@@ -2,26 +2,1732 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Web Template 1</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Luxury Hotel Website</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        :root {
+            /* =========================
+         Brand Colors 
+         "Serene Earth & Champagne"
+      ========================= */
+            --web-primary: #2C3E35;
+            --web-primary-hover: #1A2621;
+            --web-primary-dark: #121A17;
+            --web-primary-soft: #E9EFEC;
+
+            --web-secondary: #BFA37E;
+            --web-secondary-hover: #A68A66;
+            --web-secondary-dark: #8C7352;
+            --web-secondary-soft: #F5F1EB;
+
+            --web-accent: #8E6E5E;
+            --web-accent-hover: #76594B;
+            --web-accent-dark: #5C453A;
+            --web-accent-soft: #F2EEEB;
+
+            /* =========================
+                Page Backgrounds
+            ========================= */
+            --web-page-bg: #FDFCFB;
+            --web-section-bg: #F7F5F2;
+            --web-surface-bg: #FFFFFF;
+            --web-surface-muted-bg: #FAF9F8;
+            --web-dark-bg: #1A1A1A;
+
+            /* =========================
+                Text Colors
+            ========================= */
+            --web-text-main: #2D2926;
+            --web-text-muted: #6B6661;
+            --web-text-soft: #A39E99;
+            --web-text-white: #FFFFFF;
+            --web-text-on-primary: #FFFFFF;
+            --web-text-on-dark: #FDFCFB;
+
+            /* =========================
+                Border Colors
+            ========================= */
+            --web-border-light: #F1F5F9;
+            --web-border-medium: #E2E8F0;
+            --web-border-dark: #CBD5E1;
+
+            /* =========================
+                Booking & Status Colors
+            ========================= */
+            --web-success: #3E5C4E;
+            --web-success-dark: #2C3E35;
+            --web-success-soft: #ECF2EF;
+
+            --web-warning: #D4A373;
+            --web-warning-dark: #A67C52;
+            --web-warning-soft: #FAF3E0;
+
+            --web-danger: #A65D57;
+            --web-danger-dark: #7D423E;
+            --web-danger-soft: #F9EBEA;
+
+            --web-info: #5E7E8E;
+            --web-info-dark: #455D69;
+            --web-info-soft: #EBF1F4;
+
+            /* =========================
+                Shadows
+            ========================= */
+            --web-shadow-xs: 0 1px 3px rgba(44, 62, 53, 0.04);
+            --web-shadow-sm: 0 4px 6px rgba(44, 62, 53, 0.06);
+            --web-shadow-md: 0 12px 30px rgba(44, 62, 53, 0.08);
+            --web-shadow-lg: 0 18px 45px rgba(44, 62, 53, 0.12);
+            --web-shadow-xl: 0 28px 70px rgba(44, 62, 53, 0.15);
+
+            /* =========================
+                Border Radius
+            ========================= */
+            --web-radius-xs: 2px;
+            --web-radius-sm: 4px;
+            --web-radius-md: 8px;
+            --web-radius-lg: 16px;
+            --web-radius-xl: 24px;
+            --web-radius-pill: 999px;
+
+            /* =========================
+                Typography
+            ========================= */
+            --web-font-heading: "Cormorant Garamond", serif;
+            --web-font-body: "Inter", sans-serif;
+
+            --web-heading-weight: 600;
+            --web-heading-spacing: -0.01em;
+
+            --web-text-xs: 0.75rem;
+            --web-text-sm: 0.875rem;
+            --web-text-base: 1rem;
+            --web-text-lg: 1.125rem;
+            --web-text-xl: 1.25rem;
+            --web-text-2xl: 1.5rem;
+            --web-text-3xl: 2rem;
+            --web-text-4xl: 2.75rem;
+            --web-text-5xl: 3.5rem;
+
+            /* =========================
+                Spacing & Layout
+            ========================= */
+            --web-space-xs: 0.25rem;
+            --web-space-sm: 0.5rem;
+            --web-space-md: 1rem;
+            --web-space-lg: 1.5rem;
+            --web-space-xl: 2rem;
+            --web-space-2xl: 4rem;
+            --web-space-3xl: 6rem;
+
+            --web-container-max: 1140px;
+            --web-section-padding: 7rem;
+            --web-navbar-height: 80px;
+
+            /* =========================
+                Transitions
+            ========================= */
+            --web-transition-fast: 0.2s ease;
+            --web-transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --web-transition-slow: 0.5s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--web-font-body);
+            background: var(--web-page-bg);
+            color: var(--web-text-main);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--web-font-heading);
+            font-weight: var(--web-heading-weight);
+            letter-spacing: var(--web-heading-spacing);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+         HERO WRAPPER
+        ======================== */
+
+        .web-hero-wrapper {
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+            color: var(--web-text-white);
+        }
+
+        .web-hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .web-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom,
+                    rgba(18, 26, 23, 0.65) 0%,
+                    rgba(18, 26, 23, 0.28) 38%,
+                    rgba(18, 26, 23, 0.75) 100%);
+            z-index: 2;
+        }
+
+        /* =========================
+        NAVBAR
+        ========================= */
+
+        .web-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: var(--web-navbar-height);
+            z-index: 999;
+            background: transparent;
+            padding: 1rem 0;
+            transition: var(--web-transition-normal);
+        }
+
+        .web-navbar.web-navbar-scrolled {
+            background: rgba(18, 26, 23, 0.72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 8px 30px rgba(18, 26, 23, 0.18);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .web-navbar .navbar-brand {
+            font-family: var(--web-font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--web-text-white);
+            letter-spacing: 0.02em;
+        }
+
+        .web-navbar .navbar-brand:hover {
+            color: var(--web-secondary);
+        }
+
+        .web-navbar .nav-link {
+            color: rgba(255, 255, 255, 0.86);
+            font-size: var(--web-text-sm);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: var(--web-transition-fast);
+        }
+
+        .web-navbar .nav-link:hover,
+        .web-navbar .nav-link.active {
+            color: var(--web-secondary);
+        }
+
+        .web-navbar .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: none;
+        }
+
+        .web-navbar .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .web-navbar .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        .web-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0.7rem 1.35rem;
+            border-radius: var(--web-radius-pill);
+            background: var(--web-secondary);
+            color: var(--web-primary-dark);
+            font-size: var(--web-text-sm);
+            font-weight: 700;
+            border: 1px solid var(--web-secondary);
+            transition: var(--web-transition-normal);
+        }
+
+        .web-nav-btn:hover {
+            background: var(--web-secondary-hover);
+            border-color: var(--web-secondary-hover);
+            color: var(--web-text-white);
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+        HERO CONTENT
+        ========================= */
+
+        .web-hero-content {
+            position: relative;
+            z-index: 4;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+            padding: 9rem 1rem 5rem;
+        }
+
+        .web-hero-inner {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .web-hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--web-secondary);
+            font-size: var(--web-text-sm);
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .web-hero-kicker::before,
+        .web-hero-kicker::after {
+            content: "";
+            width: 42px;
+            height: 1px;
+            background: var(--web-secondary);
+            opacity: 0.8;
+        }
+
+        .web-hero-title {
+            margin-bottom: 1rem;
+            color: var(--web-text-white);
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            line-height: 0.95;
+            font-weight: 700;
+        }
+
+        .web-hero-subtitle {
+            max-width: 680px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.8;
+        }
+
+        .web-hero-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .web-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 0.85rem 1.65rem;
+            border-radius: var(--web-radius-pill);
+            background: var(--web-secondary);
+            color: var(--web-primary-dark);
+            border: 1px solid var(--web-secondary);
+            font-size: var(--web-text-sm);
+            font-weight: 700;
+            transition: var(--web-transition-normal);
+        }
+
+        .web-btn-primary:hover {
+            background: var(--web-secondary-hover);
+            border-color: var(--web-secondary-hover);
+            color: var(--web-text-white);
+            transform: translateY(-2px);
+        }
+
+        .web-btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 0.85rem 1.65rem;
+            border-radius: var(--web-radius-pill);
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--web-text-white);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            font-size: var(--web-text-sm);
+            font-weight: 700;
+            backdrop-filter: blur(8px);
+            transition: var(--web-transition-normal);
+        }
+
+        .web-btn-outline:hover {
+            background: var(--web-text-white);
+            color: var(--web-primary-dark);
+            border-color: var(--web-text-white);
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+        MOBILE RESPONSIVENESS
+        ========================= */
+
+        @media (max-width: 991.98px) {
+            .web-navbar {
+                padding: 0.8rem 0;
+            }
+
+            .web-navbar .navbar-collapse {
+                margin-top: 1rem;
+                padding: 1.25rem;
+                border-radius: var(--web-radius-lg);
+                background: rgba(18, 26, 23, 0.92);
+                backdrop-filter: blur(14px);
+                box-shadow: var(--web-shadow-lg);
+            }
+
+            .web-navbar .navbar-nav {
+                text-align: center;
+                gap: 0.25rem;
+            }
+
+            .web-navbar .nav-link {
+                padding: 0.75rem 1rem;
+            }
+
+            .web-nav-btn {
+                width: 100%;
+                margin-top: 0.8rem;
+            }
+
+            .web-hero-content {
+                padding: 8rem 1rem 4rem;
+            }
+
+            .web-hero-kicker::before,
+            .web-hero-kicker::after {
+                width: 28px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .web-navbar .navbar-brand {
+                font-size: 1.45rem;
+            }
+
+            .web-hero-content {
+                align-items: flex-end;
+                padding-bottom: 3rem;
+            }
+
+            .web-hero-title {
+                font-size: clamp(2.8rem, 16vw, 4.2rem);
+            }
+
+            .web-hero-subtitle {
+                font-size: var(--web-text-base);
+                line-height: 1.7;
+            }
+
+            .web-hero-actions {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .web-btn-primary,
+            .web-btn-outline {
+                width: 100%;
+            }
+        }
+
+        /* =========================
+        SHARED SECTION STYLES
+        ========================= */
+
+        .web-section {
+            position: relative;
+            padding: var(--web-section-padding) 0;
+            overflow: hidden;
+        }
+
+        .web-section-bg-light {
+            background: var(--web-page-bg);
+        }
+
+        .web-section-bg-soft {
+            background: var(--web-section-bg);
+        }
+
+        .web-section-bg-primary {
+            background: var(--web-primary);
+            color: var(--web-text-on-primary);
+        }
+
+        .web-section-bg-secondary {
+            background: var(--web-secondary-soft);
+        }
+
+        .web-section-bg-accent {
+            background: var(--web-accent-soft);
+        }
+
+        .web-section-bg-dark {
+            background: var(--web-dark-bg);
+            color: var(--web-text-on-dark);
+        }
+
+        .web-section-bg-primary .web-section-title,
+        .web-section-bg-primary .web-section-subtitle,
+        .web-section-bg-dark .web-section-title,
+        .web-section-bg-dark .web-section-subtitle {
+            color: var(--web-text-on-dark);
+        }
+
+        .web-section-bg-primary .web-section-text,
+        .web-section-bg-dark .web-section-text {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .web-section-kicker {
+            color: var(--web-secondary-dark);
+            font-size: var(--web-text-sm);
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .web-section-bg-primary .web-section-kicker,
+        .web-section-bg-dark .web-section-kicker {
+            color: var(--web-secondary);
+        }
+
+        .web-section-title {
+            color: var(--web-text-main);
+            font-size: clamp(2.3rem, 5vw, 4.5rem);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .web-section-subtitle {
+            color: var(--web-text-muted);
+            max-width: 720px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            font-size: var(--web-text-lg);
+        }
+
+        .web-section-text {
+            color: var(--web-text-muted);
+            line-height: 1.8;
+        }
+
+        .web-image {
+            width: 100%;
+            height: 100%;
+            min-height: 480px;
+            object-fit: cover;
+            border-radius: var(--web-radius-lg);
+            box-shadow: var(--web-shadow-lg);
+        }
+
+        .web-card {
+            background: var(--web-surface-bg);
+            border: 1px solid rgba(44, 62, 53, 0.08);
+            border-radius: var(--web-radius-lg);
+            padding: 2rem;
+            height: 100%;
+            box-shadow: var(--web-shadow-sm);
+            transition: var(--web-transition-normal);
+        }
+
+        .web-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--web-shadow-lg);
+        }
+
+        .web-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--web-radius-pill);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--web-secondary-soft);
+            color: var(--web-secondary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .web-card-title {
+            font-family: var(--web-font-heading);
+            font-size: var(--web-text-2xl);
+            color: var(--web-text-main);
+            margin-bottom: 0.75rem;
+        }
+
+        .web-card-text {
+            color: var(--web-text-muted);
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        .web-section-bg-primary .web-card,
+        .web-section-bg-dark .web-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(10px);
+        }
+
+        .web-section-bg-primary .web-card-title,
+        .web-section-bg-dark .web-card-title {
+            color: var(--web-text-white);
+        }
+
+        .web-section-bg-primary .web-card-text,
+        .web-section-bg-dark .web-card-text {
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        /* =========================
+        ABOUT SECTION
+        ========================= */
+
+        .web-about-box {
+            background: var(--web-surface-bg);
+            border-radius: var(--web-radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--web-shadow-md);
+        }
+
+        .web-about-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 0;
+        }
+
+        .web-about-list li {
+            display: flex;
+            gap: 0.75rem;
+            color: var(--web-text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .web-about-list li span {
+            color: var(--web-secondary-dark);
+            font-weight: 700;
+        }
+
+        /* =========================
+        ROOMS SECTION
+     ========================= */
+
+        .web-room-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--web-radius-lg);
+            min-height: 460px;
+            box-shadow: var(--web-shadow-lg);
+        }
+
+        .web-room-card img {
+            width: 100%;
+            height: 100%;
+            min-height: 460px;
+            object-fit: cover;
+            transition: var(--web-transition-slow);
+        }
+
+        .web-room-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .web-room-content {
+            position: absolute;
+            inset: auto 0 0 0;
+            padding: 2rem;
+            color: var(--web-text-white);
+            background: linear-gradient(to top,
+                    rgba(18, 26, 23, 0.9),
+                    rgba(18, 26, 23, 0));
+        }
+
+        .web-room-content h3 {
+            font-size: var(--web-text-3xl);
+            margin-bottom: 0.5rem;
+        }
+
+        .web-room-content p {
+            color: rgba(255, 255, 255, 0.82);
+            margin-bottom: 1rem;
+        }
+
+        .web-room-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .web-room-meta span {
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: var(--web-radius-pill);
+            padding: 0.35rem 0.75rem;
+            font-size: var(--web-text-xs);
+        }
+
+        /* =========================
+        FIXED IMAGE / PARALLAX SECTIONS
+        ========================= */
+
+        .web-fixed-section {
+            position: relative;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            color: var(--web-text-white);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .web-fixed-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(18, 26, 23, 0.62);
+        }
+
+        .web-fixed-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+        }
+
+        .web-fixed-content h2 {
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
+            line-height: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .web-fixed-content p {
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.8;
+            font-size: var(--web-text-lg);
+        }
+
+        /* =========================
+        DINING SECTION
+        ========================= */
+
+        .web-dining-feature {
+            border-radius: var(--web-radius-lg);
+            overflow: hidden;
+            background: var(--web-surface-bg);
+            box-shadow: var(--web-shadow-md);
+        }
+
+        .web-dining-feature img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+        }
+
+        .web-dining-content {
+            padding: 2rem;
+        }
+
+        .web-dining-content h3 {
+            color: var(--web-text-main);
+            font-size: var(--web-text-3xl);
+        }
+
+        /* =========================
+        EXPERIENCE STRIP
+        ========================= */
+
+        .web-stat {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .web-stat h3 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--web-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .web-stat p {
+            color: var(--web-primary);
+            margin: 0;
+        }
+
+        /* =========================
+        GALLERY SECTION
+        ========================= */
+
+        .web-gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--web-radius-lg);
+            min-height: 280px;
+            box-shadow: var(--web-shadow-sm);
+        }
+
+        .web-gallery-item img {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            object-fit: cover;
+            transition: var(--web-transition-slow);
+        }
+
+        .web-gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* =========================
+        CTA SECTION
+        ========================= */
+
+        .web-cta-box {
+            background: linear-gradient(135deg,
+                    var(--web-primary),
+                    var(--web-primary-dark));
+            border-radius: var(--web-radius-xl);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--web-text-white);
+            box-shadow: var(--web-shadow-xl);
+        }
+
+        .web-cta-box h2 {
+            font-size: clamp(2.5rem, 5vw, 4.8rem);
+            margin-bottom: 1rem;
+        }
+
+        .web-cta-box p {
+            max-width: 680px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.8;
+        }
+
+        /* =========================
+            FOOTER
+        ========================= */
+
+        .web-footer {
+            background: var(--web-dark-bg);
+            color: var(--web-text-on-dark);
+            padding: 5rem 0 1.5rem;
+        }
+
+        .web-footer-brand {
+            font-family: var(--web-font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--web-text-white);
+            margin-bottom: 1rem;
+        }
+
+        .web-footer-text {
+            color: rgba(255, 255, 255, 0.68);
+            line-height: 1.8;
+        }
+
+        .web-footer-title {
+            color: var(--web-secondary);
+            font-size: var(--web-text-lg);
+            margin-bottom: 1.25rem;
+        }
+
+        .web-footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .web-footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .web-footer-links a {
+            color: rgba(255, 255, 255, 0.68);
+            transition: var(--web-transition-fast);
+        }
+
+        .web-footer-links a:hover {
+            color: var(--web-secondary);
+        }
+
+        .web-footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            color: rgba(255, 255, 255, 0.56);
+            font-size: var(--web-text-sm);
+        }
+
+        .web-footer-socials {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .web-footer-social-link {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--web-radius-pill);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--web-text-white);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: var(--web-transition-normal);
+        }
+
+        .web-footer-social-link:hover {
+            color: var(--web-primary-dark);
+            background: var(--web-secondary);
+            border-color: var(--web-secondary);
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+        RESPONSIVE FIXES
+        ========================= */
+
+        @media (max-width: 991.98px) {
+            .web-section {
+                padding: 5rem 0;
+            }
+
+            .web-image {
+                min-height: 360px;
+            }
+
+            .web-fixed-section {
+                min-height: 460px;
+                background-attachment: scroll;
+            }
+
+            .web-about-box {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .web-section {
+                padding: 4rem 0;
+            }
+
+            .web-section-subtitle {
+                font-size: var(--web-text-base);
+                margin-bottom: 2rem;
+            }
+
+            .web-room-card,
+            .web-room-card img {
+                min-height: 390px;
+            }
+
+            .web-dining-feature img {
+                height: 300px;
+            }
+
+            .web-cta-box {
+                padding: 3rem 1.25rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Bootstrap</h1>
-    <a href="#" class="btn btn-primary">Primary Button</a>
+
+    <header class="web-hero-wrapper">
+
+        <!-- Video Background -->
+        <video class="web-hero-video" autoplay muted loop playsinline>
+            <source src="/files/video-1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Overlay -->
+        <div class="web-hero-overlay"></div>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg web-navbar">
+            <div class="container">
+
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    SereneStay
+                </a>
+
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Nav Content -->
+                <div class="collapse navbar-collapse" id="mainNavbar">
+
+                    <!-- Center Links -->
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Rooms</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Experiences</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dining</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Button -->
+                    <div class="d-flex">
+                        <a href="#" class="web-nav-btn">
+                            Book Now
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <section class="web-hero-content">
+            <div class="container">
+                <div class="web-hero-inner">
+
+                    <div class="web-hero-kicker">
+                        Luxury Hotel Experience
+                    </div>
+
+                    <h1 class="web-hero-title">
+                        Stay Where Comfort Meets Elegance
+                    </h1>
+
+                    <p class="web-hero-subtitle">
+                        Discover calm interiors, refined hospitality, beautiful rooms,
+                        and unforgettable moments designed for guests who appreciate
+                        comfort, privacy, and timeless style.
+                    </p>
+
+                    <div class="web-hero-actions">
+                        <a href="#" class="web-btn-primary">
+                            Explore Rooms
+                        </a>
+
+                        <a href="#" class="web-btn-outline">
+                            View Experience
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section class="web-section js-bg-order">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <img src="/files/lobby-4.jpg" alt="Elegant hotel lobby" class="web-image" />
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="web-about-box">
+                        <div class="web-section-kicker">Welcome to SereneStay</div>
+
+                        <h2 class="web-section-title">
+                            A Calm Escape Designed for True Hospitality
+                        </h2>
+
+                        <p class="web-section-text">
+                            SereneStay is a refined hotel experience created for guests who
+                            value comfort, privacy, warm service, and timeless interiors.
+                            From elegant rooms to wellness spaces, every detail is designed
+                            to make your stay feel effortless.
+                        </p>
+
+                        <ul class="web-about-list">
+                            <li><span>✓</span> Luxury rooms and suites with refined interiors</li>
+                            <li><span>✓</span> Full-service spa, wellness lounge, and gym</li>
+                            <li><span>✓</span> Fine dining, private events, and guest concierge</li>
+                            <li><span>✓</span> Peaceful environment for leisure and business stays</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-    <script src="./scripts.js"></script>
+    <!-- ROOMS & SUITES SECTION -->
+    <section class="web-section js-bg-order">
+        <div class="container">
+            <div class="text-center">
+                <div class="web-section-kicker">Rooms & Suites</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-        crossorigin="anonymous"></script>
+                <h2 class="web-section-title">
+                    Stay in Comfort, Wake in Style
+                </h2>
+
+                <p class="web-section-subtitle">
+                    Choose from carefully styled rooms and suites created for relaxation,
+                    privacy, and a memorable hotel experience.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="web-room-card">
+                        <img src="/files/room-1.jpg" alt="Deluxe hotel room" />
+
+                        <div class="web-room-content">
+                            <h3>Deluxe Room</h3>
+                            <p>Elegant comfort for solo guests and couples.</p>
+
+                            <div class="web-room-meta">
+                                <span>King Bed</span>
+                                <span>City View</span>
+                                <span>Breakfast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="web-room-card">
+                        <img src="/files/room-2.jpg" alt="Executive hotel suite" />
+
+                        <div class="web-room-content">
+                            <h3>Executive Suite</h3>
+                            <p>Extra space, premium comfort, and refined privacy.</p>
+
+                            <div class="web-room-meta">
+                                <span>Lounge Area</span>
+                                <span>Smart TV</span>
+                                <span>Concierge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mx-md-auto">
+                    <div class="web-room-card">
+                        <img src="/files/room-3.jpg" alt="Presidential hotel suite" />
+
+                        <div class="web-room-content">
+                            <h3>Presidential Suite</h3>
+                            <p>A signature suite for luxury stays and special guests.</p>
+
+                            <div class="web-room-meta">
+                                <span>Private Lounge</span>
+                                <span>Premium Bath</span>
+                                <span>VIP Service</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FIXED IMAGE SECTION 1 -->
+    <section class="web-fixed-section" style="background-image: url('/files/room-6.jpg');">
+        <div class="container">
+            <div class="web-fixed-content">
+                <div class="web-section-kicker">Poolside Serenity</div>
+
+                <h2>
+                    Slow Mornings, Golden Evenings, Peaceful Stays
+                </h2>
+
+                <p>
+                    Enjoy quiet moments by the pool, refreshing drinks, soft outdoor
+                    lighting, and a setting designed for relaxation from sunrise to sunset.
+                </p>
+
+                <a href="#" class="web-btn-primary">Explore Leisure</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SPA & WELLNESS SECTION -->
+    <section class="web-section js-bg-order">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="web-section-kicker">Spa & Wellness</div>
+
+                    <h2 class="web-section-title">
+                        Restore Your Body, Quiet Your Mind
+                    </h2>
+
+                    <p class="web-section-text">
+                        Step into a peaceful wellness space with calming treatments, expert
+                        therapists, steam rooms, and relaxation areas made to help you feel
+                        refreshed and renewed.
+                    </p>
+
+                    <div class="row g-4 mt-3">
+                        <div class="col-sm-6">
+                            <div class="web-card">
+                                <div class="web-card-icon">✦</div>
+                                <h3 class="web-card-title">Spa Therapy</h3>
+                                <p class="web-card-text">
+                                    Massages, facials, body treatments, and calming rituals.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="web-card">
+                                <div class="web-card-icon">☼</div>
+                                <h3 class="web-card-title">Steam Lounge</h3>
+                                <p class="web-card-text">
+                                    Relax in a warm, quiet space after a long day.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <img src="/files/spa.jpg" alt="Luxury hotel spa" class="web-image" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- GYM & FITNESS SECTION -->
+    <section class="web-section js-bg-order">
+        <div class="container">
+            <div class="text-center">
+                <div class="web-section-kicker">Gym & Fitness</div>
+
+                <h2 class="web-section-title">
+                    Keep Your Routine While You Travel
+                </h2>
+
+                <p class="web-section-subtitle">
+                    Our fitness space is designed for guests who want balance, energy,
+                    and wellness during their stay.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="web-card">
+                        <div class="web-card-icon">🏋</div>
+                        <h3 class="web-card-title">Modern Equipment</h3>
+                        <p class="web-card-text">
+                            Cardio machines, strength equipment, free weights, and workout zones.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="web-card">
+                        <div class="web-card-icon">🧘</div>
+                        <h3 class="web-card-title">Wellness Classes</h3>
+                        <p class="web-card-text">
+                            Yoga, stretching, guided sessions, and low-impact wellness routines.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mx-md-auto">
+                    <div class="web-card">
+                        <div class="web-card-icon">⏱</div>
+                        <h3 class="web-card-title">Flexible Access</h3>
+                        <p class="web-card-text">
+                            Train at your own pace with convenient guest-friendly gym access.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DINING SECTION -->
+    <section class="web-section js-bg-order">
+        <div class="container">
+            <div class="text-center">
+                <div class="web-section-kicker">Dining & Lounge</div>
+
+                <h2 class="web-section-title">
+                    Beautiful Meals, Warm Atmosphere
+                </h2>
+
+                <p class="web-section-subtitle">
+                    From breakfast to dinner, our restaurant and lounge serve carefully
+                    prepared dishes in a calm and elegant setting.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="web-dining-feature">
+                        <img src="/files/breakfast-1.jpg" alt="Hotel breakfast" />
+
+                        <div class="web-dining-content">
+                            <h3>Breakfast</h3>
+                            <p class="web-section-text">
+                                Fresh morning meals, pastries, fruits, coffee, and local favorites.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="web-dining-feature">
+                        <img src="/files/dining-3.jpg" alt="Hotel restaurant" />
+
+                        <div class="web-dining-content">
+                            <h3>Restaurant</h3>
+                            <p class="web-section-text">
+                                Elegant dining with curated dishes, refined service, and comfort.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="web-dining-feature">
+                        <img src="/files/lounge-1.jpg" alt="Hotel lounge" />
+
+                        <div class="web-dining-content">
+                            <h3>Lounge</h3>
+                            <p class="web-section-text">
+                                A relaxed setting for drinks, conversations, and quiet evenings.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FIXED IMAGE SECTION 2 -->
+    <section class="web-fixed-section" style="background-image: url('/files/spa-2.jpg');">
+        <div class="container">
+            <div class="web-fixed-content ms-lg-auto text-lg-end">
+                <div class="web-section-kicker">A Complete Hotel Experience</div>
+
+                <h2>
+                    More Than a Room, A Place to Feel Rested
+                </h2>
+
+                <p>
+                    From wellness treatments and gym sessions to calm dining and peaceful
+                    rooms, every space is planned to make your stay feel complete.
+                </p>
+
+                <a href="#" class="web-btn-outline">View Amenities</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- AMENITIES SECTION -->
+    <section class="web-section js-bg-order">
+        <div class="container">
+            <div class="text-center">
+                <div class="web-section-kicker">Hotel Amenities</div>
+
+                <h2 class="web-section-title">
+                    Everything You Need for a Better Stay
+                </h2>
+
+                <p class="web-section-subtitle">
+                    Carefully selected amenities that make your stay comfortable,
+                    convenient, and memorable.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="web-card">
+                        <div class="web-card-icon">🛎</div>
+                        <h3 class="web-card-title">Concierge</h3>
+                        <p class="web-card-text">
+                            Guest assistance, bookings, directions, and special requests.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="web-card">
+                        <div class="web-card-icon">📶</div>
+                        <h3 class="web-card-title">Fast Wi-Fi</h3>
+                        <p class="web-card-text">
+                            Reliable internet for work, streaming, and guest convenience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="web-card">
+                        <div class="web-card-icon">🚘</div>
+                        <h3 class="web-card-title">Airport Pickup</h3>
+                        <p class="web-card-text">
+                            Smooth arrival and departure support for hotel guests.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="web-card">
+                        <div class="web-card-icon">🧺</div>
+                        <h3 class="web-card-title">Laundry</h3>
+                        <p class="web-card-text">
+                            Convenient laundry and housekeeping services during your stay.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- EVENTS SECTION -->
+    <section class="web-section js-bg-order">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <img src="/files/event-1.jpg" alt="Hotel event hall" class="web-image" />
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="web-section-kicker">Events & Meetings</div>
+
+                    <h2 class="web-section-title">
+                        Elegant Spaces for Memorable Gatherings
+                    </h2>
+
+                    <p class="web-section-text">
+                        Host business meetings, private dinners, weddings, conferences, and
+                        special celebrations in beautifully arranged spaces with professional
+                        support from our events team.
+                    </p>
+
+                    <div class="row g-4 mt-3">
+                        <div class="col-sm-6">
+                            <div class="web-card">
+                                <h3 class="web-card-title">Meetings</h3>
+                                <p class="web-card-text">
+                                    Boardrooms, conference setup, and business support.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="web-card">
+                                <h3 class="web-card-title">Celebrations</h3>
+                                <p class="web-card-text">
+                                    Private dinners, receptions, and special occasions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="web-btn-primary mt-4">Plan an Event</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- EXPERIENCE STATS SECTION -->
+    <section class="web-section js-bg-order">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="web-stat">
+                        <h3>48+</h3>
+                        <p>Luxury Rooms</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="web-stat">
+                        <h3>4</h3>
+                        <p>Dining Spaces</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="web-stat">
+                        <h3>24/7</h3>
+                        <p>Guest Support</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="web-stat">
+                        <h3>5★</h3>
+                        <p>Guest Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- GALLERY SECTION -->
+    <section class="web-section js-bg-order">
+        <div class="container">
+            <div class="text-center">
+                <div class="web-section-kicker">Gallery</div>
+
+                <h2 class="web-section-title">
+                    A Glimpse Into Your Stay
+                </h2>
+
+                <p class="web-section-subtitle">
+                    Explore the rooms, dining spaces, wellness areas, and calm corners
+                    that make the hotel experience special.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="web-gallery-item">
+                        <img src="/files/room-4.jpg" alt="Hotel room gallery" />
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="web-gallery-item">
+                        <img src="/files/pool.jpg" alt="Hotel pool gallery" />
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="web-gallery-item">
+                        <img src="/files/spa-5.jpg" alt="Hotel spa gallery" />
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="web-gallery-item">
+                        <img src="/files/dining-1.jpg" alt="Hotel dining gallery" />
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="web-gallery-item">
+                        <img src="/files/gym.jpg" alt="Hotel gym gallery" />
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="web-gallery-item">
+                        <img src="/files/lounge-1.jpg" alt="Hotel lounge gallery" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA SECTION -->
+    <section class="web-section js-bg-order">
+        <div class="container">
+            <div class="web-cta-box">
+                <div class="web-section-kicker">Reserve Your Stay</div>
+
+                <h2>
+                    Ready for a More Relaxing Hotel Experience?
+                </h2>
+
+                <p>
+                    Book your stay and enjoy refined rooms, calm hospitality, wellness
+                    spaces, fine dining, and everything you need for a memorable visit.
+                </p>
+
+                <div class="web-hero-actions">
+                    <a href="#" class="web-btn-primary">Book Your Stay</a>
+                    <a href="#" class="web-btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="web-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="web-footer-brand">SereneStay</div>
+
+                    <p class="web-footer-text">
+                        A modern luxury hotel created for comfort, calm hospitality,
+                        memorable dining, wellness, and elegant stays.
+                    </p>
+
+                    <div class="web-footer-socials">
+                        <a href="#" class="web-footer-social-link" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" class="web-footer-social-link" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#" class="web-footer-social-link" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+                    <h4 class="web-footer-title">Hotel</h4>
+
+                    <ul class="web-footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Rooms</a></li>
+                        <li><a href="#">Dining</a></li>
+                        <li><a href="#">Spa</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+                    <h4 class="web-footer-title">Amenities</h4>
+
+                    <ul class="web-footer-links">
+                        <li><a href="#">Gym</a></li>
+                        <li><a href="#">Pool</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Concierge</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="web-footer-title">Contact</h4>
+
+                    <p class="web-footer-text mb-2">
+                        24 Serene Avenue, City Center
+                    </p>
+
+                    <p class="web-footer-text mb-2">
+                        reservations@serenestay.com
+                    </p>
+
+                    <p class="web-footer-text mb-0">
+                        +234 800 000 0000
+                    </p>
+                </div>
+            </div>
+
+            <div class="web-footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+                <div>
+                    © 2026 SereneStay Hotel. All rights reserved.
+                </div>
+
+                <div>
+                    Privacy Policy · Terms · Booking Policy
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.querySelector(".web-navbar");
+
+            function handleNavbarScroll() {
+                if (window.scrollY > 40) {
+                    navbar.classList.add("web-navbar-scrolled");
+                } else {
+                    navbar.classList.remove("web-navbar-scrolled");
+                }
+            }
+
+            handleNavbarScroll();
+
+            window.addEventListener("scroll", handleNavbarScroll);
+        });
+
+        // Apply background classes to sections in a specific order
+        document.addEventListener("DOMContentLoaded", function () {
+            const sectionBackgroundOrder = [
+                "web-section-bg-light",
+                "web-section-bg-soft",
+                "web-section-bg-secondary",
+                "web-section-bg-primary",
+                "web-section-bg-accent",
+                "web-section-bg-soft",
+                "web-section-bg-dark"
+            ];
+
+            const sections = document.querySelectorAll(".js-bg-order");
+
+            sections.forEach(function (section, index) {
+                const bgClass = sectionBackgroundOrder[index % sectionBackgroundOrder.length];
+                section.classList.add(bgClass);
+            });
+        });
+    </script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
 </body>
 
 </html>

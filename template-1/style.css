@@ -1,0 +1,302 @@
+:root {
+  /* =========================
+     Brand Colors 
+     "Serene Earth & Champagne"
+  ========================= */
+  --web-primary: #2C3E35;         /* Deep Forest (Luxury/Trust) */
+  --web-primary-hover: #1A2621;
+  --web-primary-dark: #121A17;
+  --web-primary-soft: #E9EFEC;
+
+  --web-secondary: #BFA37E;       /* Muted Gold/Brass (Premium) */
+  --web-secondary-hover: #A68A66;
+  --web-secondary-dark: #8C7352;
+  --web-secondary-soft: #F5F1EB;
+
+  --web-accent: #8E6E5E;          /* Warm Taupe/Clay */
+  --web-accent-hover: #76594B;
+  --web-accent-dark: #5C453A;
+  --web-accent-soft: #F2EEEB;
+
+  /* =========================
+     Page Backgrounds
+  ========================= */
+  --web-page-bg: #FDFCFB;         /* Soft Linen Canvas */
+  --web-section-bg: #F7F5F2;      /* Warm Sand */
+  --web-surface-bg: #FFFFFF;
+  --web-surface-muted-bg: #FAF9F8;
+  --web-dark-bg: #1A1A1A;         /* For Footers/Overlays */
+
+  /* =========================
+     Text Colors
+  ========================= */
+  --web-text-main: #2D2926;       /* Charcoal Black */
+  --web-text-muted: #6B6661;
+  --web-text-soft: #A39E99;
+  --web-text-white: #FFFFFF;
+  --web-text-on-primary: #FFFFFF;
+  --web-text-on-dark: #FDFCFB;
+
+  /* =========================
+     Border Colors
+  ========================= */
+  --web-border-light: #F1F5F9;
+  --web-border-medium: #E2E8F0;
+  --web-border-dark: #CBD5E1;
+
+  /* =========================
+     Booking & Status Colors
+  ========================= */
+  --web-success: #3E5C4E;         /* Available (Muted Sage) */
+  --web-success-dark: #2C3E35;
+  --web-success-soft: #ECF2EF;
+
+  --web-warning: #D4A373;         /* Pending/Low Stock (Ochre) */
+  --web-warning-dark: #A67C52;
+  --web-warning-soft: #FAF3E0;
+
+  --web-danger: #A65D57;          /* Booked/Unavailable (Dusty Rose) */
+  --web-danger-dark: #7D423E;
+  --web-danger-soft: #F9EBEA;
+
+  --web-info: #5E7E8E;            /* Calendar Selection (Slate) */
+  --web-info-dark: #455D69;
+  --web-info-soft: #EBF1F4;
+
+  /* =========================
+     Shadows (Soft & Diffused)
+  ========================= */
+  --web-shadow-xs: 0 1px 3px rgba(44, 62, 53, 0.04);
+  --web-shadow-sm: 0 4px 6px rgba(44, 62, 53, 0.06);
+  --web-shadow-md: 0 12px 30px rgba(44, 62, 53, 0.08);
+  --web-shadow-lg: 0 18px 45px rgba(44, 62, 53, 0.12);
+  --web-shadow-xl: 0 28px 70px rgba(44, 62, 53, 0.15);
+
+  /* =========================
+     Border Radius (Sharp Elegance)
+  ========================= */
+  --web-radius-xs: 2px;
+  --web-radius-sm: 4px;
+  --web-radius-md: 8px;           /* Standard button/card */
+  --web-radius-lg: 16px;          /* Large modal/section */
+  --web-radius-xl: 24px;
+  --web-radius-pill: 999px;
+
+  /* =========================
+     Typography (Hospitality Focused)
+  ========================= */
+  --web-font-heading: "Cormorant Garamond", serif;
+  --web-font-body: "Inter", sans-serif;
+
+  --web-heading-weight: 600;
+  --web-heading-spacing: -0.01em;
+
+  --web-text-xs: 0.75rem;
+  --web-text-sm: 0.875rem;
+  --web-text-base: 1rem;
+  --web-text-lg: 1.125rem;
+  --web-text-xl: 1.25rem;
+  --web-text-2xl: 1.5rem;
+  --web-text-3xl: 2rem;
+  --web-text-4xl: 2.75rem;
+  --web-text-5xl: 3.5rem;
+
+  /* =========================
+     Spacing & Layout
+  ========================= */
+  --web-space-xs: 0.25rem;
+  --web-space-sm: 0.5rem;
+  --web-space-md: 1rem;
+  --web-space-lg: 1.5rem;
+  --web-space-xl: 2rem;
+  --web-space-2xl: 4rem;
+  --web-space-3xl: 6rem;
+
+  --web-container-max: 1140px;
+  --web-section-padding: 7rem;    /* Generous breathing room */
+  --web-navbar-height: 80px;
+
+  /* =========================
+     Transitions
+  ========================= */
+  --web-transition-fast: 0.2s ease;
+  --web-transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --web-transition-slow: 0.5s ease;
+}
+
+
+/* Include the :root variables generated in the previous step here */
+
+body {
+    font-family: var(--web-font-body);
+    background-color: var(--web-page-bg);
+    color: var(--web-text-main);
+}
+
+/* Video Background Logic */
+.hero-wrapper {
+    z-index: 1;
+}
+
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: -1;
+}
+
+/* Navbar Customization */
+.navbar {
+    padding-top: 1.5rem;
+    z-index: 10;
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.8) !important;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: var(--web-transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--web-secondary) !important;
+}
+
+/* Custom Buttons based on Variables */
+.btn-primary-custom {
+    background-color: var(--web-secondary);
+    color: var(--web-text-on-primary);
+    border: none;
+    border-radius: var(--web-radius-pill);
+    font-weight: 600;
+    transition: var(--web-transition-normal);
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--web-secondary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--web-shadow-md);
+}
+
+/* Custom Secondary Button - Solid Style */
+.btn-secondary-custom {
+    background-color: var(--web-primary-soft); /* Light sage/forest tint */
+    color: var(--web-primary);                /* Deep forest text */
+    border: 1px solid var(--web-primary-soft);
+    border-radius: var(--web-radius-pill);
+    font-weight: 600;
+    transition: var(--web-transition-normal);
+}
+
+.btn-secondary-custom:hover {
+    background-color: transparent;
+    border-color: var(--web-primary);
+    color: var(--web-primary);
+    transform: translateY(-2px);
+}
+
+/* Custom Secondary Button - Outline/Elegant Style */
+.btn-outline-secondary-custom {
+    background-color: transparent;
+    color: var(--web-secondary);             /* Gold/Brass text */
+    border: 1px solid var(--web-secondary);  /* Gold/Brass border */
+    border-radius: var(--web-radius-pill);
+    font-weight: 600;
+    transition: var(--web-transition-normal);
+}
+
+.btn-outline-secondary-custom:hover {
+    background-color: var(--web-secondary);
+    color: var(--web-text-on-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--web-shadow-sm);
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: var(--web-radius-pill);
+    font-weight: 600;
+    transition: var(--web-transition-normal);
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Animation */
+.animate-up {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: var(--web-dark-bg);
+        padding: 2rem;
+        border-radius: var(--web-radius-md);
+        margin-top: 1rem;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+}
+
+.py-large {
+    padding-top: var(--web-section-padding);
+    padding-bottom: var(--web-section-padding);
+}
+
+/* Fixed Background Image Style */
+.fixed-bg-section {
+    height: 60vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.fixed-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+}
+
+.ls-wide { letter-spacing: 0.15em; }
+
+/* JavaScript Color Helper Classes */
+.bg-hotel-light { background-color: var(--web-page-bg); color: var(--web-text-main); }
+.bg-hotel-warm { background-color: var(--web-section-bg); color: var(--web-text-main); }
+.bg-hotel-dark { background-color: var(--web-primary); color: var(--web-text-white); }
