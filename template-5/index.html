@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11121d" />
+  <meta name="description" content="Aster House is a small coastal hideaway for thoughtful stays, long lunches, and days that find their own pace." />
+  <title>Aster House — A Stay Apart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Aster House home">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span>ASTER<small>HOUSE</small></span>
+    </a>
+    <a class="header-note" href="#stay">A SMALL COASTAL HOUSE <i></i> OPEN ALL YEAR</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="side-menu" aria-label="Open navigation">
+      <span class="menu-label">MENU</span><span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="menu-backdrop" data-menu-close></div>
+  <nav class="side-menu" id="side-menu" aria-label="Main navigation" aria-hidden="true" inert>
+    <div class="side-menu-head">
+      <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">✳</span><span>ASTER<small>HOUSE</small></span></a>
+      <button class="menu-close" type="button" aria-label="Close navigation">CLOSE <b aria-hidden="true">×</b></button>
+    </div>
+    <div class="side-menu-links">
+      <p>COME A LITTLE CLOSER</p>
+      <a href="#stay"><small>01</small> The house <span>↗</span></a>
+      <a href="rooms.html"><small>02</small> Rooms & suites <span>↗</span></a>
+      <a href="spa.html"><small>03</small> Spa & wellness <span>↗</span></a>
+      <a href="dining.html"><small>04</small> Dining <span>↗</span></a>
+      <a href="fitness.html"><small>05</small> Fitness <span>↗</span></a>
+      <a href="events.html"><small>06</small> Gatherings & events <span>↗</span></a>
+      <a href="booking.html"><small>07</small> Find your dates <span>↗</span></a>
+      <a href="#story"><small>08</small> The Aster way <span>↗</span></a>
+      <a href="#contact"><small>09</small> Get in touch <span>↗</span></a>
+    </div>
+    <div class="side-menu-foot"><span>THE COAST, AT YOUR OWN PACE</span><a href="mailto:hello@asterhouse.example">SAY HELLO ↗</a></div>
+  </nav>
+
+  <main>
+    <section class="hero-runway" id="home" aria-label="A moving view of Aster House">
+      <article class="hero-slide hero-slide-one">
+        <video class="hero-video" muted loop playsinline preload="none" poster="../files/main-home-1.avif" aria-hidden="true">
+          <source src="../files/video-4.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-gradient" aria-hidden="true"></div>
+        <div class="hero-monogram" aria-hidden="true">A</div>
+        <div class="hero-message">
+          <p class="hero-kicker"><span></span> A HOUSE BY THE WATER</p>
+          <h1>Make space<br />for <em>the feeling.</em></h1>
+          <div class="hero-subline">
+            <p>A stay shaped by the coast, the people who care for it, and whatever kind of pause you need.</p>
+            <a class="hero-discover" href="#stay">COME SEE <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero-scroll-note"><span class="scroll-line"></span> SCROLL TO SETTLE IN</div>
+        <div class="hero-coordinate">36° 32' N &nbsp; / &nbsp; 4° 37' W</div>
+      </article>
+      <article class="hero-slide hero-slide-two" aria-label="The coast sets the pace">
+        <div class="hero-gradient" aria-hidden="true"></div>
+        <div class="hero-message hero-message-secondary">
+          <p class="hero-kicker"><span></span> ROOM TO FIND YOUR RHYTHM</p>
+          <h2>Let the coast<br />set <em>the pace.</em></h2>
+          <p class="hero-scene-copy">A slower morning. A swim without a schedule. An afternoon that asks nothing of you.</p>
+        </div>
+        <div class="hero-scene-number">02 <i></i> 03</div>
+      </article>
+      <article class="hero-slide hero-slide-three" aria-label="Stay for every side of the house">
+        <div class="hero-gradient" aria-hidden="true"></div>
+        <div class="hero-message hero-message-secondary">
+          <p class="hero-kicker"><span></span> ALL THE LITTLE THINGS, TOGETHER</p>
+          <h2>Stay for every<br />side of <em>the house.</em></h2>
+          <p class="hero-scene-copy">From first light in your suite to the last story over dinner, make the whole place yours.</p>
+          <a class="hero-discover" href="#stay">STEP INSIDE <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-scene-number">03 <i></i> 03</div>
+      </article>
+    </section>
+
+    <section class="intro-section" id="stay">
+      <div class="section-rail"><span>01</span><i></i><span>THE HOUSE</span></div>
+      <div class="intro-copy">
+        <p class="section-kicker">A different pace begins here</p>
+        <h2>More than<br />a room for the<br /><em>night.</em></h2>
+        <p class="intro-paragraph">Aster House is a small coastal retreat built around the things that make a stay matter: a warm welcome, thoughtful spaces, and room to make the day your own.</p>
+        <a class="text-link" href="#rooms">GET TO KNOW THE HOUSE <span>↗</span></a>
+      </div>
+      <div class="intro-image-wrap">
+        <img src="../files/lounge-1.jpg" alt="The warmly lit lounge at Aster House" loading="lazy" />
+        <span class="image-note">A QUIET CORNER, ALWAYS READY</span>
+      </div>
+      <div class="intro-proof">
+        <span class="proof-spark" aria-hidden="true">✳</span>
+        <p>Small enough to know your name.<br />Thoughtful enough to remember the details.</p>
+      </div>
+    </section>
+
+    <section class="offer-section" id="house">
+      <div class="offer-heading">
+        <p class="section-kicker">A stay that feels like yours</p>
+        <h2>Choose your<br /><em>kind of elsewhere.</em></h2>
+        <p class="offer-lead">Explore the house, find your favourite, and book the kind of stay you came for.</p>
+        <div class="offer-heading-actions">
+          <a class="offer-action-primary" href="booking.html">BOOK YOUR STAY <span>↗</span></a>
+          <a class="offer-action-secondary" href="#experiences">VIEW ALL EXPERIENCES <span>↓</span></a>
+        </div>
+      </div>
+      <div class="offer-stack">
+        <article class="offer-panel offer-room" id="rooms">
+          <a class="offer-card-hit" href="rooms.html" aria-label="View rooms and suites"></a>
+          <div class="offer-panel-copy">
+            <span class="offer-index">01 / A ROOM TO CALL YOURS</span>
+            <h3>Stay close<br />to the <em>quiet.</em></h3>
+            <p>Light-filled rooms, natural textures, and little thoughtful touches. Find a hideaway for two or bring your favourite people along.</p>
+            <div class="offer-tags"><span>ROOMS & SUITES</span><span>PRIVATE TERRACES</span><span>SLOW MORNINGS</span></div>
+            <div class="offer-card-actions">
+              <a class="panel-link" href="rooms.html">VIEW OUR ROOMS <span>↗</span></a>
+              <a class="panel-book" href="booking.html">BOOK NOW <span>↗</span></a>
+            </div>
+          </div>
+          <div class="offer-panel-image">
+            <img src="../files/room-4.jpg" alt="A calm, light-filled room at Aster House" loading="lazy" />
+            <span class="panel-image-label">THE GARDEN SUITE</span>
+          </div>
+        </article>
+        <article class="offer-panel offer-spa" id="spa">
+          <a class="offer-card-hit" href="spa.html" aria-label="Explore the spa and wellness facilities"></a>
+          <div class="offer-panel-copy">
+            <span class="offer-index">02 / TIME THAT BELONGS TO YOU</span>
+            <h3>Come back<br />to <em>yourself.</em></h3>
+            <p>Ease into a restorative treatment, linger by the water, and let the afternoon unfold without watching the clock.</p>
+            <div class="offer-tags"><span>SPA RITUALS</span><span>POOL DAYS</span><span>QUIET MOMENTS</span></div>
+            <div class="offer-card-actions">
+              <a class="panel-link" href="spa.html">EXPLORE THE SPA <span>↗</span></a>
+              <a class="panel-book" href="booking.html">PLAN YOUR STAY <span>↗</span></a>
+            </div>
+          </div>
+          <div class="offer-panel-image">
+            <img src="../files/spa-3.jpg" alt="A peaceful spa retreat at Aster House" loading="lazy" />
+            <span class="panel-image-label">THE SLOW ROOM</span>
+          </div>
+        </article>
+        <article class="offer-panel offer-dining" id="dining">
+          <a class="offer-card-hit" href="dining.html" aria-label="Explore dining at Aster House"></a>
+          <div class="offer-panel-copy">
+            <span class="offer-index">03 / SOMETHING GOOD IS COOKING</span>
+            <h3>One more<br /><em>at the table.</em></h3>
+            <p>Seasonal plates, local ingredients, and the kind of dinner that turns into another story and one last glass.</p>
+            <div class="offer-tags"><span>SEASONAL KITCHEN</span><span>LONG LUNCHES</span><span>SUPPER BY THE SEA</span></div>
+            <div class="offer-card-actions">
+              <a class="panel-link" href="dining.html">VIEW OUR DINING <span>↗</span></a>
+              <a class="panel-book" href="mailto:hello@asterhouse.example?subject=A%20table%20at%20Aster%20House">ASK ABOUT A TABLE <span>↗</span></a>
+            </div>
+          </div>
+          <div class="offer-panel-image">
+            <img src="../files/dining-1.jpg" alt="A relaxed dining experience at Aster House" loading="lazy" />
+            <span class="panel-image-label">A TABLE BY THE WATER</span>
+          </div>
+        </article>
+        <article class="offer-panel offer-fitness" id="fitness">
+          <a class="offer-card-hit" href="fitness.html" aria-label="View the gym and fitness facilities"></a>
+          <div class="offer-panel-copy">
+            <span class="offer-index">04 / A LITTLE ENERGY, YOUR WAY</span>
+            <h3>Move at<br /><em>your pace.</em></h3>
+            <p>Keep to your routine in the light-filled gym, stretch out after a coastal walk, or make movement part of the holiday.</p>
+            <div class="offer-tags"><span>WELL-EQUIPPED GYM</span><span>STRETCH & RESET</span><span>COASTAL WALKS</span></div>
+            <div class="offer-card-actions">
+              <a class="panel-link" href="fitness.html">VIEW FITNESS <span>↗</span></a>
+              <a class="panel-book" href="booking.html">BOOK A STAY <span>↗</span></a>
+            </div>
+          </div>
+          <div class="offer-panel-image">
+            <img src="../files/gym.jpg" alt="The bright, well-equipped gym at Aster House" loading="lazy" />
+            <span class="panel-image-label">MOVE A LITTLE, OR A LOT</span>
+          </div>
+        </article>
+        <article class="offer-panel offer-events" id="events">
+          <a class="offer-card-hit" href="events.html" aria-label="Explore events and gatherings at Aster House"></a>
+          <div class="offer-panel-copy">
+            <span class="offer-index">05 / BRING EVERYONE TOGETHER</span>
+            <h3>Make room<br />for <em>the occasion.</em></h3>
+            <p>From intimate celebrations to a gathering by the coast, thoughtful spaces and a caring team make it feel like yours.</p>
+            <div class="offer-tags"><span>PRIVATE GATHERINGS</span><span>CELEBRATIONS</span><span>MADE PERSONAL</span></div>
+            <div class="offer-card-actions">
+              <a class="panel-link" href="events.html">VIEW OUR EVENTS <span>↗</span></a>
+              <a class="panel-book" href="mailto:hello@asterhouse.example?subject=An%20occasion%20at%20Aster%20House">PLAN AN EVENT <span>↗</span></a>
+            </div>
+          </div>
+          <div class="offer-panel-image">
+            <img src="../files/event-1.jpg" alt="A thoughtfully arranged event space at Aster House" loading="lazy" />
+            <span class="panel-image-label">GATHER A LITTLE CLOSER</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="trust-band" aria-label="Our approach to hospitality">
+      <p>THE DETAILS ARE WHAT MAKE IT FEEL DIFFERENT</p>
+      <div class="trust-marquee" aria-hidden="true">
+        <div class="trust-track">
+          <span>Thoughtful hosting <b>✳</b></span><span>Local at heart <b>✳</b></span><span>Room to breathe <b>✳</b></span><span>Here when you need us <b>✳</b></span>
+          <span>Thoughtful hosting <b>✳</b></span><span>Local at heart <b>✳</b></span><span>Room to breathe <b>✳</b></span><span>Here when you need us <b>✳</b></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="host-section" id="story">
+      <div class="host-story">
+        <div class="host-photo">
+          <img src="../files/pool.jpg" alt="A guest enjoying a quiet moment beside the Aster House pool" loading="lazy" />
+          <span class="host-photo-dots" aria-hidden="true"></span>
+          <span class="host-photo-ring" aria-hidden="true">✳</span>
+          <div class="host-profile">
+            <span class="host-avatar" aria-hidden="true">A</span>
+            <p>YOUR ASTER HOST<small>HERE BEFORE YOU ARRIVE</small></p>
+            <span class="host-profile-mark">ASTER HOUSE</span>
+          </div>
+        </div>
+        <div class="host-details">
+          <p class="section-kicker">Good people make a place</p>
+          <h2 class="host-title">A familiar face<br />from <em>day one.</em></h2>
+          <p class="host-description">A thoughtful stay starts long before check-in. Our in-house team gets to know what brings you here, then takes care of the little details that let you settle in.</p>
+          <div class="host-promises">
+            <div><p>A warm welcome, at your pace</p><span>01</span></div>
+            <div><p>Local recommendations, made personal</p><span>02</span></div>
+            <div><p>Thoughtful help, from arrival to farewell</p><span>03</span></div>
+          </div>
+          <a class="text-link" href="#contact">SAY HELLO TO YOUR HOSTS <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-runway" id="experiences" aria-label="A glimpse of life at Aster House">
+      <div class="gallery-stage">
+        <div class="gallery-heading">
+          <p class="section-kicker">No two days need to look alike</p>
+          <h2>Let curiosity<br />lead <em>the way.</em></h2>
+          <a href="booking.html">MAKE YOURSELF AT HOME <span>↘</span></a>
+        </div>
+        <div class="gallery-tile gallery-tile-one"><img src="../files/pool.jpg" alt="Poolside in the afternoon sun" loading="lazy" /><span>THE BLUE HOUR</span></div>
+        <div class="gallery-tile gallery-tile-two"><img src="../files/dining-2.jpg" alt="A table ready for a relaxed lunch" loading="lazy" /><span>A LONG LUNCH</span></div>
+        <div class="gallery-tile gallery-tile-three"><img src="../files/garden-area.jpg" alt="A leafy corner to explore" loading="lazy" /><span>THE GARDEN PATH</span></div>
+        <div class="gallery-tile gallery-tile-four"><img src="../files/room-7.jpg" alt="A suite made for a slower morning" loading="lazy" /><span>TAKE YOUR TIME</span></div>
+        <div class="gallery-tile gallery-tile-five"><img src="../files/spa-5.jpg" alt="A quiet wellness space" loading="lazy" /><span>A MOMENT TO RESET</span></div>
+        <div class="gallery-tile gallery-tile-six"><img src="../files/lounge-2.jpg" alt="An intimate lounge for the evening" loading="lazy" /><span>ONE LAST STORY</span></div>
+      </div>
+    </section>
+
+    <section class="values-section">
+      <div class="values-heading">
+        <p class="section-kicker">What we believe a stay should feel like</p>
+        <h2>Considered in<br /><em>all the right ways.</em></h2>
+      </div>
+      <div class="values-grid">
+        <article class="value-card value-lilac"><span>01 / THE WELCOME</span><div class="value-orbit" aria-hidden="true">✳</div><h3>Human,<br />always.</h3><p>Warm, genuine care from a team that takes the time to notice.</p></article>
+        <article class="value-card value-rose"><span>02 / THE PLACE</span><div class="value-orbit" aria-hidden="true">◌</div><h3>Rooted<br />right here.</h3><p>A sense of place in the details, the flavours, and the people we know.</p></article>
+        <article class="value-card value-blue"><span>03 / YOUR TIME</span><div class="value-orbit" aria-hidden="true">✧</div><h3>Room to<br />be yourself.</h3><p>Thoughtful spaces and the freedom to make the day entirely your own.</p></article>
+      </div>
+    </section>
+
+    <section class="booking-section" id="book">
+      <div class="booking-image"><img src="../files/main-home-1.avif" alt="A palm-lined view of the coastal retreat" loading="lazy" /><span>A LITTLE FURTHER FROM EVERYTHING</span></div>
+      <div class="booking-copy">
+        <p class="section-kicker">Whenever you are ready</p>
+        <h2>Your coast<br />is <em>waiting.</em></h2>
+        <p>Tell us when you would like to come. We will help you find a room that feels right.</p>
+        <form class="quick-booking" id="quick-booking">
+          <label>Arrive<input type="date" name="arrival" required /></label>
+          <label>Leave<input type="date" name="departure" required /></label>
+          <label>Adults<select name="adults"><option value="2">2 adults</option><option value="1">1 adult</option><option value="3">3 adults</option><option value="4">4 adults</option></select></label>
+          <button type="submit">CONTINUE TO BOOKING <span>↗</span></button>
+          <p id="booking-feedback" role="status" aria-live="polite"></p>
+        </form>
+        <span class="booking-note">Or write us a note at <a href="mailto:hello@asterhouse.example">hello@asterhouse.example</a></span>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-copy">
+        <p class="section-kicker">A note is always welcome</p>
+        <h2>Let's make<br />this <em>your stay.</em></h2>
+        <p>Questions about a room, a celebration, or the little things that make a trip yours? Our host team would love to hear from you.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="contact-email" href="mailto:hello@asterhouse.example?subject=Hello%20Aster%20House">
+          <span><small>WRITE TO THE HOUSE</small>hello@asterhouse.example</span><b aria-hidden="true">↗</b>
+        </a>
+        <a class="contact-booking" href="booking.html">ALREADY HAVE DATES IN MIND? <span>PLAN YOUR STAY ↗</span></a>
+        <p class="contact-note">Demo template: replace the sample email address with the hotel's contact inbox before publishing.</p>
+      </div>
+    </section>
+
+    <div class="closing-marquee" aria-hidden="true">
+      <div class="closing-track"><span>Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b> Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b></span><span>Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b> Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b></span></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">✳</span><span>ASTER<small>HOUSE</small></span></a>
+    <p>A familiar place to find<br />a little more room.</p>
+    <div class="footer-links"><a href="rooms.html">THE ROOMS</a><a href="spa.html">SPA</a><a href="dining.html">DINING</a><a href="fitness.html">FITNESS</a><a href="events.html">EVENTS</a><a href="booking.html">BOOK A STAY</a><a href="#contact">CONTACT</a></div>
+    <span class="copyright">© 2025 ASTER HOUSE</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

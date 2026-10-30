@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#082f35" />
+  <title>Get in Touch — Salt & Tide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-hero" style="--page-image: url('../files/contact-1.jpg')">
+    <nav class="site-nav" aria-label="Main navigation"><a class="wordmark" href="index.html" aria-label="Salt and Tide home"><span class="wordmark-mark">S<span>&</span>T</span><span class="wordmark-caption">COASTAL HOUSE</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation"><span></span><span></span></button><div class="nav-links" id="nav-links"><a href="rooms.html">Stay</a><a href="experiences.html">Explore</a><a href="dining.html">Dining</a><a href="events.html">Gather</a><a href="contact.html">Contact</a><a class="nav-book" href="booking.html">Find your dates <span aria-hidden="true">↗</span></a></div></nav>
+    <div class="page-hero-content"><p class="eyebrow"><span class="eyebrow-dot"></span> A real person, just over here</p><h1>We would love<br /><em>to hear from you.</em></h1><p>Questions, plans, or just a little curiosity about the coast? Drop us a note.</p></div>
+  </header>
+  <main>
+    <section class="page-section">
+      <div class="page-form-wrap">
+        <div class="page-form-intro"><span class="section-number">01 — Say hello</span><h2 class="page-section-heading">Start a<br /><em>conversation.</em></h2><p>Let us know what is on your mind. For room availability, you can also use our quick booking page.</p>
+          <div class="contact-details"><div class="contact-detail"><span>Write to us</span><strong><a href="mailto:hello@saltandtide.example">hello@saltandtide.example</a></strong></div><div class="contact-detail"><span>Give us a ring</span><strong><a href="tel:+18005550146">+1 (800) 555-0146</a></strong></div><div class="contact-detail"><span>Here for you</span><strong>Every day, 8 am — 8 pm</strong></div></div>
+        </div>
+        <form class="page-form" id="contact-form">
+          <label>Your name<input name="name" autocomplete="name" placeholder="How should we address you?" required /></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+          <label>What is this about?<select name="subject" required><option value="">Choose a topic</option><option>Planning a stay</option><option>Dining or experiences</option><option>A gathering</option><option>Something else</option></select></label>
+          <label>Phone number <span>(optional)</span><input name="phone" type="tel" autocomplete="tel" placeholder="+1 (555) 000-0000" /></label>
+          <label class="form-wide">When are you thinking?<input name="dates" placeholder="A date or a rough idea" /></label>
+          <label class="form-wide">Your note<textarea name="message" placeholder="Tell us a little more..." required></textarea></label>
+          <button class="booking-submit form-wide" type="submit">Send your note <span aria-hidden="true">↗</span></button>
+          <p class="form-feedback" id="contact-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+    <section class="page-section page-section-tint"><div class="page-section-top"><div><span class="section-number">Getting here</span><h2 class="page-section-heading">A little off<br /><em>the usual path.</em></h2></div><p>We will share the best route and help arrange a pickup once your stay is confirmed.</p></div><div class="page-photo-grid"><div class="page-photo"><img src="../files/slider-1.jpeg" alt="The pool and palms at the coastal house" loading="lazy" /><span class="page-photo-label"><span>Find the water. Find us.</span><span>↗</span></span></div><div class="page-photo"><img src="../files/garden-area.jpg" alt="Garden grounds surrounding the hotel" loading="lazy" /><span class="page-photo-label"><span>Take the scenic way in.</span><span>↗</span></span></div></div></section>
+  </main>
+  <footer class="site-footer"><a class="wordmark footer-mark" href="index.html"><span class="wordmark-mark">S<span>&</span>T</span><span class="wordmark-caption">COASTAL HOUSE</span></a><p>Somewhere by the water.<br />A little away from it all.</p><div class="footer-links"><a href="rooms.html">Stay</a><a href="experiences.html">Explore</a><a href="booking.html">Book a stay</a></div><span class="copyright">© 2025 SALT & TIDE</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>

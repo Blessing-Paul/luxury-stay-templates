@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#082f35" />
+  <title>Dining by the Water — Salt & Tide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-hero" style="--page-image: url('../files/dining-3.jpg')">
+    <nav class="site-nav" aria-label="Main navigation"><a class="wordmark" href="index.html" aria-label="Salt and Tide home"><span class="wordmark-mark">S<span>&</span>T</span><span class="wordmark-caption">COASTAL HOUSE</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation"><span></span><span></span></button><div class="nav-links" id="nav-links"><a href="rooms.html">Stay</a><a href="experiences.html">Explore</a><a href="dining.html">Dining</a><a href="events.html">Gather</a><a href="contact.html">Contact</a><a class="nav-book" href="booking.html">Find your dates <span aria-hidden="true">↗</span></a></div></nav>
+    <div class="page-hero-content"><p class="eyebrow"><span class="eyebrow-dot"></span> Fresh from around here</p><h1>Pull up a chair.<br /><em>Stay for supper.</em></h1><p>Sea-to-table plates, garden-picked greens, and one more story before you go.</p></div>
+  </header>
+  <main>
+    <section class="page-intro"><span class="section-number">01 — The kitchen at the coast</span><div><h2>Good food.<br /><em>Long evenings.</em></h2><p>Our kitchen follows the seasons and the shoreline. Think just-caught seafood, sun-warmed produce, small-batch wine, and generous plates made to pass around.</p><a class="text-link" href="#restaurant-reservation">Ask about a table <span aria-hidden="true">↗</span></a></div></section>
+    <section class="page-section page-section-tint"><div class="page-section-top"><div><span class="section-number">From first light to last call</span><h2 class="page-section-heading">A seat for<br /><em>every kind of day.</em></h2></div><p>Come as you are. There is always room for one more at the table.</p></div><div class="page-photo-grid"><div class="page-photo"><img src="../files/breakfast-1.jpg" alt="A fresh breakfast served in morning light" loading="lazy" /><span class="page-photo-label"><span>07:00 — 10:30 / The easy breakfast</span><span>01</span></span></div><div class="page-photo"><img src="../files/dining-2.jpg" alt="A relaxed restaurant dining room" loading="lazy" /><span class="page-photo-label"><span>12:00 — 15:00 / Long lunch</span><span>02</span></span></div><div class="page-photo"><img src="../files/dining-7.avif" alt="A seasonal dinner plate from the kitchen" loading="lazy" /><span class="page-photo-label"><span>17:30 — 22:00 / Supper by the sea</span><span>03</span></span></div><div class="page-photo"><img src="../files/lounge-2.jpg" alt="A cozy lounge corner for an after-dinner drink" loading="lazy" /><span class="page-photo-label"><span>Until late / One last drink</span><span>04</span></span></div></div></section>
+    <section class="page-section"><div class="page-section-top"><div><span class="section-number">A taste of the menu</span><h2 class="page-section-heading">Simple, seasonal,<br /><em>worth lingering over.</em></h2></div><p>Our menu changes with the catch and the harvest. Here are a few house favourites.</p></div><div class="page-feature-list"><article class="page-feature"><small>FROM THE WATER</small><h3>Today's catch</h3><p>Charcoal-grilled fish, lemon leaf, and whatever the garden is giving.</p></article><article class="page-feature"><small>FROM THE GARDEN</small><h3>Little green things</h3><p>Bright herbs, crisp leaves, and ripe fruit from close to home.</p></article><article class="page-feature"><small>FOR THE TABLE</small><h3>Something sweet</h3><p>A small, changing list of treats best shared over another coffee.</p></article></div><div class="page-cta"><p>Choose your preferred date, time, and party size. We will confirm your table request.</p><a class="booking-submit" href="#restaurant-reservation">Find a table <span aria-hidden="true">↗</span></a></div></section>
+    <section class="page-section page-section-tint" id="restaurant-reservation">
+      <div class="experience-request-form">
+        <div class="page-form-intro"><span class="section-number">02 — A place at the table</span><h2 class="page-section-heading">Save a seat<br /><em>for supper.</em></h2><p>Send us your preferred time and party details. We will confirm your reservation directly; this demo form is not connected to a live table system.</p></div>
+        <form class="page-form" id="dining-form">
+          <label>Preferred date<input type="date" name="diningDate" required /></label>
+          <label>Seating time<select name="diningTime" required><option value="">Choose a time</option><option>Breakfast — 8:00 am</option><option>Lunch — 12:00 pm</option><option>Lunch — 1:30 pm</option><option>Dinner — 6:00 pm</option><option>Dinner — 7:30 pm</option><option>Dinner — 9:00 pm</option></select></label>
+          <label>Number of guests<select name="diningGuests" required><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6 guests</option><option>7+ guests</option></select></label>
+          <label>Your name<input name="diningName" autocomplete="name" placeholder="Full name" required /></label>
+          <label>Email address<input name="diningEmail" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+          <label>Phone number<input name="diningPhone" type="tel" autocomplete="tel" placeholder="+1 (555) 000-0000" /></label>
+          <label class="form-wide">Dietary needs or special requests<textarea name="diningNotes" placeholder="Let us know how we can make your visit comfortable."></textarea></label>
+          <button class="booking-submit form-wide" type="submit">Request a table <span aria-hidden="true">↗</span></button>
+          <p class="form-feedback" id="dining-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="wordmark footer-mark" href="index.html"><span class="wordmark-mark">S<span>&</span>T</span><span class="wordmark-caption">COASTAL HOUSE</span></a><p>Somewhere by the water.<br />A little away from it all.</p><div class="footer-links"><a href="experiences.html">Experiences</a><a href="events.html">Gather</a><a href="contact.html">Get in touch</a></div><span class="copyright">© 2025 SALT & TIDE</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#082f35" />
+  <title>Plan Your Stay — Salt & Tide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-hero" style="--page-image: url('../files/pool.jpg')">
+    <nav class="site-nav" aria-label="Main navigation"><a class="wordmark" href="index.html" aria-label="Salt and Tide home"><span class="wordmark-mark">S<span>&</span>T</span><span class="wordmark-caption">COASTAL HOUSE</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation"><span></span><span></span></button><div class="nav-links" id="nav-links"><a href="rooms.html">Stay</a><a href="experiences.html">Explore</a><a href="dining.html">Dining</a><a href="events.html">Gather</a><a href="contact.html">Contact</a><a class="nav-book" href="booking.html">Find your dates <span aria-hidden="true">↗</span></a></div></nav>
+    <div class="page-hero-content"><p class="eyebrow"><span class="eyebrow-dot"></span> Stay a while or bring everyone</p><h1>Make a little<br /><em>time for the coast.</em></h1><p>Plan a room stay or tell us about the gathering you have in mind. We will help you find the right kind of space.</p></div>
+  </header>
+  <main>
+    <section class="booking-choice-wrap" aria-labelledby="booking-choice-title">
+      <div class="booking-choice-heading">
+        <span class="section-number">A good place to begin</span>
+        <h2 id="booking-choice-title">What brings you<br /><em>to the coast?</em></h2>
+        <p>Choose your kind of visit and we will take you straight to the right details.</p>
+      </div>
+      <div class="booking-choice-cards">
+        <a class="booking-choice-card stay-choice" href="#room-booking">
+          <span class="choice-index">01 / STAY A WHILE</span>
+          <span class="choice-title">A room for<br /><em>your escape.</em></span>
+          <span class="choice-description">Choose dates, room type, and who is coming along.</span>
+          <span class="choice-action">Plan a room stay <span aria-hidden="true">↓</span></span>
+        </a>
+        <a class="booking-choice-card event-choice" href="#event-booking">
+          <span class="choice-index">02 / BRING YOUR PEOPLE</span>
+          <span class="choice-title">A gathering<br /><em>to remember.</em></span>
+          <span class="choice-description">Tell us about your occasion and the day you have in mind.</span>
+          <span class="choice-action">Plan a gathering <span aria-hidden="true">↓</span></span>
+        </a>
+      </div>
+    </section>
+    <section class="page-section" id="room-booking">
+      <div class="page-form-wrap">
+        <div class="page-form-intro"><span class="section-number">01 — A room by the water</span><h2 class="page-section-heading">Your stay,<br /><em>your own pace.</em></h2><p>Share your travel dates and party size to start planning. We will calculate your nights here; live room availability and rates need to be connected to a booking service.</p>
+          <div class="contact-details"><div class="contact-detail"><span>A note about dates</span><strong>Arrive any day from 3 pm</strong></div><div class="contact-detail"><span>Take your time</span><strong>Check-out is by 11 am</strong></div><div class="contact-detail"><span>Prefer a person?</span><strong><a href="contact.html">Talk to our team ↗</a></strong></div></div>
+        </div>
+        <form class="page-form" id="booking-page-form">
+          <div class="form-section-label form-wide"><span>01</span> Your stay details</div>
+          <label>Arrival date<input type="date" name="arrival" required /></label>
+          <label>Departure date<input type="date" name="departure" required /></label>
+          <p class="stay-length form-wide" id="stay-length" aria-live="polite">Length of stay: choose your dates</p>
+          <label>Room type<select name="room" required><option value="">Choose a stay</option><option value="The Dune Room">The Dune Room — $240 / night</option><option value="The Tide Suite">The Tide Suite — $380 / night</option><option value="The House Suite">The House Suite — $520 / night</option></select></label>
+          <label>Number of rooms<select name="rooms" required><option value="1">1 room</option><option value="2">2 rooms</option><option value="3">3 rooms</option><option value="4">4 rooms</option><option value="5">5 rooms</option></select></label>
+          <label>Adults<input type="number" name="adults" min="1" max="20" value="2" required /></label>
+          <label>Children<input type="number" name="children" min="0" max="20" value="0" required /></label>
+          <div class="form-section-label form-wide"><span>02</span> Your details</div>
+          <label>Your name<input name="name" autocomplete="name" placeholder="Full name" required /></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+          <label class="form-wide">Anything we should know?<textarea name="requests" placeholder="Accessibility needs, arrival notes, or a special occasion (optional)"></textarea></label>
+          <button class="booking-submit form-wide" type="submit">Review my stay <span aria-hidden="true">↗</span></button>
+          <p class="form-feedback" id="booking-page-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+    <section class="event-booking-section" id="event-booking">
+      <div class="event-booking-intro"><span class="event-kicker">02 — A gathering worth remembering</span><h2>Bring your<br /><em>people together.</em></h2><p>Tell us what you are celebrating, how many guests you have in mind, and what would make the day feel like yours. Our events team will follow up to shape the details.</p><div class="event-note"><span>THE HOUSE CAN HOST</span><strong>Long-table suppers · Garden gatherings · Weekend celebrations</strong></div></div>
+      <form class="event-form" id="event-booking-form">
+        <div class="event-form-heading"><span>LET'S START WITH THE BASICS</span><h3>What are you dreaming up?</h3></div>
+        <label>Your occasion<select name="eventType" required><option value="">Choose a gathering</option><option>Wedding or celebration</option><option>Birthday or family gathering</option><option>Work retreat or meeting</option><option>Long-table dinner</option><option>Something else</option></select></label>
+        <label>Preferred date<input type="date" name="eventDate" required /></label>
+        <label>Estimated guest count<input type="number" name="eventGuests" min="2" max="200" placeholder="For example, 30" required /></label>
+        <label>Where would you like to gather?<select name="eventSpace" required><option value="">Choose a space</option><option>Garden table</option><option>House room</option><option>Whole property</option><option>Help me decide</option></select></label>
+        <label>Food and drink<select name="catering"><option value="">Not decided yet</option><option>Yes, please include catering</option><option>No catering needed</option><option>I'd like to discuss options</option></select></label>
+        <label>Your name<input name="eventName" autocomplete="name" placeholder="Full name" required /></label>
+        <label>Email address<input name="eventEmail" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+        <label>Phone number<input name="eventPhone" type="tel" autocomplete="tel" placeholder="+1 (555) 000-0000" required /></label>
+        <label class="event-form-wide">A few more details<textarea name="eventNotes" placeholder="Share your idea, timing, or anything you would like us to know."></textarea></label>
+        <button class="event-submit event-form-wide" type="submit">Enquire about your event <span aria-hidden="true">↗</span></button>
+        <p class="event-feedback event-form-wide" id="event-booking-feedback" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section class="page-section page-section-tint"><div class="page-section-top"><div><span class="section-number">A little help before you arrive</span><h2 class="page-section-heading">The useful<br /><em>little details.</em></h2></div></div><div class="page-feature-list"><article class="page-feature"><small>ARRIVAL</small><h3>Come as you are</h3><p>Check-in starts at 3 pm. Let us know if you are arriving later in the day.</p></article><article class="page-feature"><small>CHANGING PLANS</small><h3>Plans can change</h3><p>Cancellation terms depend on the selected rate. Contact us if your plans shift.</p></article><article class="page-feature"><small>SPECIAL REQUESTS</small><h3>We will do our best</h3><p>Tell us about accessibility needs, celebrations, or anything that helps you settle in.</p></article></div></section>
+  </main>
+  <footer class="site-footer"><a class="wordmark footer-mark" href="index.html"><span class="wordmark-mark">S<span>&</span>T</span><span class="wordmark-caption">COASTAL HOUSE</span></a><p>Somewhere by the water.<br />A little away from it all.</p><div class="footer-links"><a href="rooms.html">Choose a room</a><a href="experiences.html">Explore</a><a href="contact.html">Get in touch</a></div><span class="copyright">© 2025 SALT & TIDE</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
