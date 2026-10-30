@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wells Carlton Hotel & Apartments</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Fixed Top Navigation Bar -->
+    <nav id="heroNavbar" class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container px-4 px-md-5">
+
+            <!-- Customized Clean Hamburger Trigger -->
+            <button class="navbar-toggler custom-toggler order-1" type="button" onclick="openMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Desktop Links (Left-aligned, Ultra-Compact Group) -->
+            <div class="collapse navbar-collapse order-3 order-lg-1 flex-grow-0" id="mainNavbar">
+                <ul class="navbar-nav compact-nav-links">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+                    <!-- Refined Amenities to Dropdown named 'Spaces' -->
+                    <li class="nav-item dropdown custom-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="spacesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Experiences
+                        </a>
+                        <ul class="dropdown-menu border-0" aria-labelledby="spacesDropdown">
+                            <li><a class="dropdown-item" href="gym.html">Gym</a></li>
+                            <li><a class="dropdown-item" href="spa.html">Spa</a></li>
+                            <li><a class="dropdown-item" href="restaurant.html">Restaurant</a></li>
+                            <li><a class="dropdown-item" href="events.html">Events & Halls</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Absolute Centered Brand Mark -->
+            <a class="navbar-brand-centered order-2" href="#">
+                <span class="brand-top">WELLS</span>
+                <span class="brand-bottom">CARLTON</span>
+            </a>
+
+            <!-- Right-aligned Actions Panel (Balanced with Login) -->
+            <div class="d-none d-sm-flex align-items-center gap-4 order-4 ms-auto ms-lg-0">
+                <a href="login.html" class="nav-link contact-link login-link">Login</a>
+                <a href="contact.html" class="nav-link contact-link">Contact Us</a>
+                <a href="booking.html" class="btn btn-custom btn-nav-large px-4 py-2.5">Book Now</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Full-screen Mobile Overlay Drawer -->
+    <div class="mobile-overlay" id="mobileMenu">
+        <div class="mobile-header">
+            <span class="fw-bold tracking-wider text-uppercase text-accent-light">Navigation</span>
+            <span onclick="closeMenu()" class="mobile-close">&times;</span>
+        </div>
+
+        <div class="mobile-body">
+            <div class="mobile-section">
+                <h6>Explore Our Property</h6>
+                <a href="index.html">Home</a>
+                <a href="rooms.html">Rooms & Suites</a>
+
+                <!-- Expanded Spaces Sub-links for Mobile Navigation Clarity -->
+                <div class="mobile-nested-group ps-2 my-2">
+                    <span class="mobile-sub-heading d-block text-uppercase">Featured Spaces</span>
+                    <a href="gym.html" class="py-1 ps-2 opacity-75 fs-6">- Gym</a>
+                    <a href="spa.html" class="py-1 ps-2 opacity-75 fs-6">- Spa</a>
+                    <a href="restaurant.html" class="py-1 ps-2 opacity-75 fs-6">- Restaurant</a>
+                    <a href="events.html" class="py-1 ps-2 opacity-75 fs-6">- Events & Halls</a>
+                </div>
+
+                <a href="tel:+12345678">Contact Us</a>
+                <a href="login.html">Guest Login</a>
+            </div>
+
+            <div class="mobile-section pt-2">
+                <a href="booking.html" class="btn btn-custom w-100 py-3 text-center d-block">Book Your Stay Now</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+   HMS LUXURY RESTAURANT HERO SECTION (ADAPTIVE HALF-SPLIT)
+   ========================================== -->
+    <header class="hms-restaurant-split-hero position-relative overflow-hidden">
+
+        <!-- Background engine that handles full-bleed scaling ONLY on mobile/tablet views -->
+        <div class="restaurant-hero-mobile-bg d-lg-none">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&h=900&q=80"
+                class="w-100 h-100 object-fit-cover object-position-left" alt="Mobile Background Cover">
+            <div class="restaurant-hero-mobile-overlay"></div>
+        </div>
+
+        <div class="container-fluid p-0 h-100 position-relative z-3">
+            <div class="row g-0 h-100 align-items-center">
+
+                <!-- LEFT PANEL: Covers exactly half the screen on desktop (lg/xl), holds both images -->
+                <div class="col-lg-6 hms-hero-left-split position-relative d-none d-lg-block">
+                    <!-- Base Image Block -->
+                    <div class="w-100 h-100">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&h=900&q=80"
+                            class="w-100 h-100 object-fit-cover" alt="The Carlton Grill Base Display">
+                    </div>
+
+                    <!-- Floating Portrait Box inside the left half -->
+                    <div class="restaurant-hero-nested-floating-box">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&h=800&q=80"
+                            class="restaurant-floating-photo" alt="Signature Plate Detail Showcase">
+                    </div>
+                </div>
+
+                <!-- RIGHT PANEL: Narrative text content panel -->
+                <div class="col-lg-6 hms-hero-right-split d-flex flex-column justify-content-center">
+                    <div class="restaurant-hero-content-wrapper px-4 px-md-5 mx-xl-5">
+
+                        <!-- Header and Subheading matching your layout accent colors -->
+                        <span class="text-uppercase tracking-widest fw-black d-block mb-2 text-accent-theme"
+                            style="font-size: 0.75rem; letter-spacing: 4px !important;">
+                            The Carlton Grill
+                        </span>
+
+                        <h1 class="display-4 fw-black text-uppercase tracking-tight text-accent-theme mb-4">
+                            Culinary Artistry <br>Redefined
+                        </h1>
+
+                        <p class="text-accent-theme leading-relaxed mb-4">
+                            Indulge in an extraordinary gastronomic journey where world-class techniques meet organic,
+                            hand-selected seasonal flavors. Our master chefs compose visually stunning, unforgettable
+                            narratives on every single plate.
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#reserve-table"
+                                class="btn hms-restaurant-action-btn px-4 py-3 fw-bold text-white text-uppercase shadow-sm"
+                                style="font-size: 0.8rem; letter-spacing: 1px;">
+                                Reserve A Table <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section class="hms-dual-composite-section py-5 bg-white overflow-visible">
+        <div class="container px-4 px-md-5 py-md-4">
+            <div class="row g-5 align-items-center">
+
+                <div class="col-lg-5 order-2 order-lg-1">
+                    <div class="hms-pyramid-grid-container">
+
+                        <div class="hms-pyramid-row-top d-flex justify-content-center">
+                            <div class="hms-small-thumb-box shadow">
+                                <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=400&h=400&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Interior Detail Top">
+                            </div>
+                        </div>
+
+                        <div class="hms-pyramid-row-bottom d-flex justify-content-center gap-4">
+                            <div class="hms-small-thumb-box shadow">
+                                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=400&h=400&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Interior Detail Bottom Left">
+                            </div>
+                            <div class="hms-small-thumb-box shadow">
+                                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=400&h=400&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Interior Detail Bottom Right">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-7 order-1 order-lg-2">
+                    <div class="hms-double-layer-wrapper position-relative mx-auto ms-lg-auto me-lg-0">
+
+                        <div class="hms-stack-base-card rounded-2 overflow-hidden shadow">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&h=1200&q=80"
+                                class="w-100 h-100 object-fit-cover" alt="Main Restaurant Ambience Base">
+                        </div>
+
+                        <div
+                            class="hms-stack-floating-card rounded-2 overflow-hidden shadow-lg border border-white border-4">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=450&h=550&q=80"
+                                class="w-100 h-100 object-fit-cover" alt="Layered Accent Frame Left">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================
+   HMS ASYMMETRIC STAGGERED GRID GALLERY SECTION
+   ========================================== -->
+    <section class="hms-staggered-gallery-section py-5 bg-white overflow-hidden">
+        <div class="container px-4 px-md-5 py-md-4">
+            <div class="row g-5 align-items-center">
+
+                <!-- LEFT SIDE: Narrative / Introduction Block -->
+                <div class="col-lg-5 order-2 order-lg-1">
+                    <div class="pe-xl-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="hms-grid-indicator-line"></span>
+                            <span class="text-uppercase tracking-widest text-muted fw-bold"
+                                style="font-size: 0.72rem; letter-spacing: 3px !important;">Epicurean Details</span>
+                        </div>
+
+                        <h2 class="h1 fw-black text-dark mb-3 text-uppercase tracking-tight" style="line-height: 1.15;">
+                            Crafted Spaces, <br><span class="text-accent-theme">Curated Moments</span>
+                        </h2>
+
+                        <p class="text-muted fs-6 leading-relaxed mb-4">
+                            Every corner of our dining space is designed to complement the culinary journey. From the
+                            custom-blown glass lighting profiles to the hand-stitched leather textures, intimacy and
+                            sensory elegance remain synchronized.
+                        </p>
+
+                        <a href="/gallery.html"
+                            class="text-uppercase tracking-wider small fw-black text-dark text-decoration-none hms-grid-link-hover">
+                            View Full Property Gallery <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE: The 3-Image Offset Cascade Grid -->
+                <div class="col-lg-7 order-1 order-lg-2">
+                    <div class="hms-staggered-masonry-wrapper">
+
+                        <!-- Thumbnail 1: Positioned Top-Left (Slightly elevated) -->
+                        <div class="hms-masonry-item item-position-alpha">
+                            <div class="masonry-card-inner rounded-2 overflow-hidden shadow">
+                                <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=500&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Bespoke Restaurant Lounge Table Context">
+                            </div>
+                        </div>
+
+                        <!-- Thumbnail 2: Main Focal Center Piece (Deep drop offset alignment) -->
+                        <div class="hms-masonry-item item-position-beta">
+                            <div
+                                class="masonry-card-inner rounded-2 overflow-hidden shadow-lg border border-white border-4">
+                                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=500&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Sommelier Wine Selection Close Up">
+                            </div>
+                        </div>
+
+                        <!-- Thumbnail 3: Positioned Right Edge (High offset ceiling) -->
+                        <div class="hms-masonry-item item-position-gamma">
+                            <div class="masonry-card-inner rounded-2 overflow-hidden shadow">
+                                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=500&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Mixology Craft Drink Detail">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+   HMS CULINARY DAYPARTS & TIMINGS SECTION
+   ========================================== -->
+<section class="hms-dayparts-section py-5 bg-white">
+    <div class="container px-4 px-md-5 py-md-4">
+        
+        <!-- Section Header Line -->
+        <div class="row mb-5 justify-content-center text-center">
+            <div class="col-lg-7">
+                <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <span class="hms-time-line"></span>
+                    <span class="text-uppercase tracking-widest text-muted fw-bold" style="font-size: 0.72rem; letter-spacing: 3px !important;">Epicurean Horology</span>
+                </div>
+                <h2 class="h1 fw-black text-dark text-uppercase tracking-tight mb-3">
+                    A Symphony for <span class="text-accent-theme">Every Hour</span>
+                </h2>
+                <p class="text-muted fs-6 max-w-center">
+                    From crisp morning light to intimate candlelit midnight hours, our culinary focus evolves fluidly throughout the day to match your rhythm.
+                </p>
+            </div>
+        </div>
+
+        <!-- Three-Card Daypart Columns Grid -->
+        <div class="row g-4 justify-content-center">
+            
+            <!-- Daypart 1: Morning/Breakfast -->
+            <div class="col-md-6 col-lg-4">
+                <div class="hms-time-card rounded-2 overflow-hidden bg-light shadow-sm d-flex flex-column h-100 position-relative">
+                    
+                    <!-- Image Panel -->
+                    <div class="hms-time-img-frame">
+                        <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=500&q=80" 
+                             class="w-100 h-100 object-fit-cover" alt="Morning Breakfast Setting">
+                        <!-- Dynamic Status Marker -->
+                        <span class="badge position-absolute top-0 end-0 m-3 hms-status-tag status-active">Active Now</span>
+                    </div>
+
+                    <!-- Content Panel -->
+                    <div class="p-4 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-baseline mb-2">
+                            <h3 class="h5 fw-black text-dark m-0 text-uppercase tracking-wide">The Artisan Dawn</h3>
+                            <span class="text-muted small fw-bold">07:00 — 10:30</span>
+                        </div>
+                        <p class="text-muted small flex-grow-1 mb-4">
+                            Freshly baked house viennoiseries, cold-pressed citrus distillations, and single-origin pour-overs paired with elegant savory egg soufflés.
+                        </p>
+                        <div class="border-top pt-3 mt-auto">
+                            <span class="text-uppercase tracking-wider text-dark fw-black fs-xs">Breakfast & Brunch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daypart 2: Mid-Day/Lunch -->
+            <div class="col-md-6 col-lg-4">
+                <div class="hms-time-card rounded-2 overflow-hidden bg-light shadow-sm d-flex flex-column h-100 position-relative">
+                    
+                    <!-- Image Panel -->
+                    <div class="hms-time-img-frame">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80" 
+                             class="w-100 h-100 object-fit-cover" alt="Mid-day Business Lunch Presentation">
+                        <span class="badge position-absolute top-0 end-0 m-3 hms-status-tag status-scheduled">Serving Next</span>
+                    </div>
+
+                    <!-- Content Panel -->
+                    <div class="p-4 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-baseline mb-2">
+                            <h3 class="h5 fw-black text-dark m-0 text-uppercase tracking-wide">Bespoke Mid-Day</h3>
+                            <span class="text-muted small fw-bold">12:30 — 15:30</span>
+                        </div>
+                        <p class="text-muted small flex-grow-1 mb-4">
+                            Crisp, fast-paced gastronomic intervals. Artfully curated multi-course bento boxes, express micro-greens, and delicate handmade pasta frameworks.
+                        </p>
+                        <div class="border-top pt-3 mt-auto">
+                            <span class="text-uppercase tracking-wider text-dark fw-black fs-xs">Business & Casual Lunch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daypart 3: Evening/Dinner -->
+            <div class="col-md-6 col-lg-4">
+                <div class="hms-time-card rounded-2 overflow-hidden bg-light shadow-sm d-flex flex-column h-100 position-relative">
+                    
+                    <!-- Image Panel -->
+                    <div class="hms-time-img-frame">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80" 
+                             class="w-100 h-100 object-fit-cover" alt="Evening Fine Dining Ambiencce">
+                        <span class="badge position-absolute top-0 end-0 m-3 hms-status-tag status-scheduled">Dinner Profile</span>
+                    </div>
+
+                    <!-- Content Panel -->
+                    <div class="p-4 d-flex flex-column flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-baseline mb-2">
+                            <h3 class="h5 fw-black text-dark m-0 text-uppercase tracking-wide">The Twilight Grand</h3>
+                            <span class="text-muted small fw-bold">18:30 — 22:30</span>
+                        </div>
+                        <p class="text-muted small flex-grow-1 mb-4">
+                            Our premier culinary signature showcase. Thematic tasting menus, sommelier-curated pairings, and hyper-aged prime cuts of wood-fired proteins.
+                        </p>
+                        <div class="border-top pt-3 mt-auto">
+                            <span class="text-uppercase tracking-wider text-dark fw-black fs-xs">Fine Dining & Sommelier Sets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <section class="fancy-cta-section py-5 position-relative overflow-hidden">
+        <div class="cta-glass-overlay"></div>
+        <div class="container px-4 px-md-5 position-relative z-3 py-5 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <span class="d-block text-uppercase fw-black text-accent letter-spacing-2 mb-3">Reservations
+                        Open</span>
+                    <h2 class="display-5 text-white text-uppercase fw-black mb-4">Secure Your Luxury Haven</h2>
+                    <p class="text-white-50 fs-5 mb-5 max-w-xl mx-auto font-weight-light">
+                        Escape into a refined ecosystem of luxury, privacy, and impeccable service. Your customized
+                        sanctuary layout is prepared and waiting for your check-in parameters.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                        <a href="#" class="btn btn-custom btn-nav-large px-5 py-3 text-uppercase">Reserve Your Suite
+                            Now</a>
+                        <a href="tel:+12345678"
+                            class="btn btn-outline-white px-5 py-3 text-uppercase fw-bold letter-spacing-1">Speak with
+                            Concierge</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="luxury-footer-system pt-5 pb-4 position-relative">
+        <div class="container px-4 px-md-5 pt-3">
+            <div class="row g-5 border-bottom border-secondary-subtle pb-5">
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Wells Carlton</h5>
+                    <p class="small text-muted leading-relaxed mb-0">
+                        A timeless statement of modern elegance, architecture, and luxury execution. Built to host
+                        global travelers seeking sanctuary.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Discover Spaces</h5>
+                    <ul class="list-unstyled footer-link-list d-flex flex-column gap-2.5">
+                        <li><a href="#">The Luxury Rooms</a></li>
+                        <li><a href="#">The Organic Spa</a></li>
+                        <li><a href="#">Elite Fitness Center</a></li>
+                        <li><a href="#">Fine Dining Restaurant</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Contact Info</h5>
+                    <ul class="list-unstyled footer-contact-details d-flex flex-column gap-2">
+                        <li class="small text-muted"><strong class="text-primary-theme">Address:</strong> 8 Asokoro
+                            District, Abuja, Nigeria</li>
+                        <li class="small text-muted"><strong class="text-primary-theme">Phone:</strong> +234 (0) 123
+                            4567 89</li>
+                        <li class="small text-muted"><strong class="text-primary-theme">Email:</strong>
+                            concierge@wellscarlton.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Follow Us</h5>
+                    <p class="small text-muted mb-3">Connect with our social media networks for daily property updates:
+                    </p>
+                    <div class="d-flex gap-3 social-icon-row">
+                        <a href="#" aria-label="Instagram Channel"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" aria-label="Facebook Page"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" aria-label="Twitter Feed"><i class="bi bi-twitter-x fs-5"></i></a>
+                        <a href="#" aria-label="LinkedIn Network"><i class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row pt-4 align-items-center">
+                <div class="col-sm-6">
+                    <p class="small text-muted mb-0">&copy; 2026 Wells Carlton Hotel & Suites. All Rights Reserved.</p>
+                </div>
+                <div class="col-sm-6 text-sm-end mt-3 mt-sm-0 position-relative">
+                    <button onclick="scrollToTop()" class="btn btn-scroll-top border-0 p-2" id="scrollTopBtn"
+                        aria-label="Scroll back to top area">
+                        <span class="small text-uppercase tracking-wider fw-bold text-primary-theme me-2">Back To
+                            Top</span>
+                        <i class="bi bi-arrow-up-square-fill fs-4 text-primary-theme align-middle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & Custom Layout Architecture Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,2854 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@100..900&display=swap');
+/* ==========================================
+   CSS VARIABLE DECLARATIONS
+   ========================================== */
+:root {
+    --web-primary: #0C3989;
+    --web-secondary: #124B6B;
+    --web-accent: #9B362D;
+    --nav-height: 90px;
+}
+
+/* ==========================================
+   BASE SYSTEM GLOBAL RESETS
+   ========================================== */
+body {
+    background-color: #fcfcfc;
+    overflow-x: hidden;
+     font-family: "Jost", sans-serif;
+}
+
+.text-accent {
+    color: var(--web-accent);
+}
+
+.bg-accent-light {
+    background-color: color-mix(
+        in srgb,
+        var(--web-accent) 40%,
+        white 60%
+    );
+}
+
+.navbar .nav-link,
+.dropdown-toggle,
+.navbar-brand-centered {
+    cursor: pointer;
+}
+
+/* ==========================================
+   DESKTOP NAVIGATION CORE LAYOUT
+   ========================================== */
+.custom-navbar {
+    min-height: var(--nav-height);
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+    z-index: 1050;
+}
+
+.custom-navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.compact-nav-links {
+    max-width: 260px; /* Expanded slightly to account for elegant 'Spaces' dropdown width requirements */
+}
+
+.custom-navbar .nav-link {
+    color: #222222;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: var(--web-primary);
+}
+
+.btn-nav-large {
+    font-size: 0.95rem;
+    padding: 10px 28px !important;
+    font-weight: 800 !important;
+}
+
+/* ==========================================
+   PREMIUM CUSTOM GLASS DROPDOWN CONFIG
+   ========================================== */
+.custom-dropdown .dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 4px; /* Rigid modern structure matching site buttons */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem 0;
+    margin-top: 10px !important;
+}
+
+.custom-dropdown .dropdown-item {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #222222;
+    padding: 0.6rem 1.2rem;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: var(--web-primary);
+    color: #ffffff;
+}
+
+/* ==========================================
+   BRAND LOGO ARCHITECTURE LOGIC
+   ========================================== */
+.navbar-brand-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1060;
+}
+
+.brand-top {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #111111;
+    transition: color 0.3s ease;
+}
+
+.brand-bottom {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: var(--web-primary);
+    margin-right: -6px;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   HERO CONTAINER AND INNER LAYOUTS
+   ========================================== */
+.left-hero-panel {
+    padding-top: calc(var(--nav-height) + 3rem);
+    padding-bottom: 5rem;
+    min-height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-content-wrapper {
+    max-width: 540px;
+}
+
+.fw-black {
+    font-weight: 900 !important;
+}
+
+.hero-title {
+    color: var(--web-primary);
+    line-height: 1.15;
+}
+
+.hero-writeup {
+    color: var(--web-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+
+/* ==========================================
+   BUTTON STRUCTURAL FOUNDATIONS (SQUARE/RECT)
+   ========================================== */
+.btn-custom {
+    background-color: var(--web-primary);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 4px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.btn-custom:hover {
+    background-color: var(--web-secondary);
+    transform: translateY(-2px);
+}
+
+.btn-hero-cta {
+    font-size: 1.1rem;
+}
+
+/* ==========================================
+   CUSTOM HAMBURGER UTILITIES
+   ========================================== */
+.custom-toggler {
+    border: none;
+    background: transparent;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 0;
+}
+
+.custom-toggler span {
+    height: 2px;
+    width: 26px;
+    background: var(--web-primary);
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.custom-navbar.scrolled .custom-toggler span {
+    background: #222222;
+}
+
+.custom-toggler:hover span:nth-child(1) {
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   THEMED MOBILE DRAWER OVERLAY DESIGN
+   ========================================== */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--web-secondary) 0%, #0d354d 100%);
+    z-index: 9999;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 30px;
+}
+
+.mobile-overlay.active {
+    transform: translateX(0);
+}
+
+.mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.mobile-header .fw-bold {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.text-accent-light {
+    color: var(--web-accent);
+    letter-spacing: 1px;
+}
+
+.mobile-close {
+    font-size: 36px;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.mobile-close:hover {
+    color: var(--web-accent);
+    transform: rotate(90deg);
+}
+
+.mobile-body {
+    margin-top: 30px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.mobile-section {
+    margin-bottom: 35px;
+}
+
+.mobile-section h6 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    color: var(--web-accent);
+    margin-bottom: 15px;
+}
+
+.mobile-sub-heading {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.mobile-section a:not(.btn) {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobile-section a:not(.btn):hover {
+    color: #ffffff;
+    padding-left: 6px;
+}
+
+/* ==========================================
+   CONSOLIDATED RESPONSIVE BREAKPOINTS
+   ========================================== */
+@media (max-width: 991px) {
+    .custom-navbar:not(.scrolled) .brand-top {
+        color: #ffffff !important;
+    }
+    
+    .custom-navbar:not(.scrolled) .brand-bottom {
+        color: var(--web-accent) !important;
+    }
+
+    .custom-navbar:not(.scrolled) .custom-toggler span {
+        background: #ffffff !important;
+    }
+
+    /* Keeps the Login and Contact links crisp and white over the un-scrolled transparent layout background */
+    .custom-navbar:not(.scrolled) .contact-link {
+        color: #ffffff !important;
+    }
+
+    .navbar-brand-centered {
+        position: relative;
+        left: 0;
+        transform: none;
+        margin: 0 auto;
+    }
+
+    .left-hero-panel {
+        background-image: linear-gradient(135deg,
+                rgba(18, 75, 107, 0.88) 0%,
+                rgba(30, 110, 153, 0.85) 100%
+            ),
+            url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80');
+    }
+
+    .hero-title {
+        color: #ffffff !important;
+    }
+
+    .hero-writeup {
+        color: rgba(255, 255, 255, 0.82) !important;
+    }
+
+    .btn-hero-cta {
+        font-size: 0.95rem;
+        padding: 12px 20px !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .w-sm-auto {
+        width: auto !important;
+    }
+}
+
+/* ==========================================
+   FEATURES / LUXURY GALLERY EDITORIAL GRID
+   ========================================== */
+.gallery-grid-section {
+    background-color: #fcfcfc;
+    padding-bottom: 7rem;
+    z-index: 5;
+}
+
+.grid-img-box {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    border-radius: 4px;
+}
+
+.grid-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.grid-img-box:hover .grid-photo {
+    transform: scale(1.04);
+}
+
+.stacked-images-wrapper {
+    position: relative;
+    z-index: 10;
+    animation: luxuryFloat 7s ease-in-out infinite;
+}
+
+@keyframes luxuryFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.stacked-images-wrapper:hover {
+    animation-play-state: paused;
+}
+
+.stacked-images-wrapper .grid-img-box {
+    height: 220px;
+}
+
+.overlap-top-box {
+    margin-top: -80px; 
+    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.06);
+}
+
+/* Height optimized slightly to balance the newly distributed outer layout widths */
+.vertical-showcase-box {
+    height: 500px; 
+    box-shadow: 0 20px 45px rgba(18, 75, 109, 0.05);
+}
+
+/* ==========================================
+   INTERACTIVE GLASSMORPHISM LUXURY TAGS
+   ========================================== */
+.glass-photo-tag {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--web-secondary);
+    letter-spacing: 1.5px;
+    border-radius: 2px;
+    z-index: 15;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.showcase-tag {
+    bottom: 24px;
+    left: 24px;
+    color: #ffffff;
+    background: rgba(30, 110, 153, 0.65);
+}
+
+.grid-img-box:hover .glass-photo-tag {
+    background: #ffffff;
+    color: var(--web-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT CONSTRAINTS
+   ========================================== */
+@media (max-width: 767px) {
+    .overlap-top-box {
+        margin-top: 0px; 
+    }
+    
+    .stacked-images-wrapper .grid-img-box {
+        height: 180px;
+    }
+    
+    .vertical-showcase-box {
+        height: 360px;
+        margin-top: 30px; 
+    }
+}
+
+
+/* ==========================================
+   RESTAURANT & FINE DINING SHOWCASE
+   ========================================== */
+.dining-showcase-section {
+    background-color: #fcfcfc; /* Alternates to a clean off-white background canvas */
+    padding-top: 5rem !important;
+    padding-bottom: 6rem !important;
+}
+
+/* Explicit rule assigning your brand accent color to all text properties */
+.text-accent-theme {
+    color: var(--web-accent, #D4AF37) !important;
+}
+
+.dining-content-panel .text-opacity-85 {
+    color: rgba(189, 162, 92, 0.88) !important; /* Fallback accent color with high-contrast text opacity */
+}
+
+/* Accent Solid Dynamic Action Button Layout */
+.btn-accent-theme-solid {
+    background-color: var(--web-accent, #D4AF37);
+    color: #ffffff !important;
+    font-size: 0.8rem;
+    font-weight: 800;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-accent-theme-solid:hover {
+    background-color: #bda25c; /* Darker luxury gold shift on hover interactions */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(189, 162, 92, 0.2);
+}
+
+/* Rigid rectangular structural framing for the restaurant imagery */
+.dining-img-box {
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.dining-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dining-img-box:hover .dining-photo {
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================== */
+@media (max-width: 991px) {
+    .dining-showcase-section {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+    
+    .dining-img-box {
+        height: 360px;
+    }
+}
+
+/* ==========================================
+   ACCOMMODATION LONG VERTICAL LIST SYSTEM
+   ========================================== */
+.accommodation-section {
+    background-color: #ffffff;
+}
+
+/* Ensures both header elements align completely in color */
+.text-primary-theme {
+    color: var(--web-primary, #1e6e99) !important;
+}
+
+.leading-relaxed {
+    line-height: 1.75;
+    font-size: 0.95rem;
+}
+
+/* Accent Button Custom Style */
+.btn-luxury-accent {
+    background-color: var(--web-secondary, #bda25c);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-luxury-accent:hover {
+    background-color: transparent;
+    color: var(--web-secondary, #bda25c);
+    border-color: var(--web-secondary, #bda25c);
+    transform: translateY(-2px);
+}
+
+/* Clean, open card structure with borders removed entirely */
+.room-card-wrapper {
+    background: transparent;
+    border: none;
+    overflow: hidden;
+}
+
+/* Long vertical framing profile */
+.room-img-box {
+    width: 100%;
+    height: 440px; /* Increased height to give it that long editorial look */
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+}
+
+.room-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.room-card-wrapper:hover .room-photo {
+    transform: scale(1.04);
+}
+
+/* Title placement naturally underneath the image frame */
+.room-title {
+    font-size: 0.95rem;
+    color: var(--web-primary, #1e6e99);
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.room-card-wrapper:hover .room-title {
+    color: var(--web-secondary, #bda25c);
+}
+
+/* RESPONSIVE LAYOUT CONSTRAINTS */
+@media (max-width: 991px) {
+    .room-img-box {
+        height: 380px;
+    }
+}
+
+@media (max-width: 575px) {
+    .room-img-box {
+        height: 420px;
+    }
+}
+
+/* ==========================================================================
+   HMS NEUTRALIZED GLASS BADGE (ANTI-BLUE BLEED)
+   ========================================================================== */
+
+.hms-architectural-break-section {
+    width: 100%;
+    padding: 60px 0;
+    position: relative;
+    background-color: var(--web-primary, #0c3989); 
+    box-shadow: inset 0 15px 30px rgba(0, 0, 0, 0.08), 
+                inset 0 -15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Updated Frosted Glass Panel to fight color bleeding */
+.hms-glass-badge {
+    /* Linear gradient mixes a higher opacity white with a crisp reflection layer */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, rgba(240, 240, 240, 0.12) 100%) !important;
+    
+    /* Boost saturation and blur values to isolate background details */
+    backdrop-filter: blur(30px) saturate(100%) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(100%) !important;
+    
+    /* White drop shadow layer builds a barrier against dark background tinting */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3),
+                inset 0 1px 2px rgba(255, 255, 255, 0.4); 
+                
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    transform: translateZ(0);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Typography elements */
+.geometric-badge-label {
+    font-size: 0.85rem; 
+    letter-spacing: 4px;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.geometric-badge-sub {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.75); /* Elevated opacity for clarity */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+/* Graduated linear track setup */
+.graduated-line-track {
+    width: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.graduated-line-track span {
+    height: 1px;
+    background: #ffffff;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.graduated-line-track .line-primary { width: 100%; opacity: 0.9; }
+.graduated-line-track .line-secondary { width: 65%; opacity: 0.6; }
+.graduated-line-track .line-tertiary { width: 35%; opacity: 0.3; }
+
+/* ==========================================
+   MICRO-INTERACTION HOVER STATE
+   ========================================== */
+.hms-glass-badge:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, rgba(240, 240, 240, 0.16) 100%) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4),
+                inset 0 1px 3px rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.hms-glass-badge:hover .graduated-line-track .line-secondary {
+    width: 85%;
+    opacity: 0.9;
+}
+
+.hms-glass-badge:hover .graduated-line-track .line-tertiary {
+    width: 60%;
+    opacity: 0.6;
+}
+
+/* ==========================================
+   HOSPITALITY COZY NARRATIVE & FLOATING IMAGES
+   ========================================== */
+.hospitality-brand-section {
+    background-color: #ffffff;
+    padding-bottom: 6rem !important;
+}
+
+.text-opacity-85 {
+    color: rgba(30, 110, 153, 0.88) !important;
+}
+
+.btn-primary-theme-solid {
+    background-color: var(--web-primary, #1e6e99);
+    color: #ffffff !important;
+    font-size: 0.8rem;
+    font-weight: 800;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-theme-solid:hover {
+    background-color: var(--web-secondary, #124B6B);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(18, 75, 107, 0.15);
+}
+
+.floating-composite-wrapper {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+}
+
+.composite-base-box {
+    width: 72%; /* Adjusted width for clean asymmetry */
+    height: 460px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.base-composite-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Made the floating box sleeker, scaled down its height/width ratios, and lightened the masking border frame */
+.composite-floating-box {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36%; /* Scaled down slightly from 42% to look cleaner and sharper */
+    height: 270px; /* Reduced vertical footprint height */
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    /* Lighter, ultra-thin semi-translucent elegant white border split mask */
+    border: 3px solid rgba(255, 255, 255, 0.9); 
+    z-index: 20;
+}
+
+.floating-composite-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================
+   MOBILE & TABLET DESIGN ADAPTATIONS
+   ========================================== */
+@media (max-width: 991px) {
+    .floating-composite-wrapper {
+        min-height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .composite-base-box {
+        width: 75%;
+        height: 380px;
+    }
+
+    .composite-floating-box {
+        width: 38%;
+        height: 220px;
+        right: 0;
+    }
+}
+
+/* ==========================================
+   SPA MATRIX ALTERNATING GRID MODULE
+   ========================================== */
+.spa-matrix-section {
+    background-color: #ffffff;
+}
+
+.spa-grid-card {
+    background: #fcfcfc;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spa-grid-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+    border-color: rgba(30, 110, 153, 0.12);
+}
+
+.spa-card-img {
+    overflow: hidden;
+    height: 200px; /* Forces consistent structural constraints on desktop rows */
+}
+
+@media (min-width: 576px) {
+    .spa-card-img {
+        height: auto; /* Drops down height overrides to let full matching auto flex row rules scale naturally */
+    }
+}
+
+/* ==========================================
+   LEFT ALIGNED GEOMETRIC BARS SPEC
+   ========================================== */
+.geometric-accent-line-left {
+    display: block;
+    height: 6px;
+    width: 100%; /* Spans the full space inside the layout's new col-6 width boundaries */
+    background-color: rgba(30, 110, 153, 0.28);
+    border-radius: 3px;
+}
+
+/* ==========================================
+   GYM MOVEMENT & NARRATIVE LAYOUT
+   ========================================== */
+.gym-brand-section {
+    background-color: #ffffff;
+    padding-bottom: 6rem !important;
+}
+
+.gym-img-box {
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+}
+
+.gym-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================
+   FANCY CTA IMMERSIVE REVENUE BANNER
+   ========================================== */
+.fancy-cta-section {
+    background-image: linear-gradient(rgba(18, 75, 107, 0.85), rgba(13, 53, 77, 0.9)), 
+                      url('https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Parallax immersion style logic mapping */
+}
+
+.btn-outline-white {
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-white:hover {
+    background-color: #ffffff;
+    color: var(--web-primary) !important;
+    border-color: #ffffff;
+}
+
+/* ==========================================
+   MODERN 4-COLUMN LIFESTYLE FOOTER
+   ========================================== */
+.luxury-footer-system {
+    background-color: #fcfcfc;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.footer-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--web-primary);
+    letter-spacing: 1.5px;
+}
+
+.footer-link-list li a {
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    display: inline-block;
+}
+
+.footer-link-list li a:hover {
+    color: var(--web-secondary);
+    padding-left: 4px;
+}
+
+.social-icon-row a {
+    color: var(--web-primary);
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.social-icon-row a:hover {
+    color: var(--web-accent);
+    transform: translateY(-2px);
+}
+
+/* Smooth Interactive Scroll Button Anchor rules */
+.btn-scroll-top {
+    background: transparent;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.btn-scroll-top:hover i {
+    color: var(--web-secondary) !important;
+}
+
+.btn-scroll-top:hover span {
+    color: var(--web-secondary) !important;
+}
+
+/* ==========================================
+   ADAPTIVE ROOMS HERO BASE SPECIFICATIONS
+   ========================================== */
+.rooms-hero-container {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #124B6B;
+}
+
+.rooms-hero-full-bleed-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.full-bleed-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.rooms-hero-mobile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(13, 53, 77, 0.95) 0%, rgba(18, 75, 107, 0.6) 100%);
+    z-index: 2;
+}
+
+.rooms-hero-container .text-primary-theme {
+    color: #ffffff !important;
+}
+
+.rooms-hero-content-wrapper {
+    max-width: 520px;
+}
+
+.line {
+    display: block;
+    width: 100%;
+    height: 10px;
+    border-radius: 2pxS;
+}
+
+/* ==========================================
+   DESKTOP VIEWPORT LAYOUT ADJUSTMENTS (lg+)
+   ========================================== */
+@media (min-width: 992px) {
+    .rooms-hero-container {
+        height: 100vh;
+        background-color: #ffffff;
+    }
+
+    .rooms-hero-mobile-overlay {
+        display: none;
+    }
+
+    .rooms-hero-full-bleed-img {
+        left: 50%;
+        width: 50%;
+    }
+
+    .rooms-hero-container .text-primary-theme {
+        color: var(--web-primary, #1e6e99) !important;
+    }
+
+    /* 
+       TOP PADDING OFFSET SHORTCUT:
+       By padding the top of the columns, we push both the text write-up 
+       and the right element down slightly from the absolute top ceiling line.
+    */
+    .rooms-hero-left,
+    .rooms-hero-right-panel {
+        padding-top: 90px; /* Comfortably clears the absolute/fixed navbar height */
+    }
+
+    /* LOWERED FLOATING PORTRAIT IMAGE STYLE */
+    .rooms-hero-nested-floating-box {
+        position: absolute;
+        left: -120px;
+        /* Changed from 50% down to 55% to sit perfectly balanced lower down the screen */
+        top: 55%; 
+        transform: translateY(-50%);
+        width: 250px; 
+        height: 390px; 
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        border: 6px solid rgba(255, 255, 255, 1);
+        z-index: 10;
+    }
+    
+    .rooms-floating-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* ==========================================
+   HMS EXCLUSIVE OVERFLOW CAROUSEL TRACK
+   ========================================== */
+.hms-carousel-section {
+    padding: 80px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.hms-section-subtitle {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--web-accent);
+    margin-bottom: 6px;
+}
+
+.hms-section-title {
+    font-weight: 900;
+    color: var(--web-primary);
+}
+
+/* Custom CSS track enabling easy infinite item looping inside 1 single container */
+.hms-carousel-custom-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    padding: 15px 0;
+}
+
+.hms-carousel-custom-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Width calculations ensuring exactly 4 cards fill the screen grid space */
+.hms-card-container {
+    flex: 0 0 calc(25% - 18px);
+    width: calc(25% - 18px);
+    min-height: 460px;
+}
+
+@media (max-width: 1199.98px) {
+    .hms-card-container {
+        flex: 0 0 calc(33.333% - 16px);
+        width: calc(33.333% - 16px);
+    }
+}
+@media (max-width: 767.98px) {
+    .hms-card-container {
+        flex: 0 0 calc(50% - 12px);
+        width: calc(50% - 12px);
+    }
+}
+@media (max-width: 575.98px) {
+    .hms-card-container {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+/* Room Card Content Styles */
+.hms-full-bg-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hms-full-bg-card:hover {
+    transform: translateY(-6px);
+}
+
+.hms-card-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hms-full-bg-card:hover .hms-card-bg-img {
+    transform: scale(1.04);
+}
+
+.hms-card-glass-overlay {
+    position: relative;
+    z-index: 2;
+    background: rgba(12, 57, 137, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 20px;
+    margin: 12px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hms-amenity-tag {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #ffffff;
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: 6px;
+}
+
+/* Navigation buttons styling */
+.hms-carousel-controls-top {
+    display: flex;
+    gap: 8px;
+}
+
+.hms-btn-nav-round {
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid rgba(12, 57, 137, 0.15);
+    color: var(--web-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hms-btn-nav-round:hover {
+    background: var(--web-primary);
+    color: #ffffff;
+}
+
+.hms-btn-glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.hms-btn-glass:hover {
+    background: var(--web-accent);
+    border-color: var(--web-accent);
+}
+
+/* SEE-THROUGH TRANS-LUCENT GLASS MODAL DEFINITIONS */
+.hms-glass-modal .modal-content {
+    background: rgba(12, 57, 137, 0.2) !important;
+    backdrop-filter: blur(25px) saturate(140%);
+    -webkit-backdrop-filter: blur(25px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.hms-modal-details-side {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    height: 100%;
+}
+
+.hms-btn-book {
+    background-color: var(--web-accent);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.hms-btn-book:hover {
+    background-color: #822b24;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 991.98px) {
+    .hms-modal-details-side {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+}
+
+/* ==========================================
+   HMS EXCLUSIVE FAQ WRAPPER STYLE ASSIGNMENTS
+   ========================================== */
+.hms-faq-section {
+    padding: 100px 0;
+    background-color: #fcfcfc;
+    position: relative;
+    z-index: 10;
+}
+
+.hms-faq-subtitle {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--web-accent);
+    margin-bottom: 6px;
+}
+
+.hms-faq-main-title {
+    font-weight: 900;
+    color: var(--web-primary);
+}
+
+.hms-faq-cat-heading {
+    color: var(--web-secondary);
+    letter-spacing: 0.5px;
+    font-weight: 800;
+    border-bottom: 2px solid rgba(18, 75, 107, 0.1);
+    padding-bottom: 8px;
+}
+
+/* IMAGE CONTAINER ARCHITECTURE:
+   Forces the container to take 100% of the available grid row height, 
+   ensuring the image asset scales seamlessly regardless of FAQ text volume.
+*/
+.hms-faq-img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.hms-faq-cover-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.hms-faq-img-glass-tint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(12, 57, 137, 0.1), rgba(18, 75, 107, 0.2));
+    pointer-events: none;
+}
+
+/* LUXURY RESKINNING OF THE ACCORDION INTERIOR ELEMENTS */
+.hms-faq-accordion .accordion-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(12, 57, 137, 0.12);
+    margin-bottom: 4px;
+}
+
+.hms-faq-accordion .accordion-button {
+    background: transparent;
+    color: #222222;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 18px 8px;
+    box-shadow: none !important;
+    transition: color 0.2s ease;
+}
+
+.hms-faq-accordion .accordion-button:not(.collapsed) {
+    color: var(--web-accent);
+    background: transparent;
+}
+
+/* Custom indicator rotation using clean icon adjustments */
+.hms-faq-accordion .accordion-button::after {
+    background-size: 0.9rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hms-faq-accordion .accordion-body {
+    padding: 0 8px 24px 8px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555555;
+}
+
+
+/* ==========================================================================
+   HMS RESTAURANT HERO ENGINE (ROOMS STRUCTURAL REPLICA)
+   ========================================================================== */
+
+.hms-restaurant-hero-section {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Accent color synchronization engine rules */
+.hms-text-theme-accent {
+    color: var(--web-accent, #1E6E99) !important;
+}
+
+.hms-restaurant-indicator-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--web-accent, #1E6E99);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Left image viewport structure maps behind navigation space up to top screen limits */
+.hms-hero-left-bleed {
+    height: 55vh; /* Responsive fallback aspect for smaller devices */
+    width: 100%;
+}
+
+.hms-main-hero-img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hms-hero-left-vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%);
+    z-index: 2;
+}
+
+/* ==========================================
+   FLOATING DETAIL PICTURE ALIGNMENT (RIGHT INTERSECTION)
+   ========================================== */
+.hms-floating-detail-frame {
+    position: absolute;
+    bottom: -25px;
+    right: 25px;
+    width: 170px;
+    height: 220px;
+    z-index: 10;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hms-restaurant-hero-section:hover .hms-floating-detail-frame {
+    transform: translateY(-5px);
+}
+
+.hms-floating-glass-label {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Right Content Box Framework padding adjustments */
+.hms-hero-right-content {
+    padding: 60px 24px;
+    max-width: 100%;
+}
+
+.hms-restaurant-hero-title {
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+}
+
+.max-w-paragraph {
+    max-width: 490px;
+}
+
+.btn-primary{
+    background-color: var(--web-primary) !important;
+    border-color: var(--web-primary) !important;
+}
+
+
+.btn-primary:hover{
+    background-color: transparent !important;
+    color: var(--web-primary) !important;
+    border-color: var(--web-primary) !important;
+}
+
+
+
+.hms-btn-primary-action:hover {
+    background-color: #082861 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(12, 57, 137, 0.15) !important;
+}
+
+.hms-link-hover-border {
+    position: relative;
+    padding-bottom: 2px;
+}
+.hms-link-hover-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #222222;
+    transition: width 0.3s ease;
+}
+.hms-link-hover-border:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   DESKTOP SCREEN BREAKPOINT CORRECTIONS (>= 992px)
+   ========================================================================== */
+@media (min-width: 992px) {
+    .hms-restaurant-hero-section {
+        height: 100vh;
+        max-height: 100vh;
+    }
+    
+    /* Image column extends up behind transparent elements securely */
+    .hms-hero-left-bleed {
+        height: 100vh !important;
+    }
+    
+    /* Shifts layout fade direction onto horizontal intersection profile */
+    .hms-hero-left-vignette {
+        background: linear-gradient(to right, transparent 75%, rgba(255,255,255,1) 100%);
+    }
+    
+    /* Anchors floating detail card halfway over grid split partition boundary line */
+    .hms-floating-detail-frame {
+        right: -60px;
+        bottom: 15%;
+        width: 220px;
+        height: 290px;
+    }
+
+    .hms-hero-right-content {
+        padding: 0 60px 0 110px;
+    }
+}
+
+/* ==========================================================================
+   ADAPTIVE SPLIT RESTAURANT HERO SPECIFICATIONS
+   ========================================================================== */
+.hms-restaurant-split-hero {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    background-color: #124B6B; /* Baseline fallback structure weight color */
+}
+
+/* Base text color mappings */
+.hms-restaurant-split-hero .text-accent-theme {
+    color: var(--web-accent, #1E6E99) !important;
+}
+
+/* ==========================================
+   MOBILE & TABLET RULES (< 992px)
+   ========================================== */
+.restaurant-hero-mobile-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.restaurant-hero-mobile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(13, 53, 77, 0.95) 0%, rgba(18, 75, 107, 0.7) 100%);
+}
+
+.hms-hero-right-split {
+    height: 100%;
+    z-index: 5;
+    position: relative;
+}
+
+.restaurant-hero-content-wrapper {
+    max-width: 520px;
+}
+
+/* Make text crisp white for mobile readability over background imagery overlay */
+@media (max-width: 991.98px) {
+    .hms-restaurant-split-hero .text-accent-theme {
+        color: #ffffff !important;
+    }
+}
+
+/* ==========================================
+   DESKTOP VIEWPORT RUNTIME SPLIT (≥ 992px)
+   ========================================== */
+@media (min-width: 992px) {
+    /* Swap background on desktop to allow clean split view paneling */
+    .hms-restaurant-split-hero {
+        background-color: #ffffff; 
+    }
+    
+    .hms-hero-left-split {
+        height: 100vh !important;
+    }
+    
+    .hms-hero-right-split {
+        height: 100vh !important;
+    }
+
+    /* THE FLOATING FLOATER BOX (Anchored cleanly inside the left 50% image column) */
+    .restaurant-hero-nested-floating-box {
+        position: absolute;
+        top: 50%;
+        right: -40px; /* Overlaps across center screen grid boundary cleanly */
+        transform: translateY(-50%);
+        width: 200px;
+        height: 270px;
+        z-index: 10;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        border: 4px solid #ffffff;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .restaurant-floating-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1200px) {
+    .restaurant-hero-nested-floating-box {
+        width: 240px;
+        height: 330px;
+        right: -50px;
+    }
+}
+
+/* Action Trigger Button Configs */
+.hms-restaurant-action-btn {
+    background-color: var(--web-primary, #0c3989) !important;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hms-restaurant-action-btn:hover {
+    background-color: #082861 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(12, 57, 137, 0.2) !important;
+}
+
+/* ==========================================================================
+   HMS ENLARGED COMPOSITE HERO-BLEED ENGINE
+   ========================================================================== */
+
+/* CRITICAL: Force this section to let its children spill outside its boundaries */
+.hms-dual-composite-section {
+    width: 100%;
+    position: relative;
+    background-color: #ffffff;
+    overflow: visible !important; /* Prevents layout clipping */
+    z-index: 10;
+}
+
+/* ==========================================
+   RIGHT SIDE: MASSIVE COMPOSITE BLEED STACK
+   ========================================== */
+.hms-double-layer-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 620px; /* Expanded heavily from 520px to make it prominent */
+    height: 720px;    /* Taller frame space to support massive imagery scaling */
+    overflow: visible;
+}
+
+/* Base large image configuration rules with structural negative top margin */
+.hms-stack-base-card {
+    width: 90%; /* Forces the main image to claim almost the entire wrapper width */
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+    z-index: 1;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Floating layer anchored explicitly to overlay on the LEFT side */
+.hms-stack-floating-card {
+    width: 45%;
+    height: 50%;
+    position: absolute;
+    bottom: 10%;
+    left: -30px; /* Pushes it slightly out to the left for an elite asymmetrical break */
+    z-index: 5;  /* Sits firmly on top */
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* Contextual micro-interaction shift on hover */
+.hms-double-layer-wrapper:hover .hms-stack-floating-card {
+    transform: translateY(-8px) translateX(-4px);
+}
+
+/* ==========================================
+   DESKTOP SCREEN VIEWPORT HANDLING (>= 992px)
+   ========================================== */
+@media (min-width: 992px) {
+    /* Aggressive negative margin pulls the wrapper completely out of the section layout.
+       Adjust this value (e.g., -180px or -220px) to match the height of your hero/navbar matrix.
+    */
+    .hms-double-layer-wrapper {
+        margin-top: -240px !important; 
+        z-index: 999 !important; /* Guarantees it floats over the hero container slice line */
+    }
+}
+
+/* ==========================================
+   LEFT SIDE: INVERTED TRIANGLE PYRAMID (UNTOUCHED)
+   ========================================== */
+.hms-pyramid-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.hms-small-thumb-box {
+    width: 160px;
+    height: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE BREAKPOINTS
+   ========================================== */
+@media (max-width: 991.98px) {
+    .hms-double-layer-wrapper {
+        height: 500px;
+        margin-top: 0 !important; /* Resets structural shift on stacked tablet/mobile viewports */
+        max-width: 440px;
+    }
+    .hms-stack-floating-card {
+        left: 0; /* Align clean over foundation box edge when layout drops to single column */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hms-small-thumb-box {
+        width: 110px;
+        height: 110px;
+    }
+    .hms-pyramid-grid-container {
+        gap: 16px;
+    }
+    .hms-pyramid-row-bottom {
+        gap: 16px !important;
+    }
+    .hms-double-layer-wrapper {
+        height: 380px;
+    }
+}
+
+/* ==========================================================================
+   HMS ASYMMETRIC STAGGERED CASCADING MASONRY STYLES
+   ========================================================================== */
+
+.hms-staggered-gallery-section {
+    position: relative;
+    width: 100%;
+}
+
+.text-accent-theme {
+    color: var(--web-accent, #1E6E99) !important;
+}
+
+.hms-grid-indicator-line {
+    width: 24px;
+    height: 1px;
+    background-color: var(--web-accent, #1E6E99);
+    display: inline-block;
+}
+
+/* ==========================================
+   THE OFF-AXIS MASONRY CONTAINER FRAMEWORK
+   ========================================== */
+.hms-staggered-masonry-wrapper {
+    position: relative;
+    display: grid;
+    /* Divide row block horizontally into 3 equal flexible channel steps */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    padding: 40px 0;
+}
+
+/* Base properties for thumbnail container nodes */
+.hms-masonry-item {
+    position: relative;
+    width: 100%;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.masonry-card-inner {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Keeps thumbnails looking uniformly tall */
+    background-color: #f8f9fa;
+}
+
+/* ==========================================
+   STAGGERED HEIGHT OFFSET PROFILE SCHEDULING
+   ========================================== */
+
+/* Card 1: Left channel (baseline standard position) */
+.item-position-alpha {
+    transform: translateY(-15px);
+}
+
+/* Card 2: Center channel (pushed down heavily for the offset rhythm break) */
+.item-position-beta {
+    transform: translateY(35px);
+}
+
+/* Card 3: Right channel (elevated up high above the rest) */
+.item-position-gamma {
+    transform: translateY(-45px);
+}
+
+/* ==========================================
+   HOVER RESPONSIVE MICRO-INTERACTIONS
+   ========================================== */
+.hms-staggered-masonry-wrapper:hover .item-position-alpha {
+    transform: translateY(-20px) scale(1.01);
+}
+
+.hms-staggered-masonry-wrapper:hover .item-position-beta {
+    transform: translateY(45px) scale(1.02); /* Pops out slightly on hover */
+}
+
+.hms-staggered-masonry-wrapper:hover .item-position-gamma {
+    transform: translateY(-55px) scale(1.01);
+}
+
+/* Footer Link Border Line Animations */
+.hms-grid-link-hover {
+    position: relative;
+    padding-bottom: 2px;
+}
+.hms-grid-link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #222222;
+    transition: width 0.3s ease;
+}
+.hms-grid-link-hover:hover::after {
+    width: 100%;
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE BREAKPOINTS COLLAPSE (< 768px)
+   ========================================== */
+@media (max-width: 767.98px) {
+    .hms-staggered-masonry-wrapper {
+        grid-template-columns: 1fr; /* Stacks vertically into single layout column on small phones */
+        gap: 30px;
+        padding: 20px 0;
+    }
+    
+    /* Kill hard desktop displacements when reading vertically down a single feed line */
+    .item-position-alpha,
+    .item-position-beta,
+    .item-position-gamma {
+        transform: translateY(0) !important;
+    }
+    
+    .hms-staggered-masonry-wrapper:hover .item-position-alpha,
+    .hms-staggered-masonry-wrapper:hover .item-position-beta,
+    .hms-staggered-masonry-wrapper:hover .item-position-gamma {
+        transform: translateY(0) scale(1.02) !important;
+    }
+    
+    .masonry-card-inner {
+        aspect-ratio: 16 / 10; /* Switches to a wider widescreen format for easier vertical scrolling */
+    }
+}
+
+/* ==========================================================================
+   HMS ADAPTIVE SPLIT HERO & HEADER-BLEED ENGINE (EVENTS INTEGRATION)
+   ========================================================================== */
+
+.hms-restaurant-split-hero {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    background-color: #124B6B; 
+}
+
+.hms-restaurant-split-hero .text-accent-theme {
+    color: var(--web-accent, #1E6E99) !important;
+}
+
+/* Mobile full-bleed viewport imagery fallback structures */
+.restaurant-hero-mobile-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.restaurant-hero-mobile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(13, 53, 77, 0.95) 0%, rgba(18, 75, 107, 0.7) 100%);
+}
+
+.hms-hero-right-split {
+    height: 100%;
+    z-index: 5;
+    position: relative;
+}
+
+.restaurant-hero-content-wrapper {
+    max-width: 520px;
+}
+
+@media (max-width: 991.98px) {
+    .hms-restaurant-split-hero .text-accent-theme {
+        color: #ffffff !important;
+    }
+}
+
+/* Desktop half-screen constraints execution rules */
+@media (min-width: 992px) {
+    .hms-restaurant-split-hero {
+        background-color: #ffffff; 
+    }
+    .hms-hero-left-split, .hms-hero-right-split {
+        height: 100vh !important;
+    }
+
+    /* Floating nested box overlay logic */
+    .restaurant-hero-nested-floating-box {
+        position: absolute;
+        top: 50%;
+        right: -40px; 
+        transform: translateY(-50%);
+        width: 200px;
+        height: 270px;
+        z-index: 10;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        border: 4px solid #ffffff;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .restaurant-floating-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1200px) {
+    .restaurant-hero-nested-floating-box {
+        width: 240px;
+        height: 330px;
+        right: -50px;
+    }
+}
+
+/* Action button profile properties */
+.hms-restaurant-action-btn {
+    background-color: var(--web-primary, #0c3989) !important;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hms-restaurant-action-btn:hover {
+    background-color: #082861 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(12, 57, 137, 0.2) !important;
+}
+
+/* ==========================================================================
+   HMS CULINARY DAYPARTS LAYOUT ENGINE
+   ========================================================================== */
+
+.hms-dayparts-section {
+    width: 100%;
+    position: relative;
+}
+
+.hms-dayparts-section .text-accent-theme {
+    color: var(--web-accent, #1E6E99) !important;
+}
+
+.hms-time-line {
+    width: 20px;
+    height: 1px;
+    background-color: var(--web-accent, #1E6E99);
+    display: inline-block;
+}
+
+.max-w-center {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.fs-xs {
+    font-size: 0.68rem !important;
+    letter-spacing: 1.5px !important;
+}
+
+/* ==========================================
+   CARD STRUCTURE & TIMING HOVER STATES
+   ========================================== */
+.hms-time-card {
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hms-time-img-frame {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background-color: #e2e8f0;
+}
+
+.hms-time-img-frame img {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover Interaction Responses */
+.hms-time-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+.hms-time-card:hover .hms-time-img-frame img {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   STATUS BADGE COLOR SYSTEM
+   ========================================== */
+.hms-status-tag {
+    font-size: 0.62rem !important;
+    font-weight: 800;
+    text-uppercase: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 14px !important;
+    border-radius: 4px !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Active Service period color profiles */
+.status-active {
+    background-color: rgba(46, 125, 50, 0.9) !important; /* Elegant Forest Green */
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Standby/Scheduled period color profiles */
+.status-scheduled {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   LOWER SECTION COMPOSITE LAYER STACK STYLING
+   ========================================================================== */
+
+.hms-dual-composite-section {
+    width: 100%;
+    position: relative;
+    background-color: #ffffff;
+    overflow: visible !important; /* Critical to enable the upper margin bleed path */
+    z-index: 10;
+}
+
+/* Left side inverted pyramid alignments */
+.hms-pyramid-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.hms-small-thumb-box {
+    width: 160px;
+    height: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hms-small-thumb-box:hover {
+    transform: scale(1.04) translateY(-4px);
+}
+
+/* Right side massive container stack styles */
+.hms-double-layer-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 620px; 
+    height: 720px;    
+    overflow: visible;
+}
+.hms-stack-base-card {
+    width: 90%; 
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+    z-index: 1;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+.hms-stack-floating-card {
+    width: 45%;
+    height: 50%;
+    position: absolute;
+    bottom: 10%;
+    left: -30px; 
+    z-index: 5;  
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.22);
+}
+.hms-double-layer-wrapper:hover .hms-stack-floating-card {
+    transform: translateY(-8px) translateX(-4px);
+}
+
+/* Desktop negative shift engine mapping up into the hero canvas */
+@media (min-width: 992px) {
+    .hms-double-layer-wrapper {
+        margin-top: -240px !important; 
+        z-index: 999 !important; 
+    }
+}
+
+/* Responsive breakdowns for mobile platforms */
+@media (max-width: 991.98px) {
+    .hms-double-layer-wrapper {
+        height: 500px;
+        margin-top: 0 !important; 
+        max-width: 440px;
+    }
+    .hms-stack-floating-card {
+        left: 0; 
+    }
+}
+@media (max-width: 575.98px) {
+    .hms-small-thumb-box {
+        width: 110px;
+        height: 110px;
+    }
+    .hms-pyramid-grid-container {
+        gap: 16px;
+    }
+    .hms-pyramid-row-bottom {
+        gap: 16px !important;
+    }
+    .hms-double-layer-wrapper {
+        height: 380px;
+    }
+
+    .hms-restaurant-action-btn{
+        font-size: 0.7rem !important;
+        letter-spacing: normal !important;
+    }
+}
+
+/* ==========================================================================
+   HMS ADAPTIVE SPA SANCTUARY PAGE STYLING ENGINE
+   ========================================================================== */
+
+.hms-restaurant-split-hero {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    background-color: #124B6B; 
+}
+
+.hms-restaurant-split-hero .text-accent-theme {
+    color: var(--web-accent, #1E6E99) !important;
+}
+
+.restaurant-hero-mobile-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.restaurant-hero-mobile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(13, 53, 77, 0.95) 0%, rgba(18, 75, 107, 0.7) 100%);
+}
+
+.hms-hero-right-split {
+    height: 100%;
+    z-index: 5;
+    position: relative;
+}
+
+.restaurant-hero-content-wrapper {
+    max-width: 520px;
+}
+
+@media (max-width: 991.98px) {
+    .hms-restaurant-split-hero .text-accent-theme {
+        color: #ffffff !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .hms-restaurant-split-hero {
+        background-color: #ffffff; 
+    }
+    .hms-hero-left-split, .hms-hero-right-split {
+        height: 100vh !important;
+    }
+
+    .restaurant-hero-nested-floating-box {
+        position: absolute;
+        top: 50%;
+        right: -40px; 
+        transform: translateY(-50%);
+        width: 200px;
+        height: 270px;
+        z-index: 10;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        border: 4px solid #ffffff;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .restaurant-floating-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1200px) {
+    .restaurant-hero-nested-floating-box {
+        width: 240px;
+        height: 330px;
+        right: -50px;
+    }
+}
+
+.hms-restaurant-action-btn {
+    background-color: var(--web-primary, #0c3989) !important;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hms-restaurant-action-btn:hover {
+    background-color: #082861 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(12, 57, 137, 0.2) !important;
+}
+
+/* ==========================================================================
+   LOWER SECTION COMPOSITE LAYER STACK STYLING
+   ========================================================================== */
+
+.hms-dual-composite-section {
+    width: 100%;
+    position: relative;
+    background-color: #ffffff;
+    overflow: visible !important; 
+    z-index: 10;
+}
+
+.hms-pyramid-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.hms-small-thumb-box {
+    width: 160px;
+    height: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hms-small-thumb-box:hover {
+    transform: scale(1.04) translateY(-4px);
+}
+
+.hms-double-layer-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 620px; 
+    height: 720px;    
+    overflow: visible;
+}
+.hms-stack-base-card {
+    width: 90%; 
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+    z-index: 1;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+.hms-stack-floating-card {
+    width: 45%;
+    height: 50%;
+    position: absolute;
+    bottom: 10%;
+    left: -30px; 
+    z-index: 5;  
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.22);
+}
+.hms-double-layer-wrapper:hover .hms-stack-floating-card {
+    transform: translateY(-8px) translateX(-4px);
+}
+
+@media (min-width: 992px) {
+    .hms-double-layer-wrapper {
+        margin-top: -240px !important; 
+        z-index: 999 !important; 
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hms-double-layer-wrapper {
+        height: 500px;
+        margin-top: 0 !important; 
+        max-width: 440px;
+    }
+    .hms-stack-floating-card {
+        left: 0; 
+    }
+}
+@media (max-width: 575.98px) {
+    .hms-small-thumb-box {
+        width: 110px;
+        height: 110px;
+    }
+    .hms-pyramid-grid-container {
+        gap: 16px;
+    }
+    .hms-pyramid-row-bottom {
+        gap: 16px !important;
+    }
+    .hms-double-layer-wrapper {
+        height: 380px;
+    }
+}
+
+/* ==========================================================================
+   BENTO SPA GRID CARDS EXTENSION
+   ========================================================================== */
+.hms-venues-grid-section {
+    width: 100%;
+    position: relative;
+}
+.hms-venue-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--web-accent, #1E6E99);
+    border-radius: 50%;
+    display: inline-block;
+}
+.max-w-text { max-width: 500px; }
+.hms-venue-card {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hms-venue-img-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #eaeaea;
+}
+.hms-venue-img-box.standard-height { height: 240px; }
+.hms-venue-img-box img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.hms-venue-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+}
+.hms-venue-card:hover .hms-venue-img-box img { transform: scale(1.04); }
+.hms-capacity-badge {
+    background-color: rgba(30, 110, 153, 0.1) !important;
+    color: var(--web-accent, #1E6E99) !important;
+    font-size: 0.68rem !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 12px !important;
+    border-radius: 30px !important;
+}
+@media (min-width: 992px) {
+    .hms-venue-card.featured-venue .hms-venue-img-box { height: 380px; }
+    .hms-venue-card:not(.featured-venue) .hms-venue-img-box { height: 240px; }
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--web-accent, #1E6E99);
+    box-shadow: 0 0 0 0.2rem rgba(30, 110, 153, 0.15);
+}
+.hms-social-icon-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+.hms-social-icon-btn:hover {
+    background-color: var(--web-accent, #1E6E99);
+    color: #ffffff !important;
+    border-color: var(--web-accent, #1E6E99) !important;
+}
+
+/* ==========================================
+   PILL TOGGLE ENGINE
+   ========================================== */
+.hms-booking-toggle-pill {
+    background-color: #f1f3f5 !important;
+}
+.hms-booking-toggle-pill .btn {
+    border: none;
+    background: transparent;
+    color: #6c757d;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding: 10px 24px;
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hms-booking-toggle-pill .btn.active {
+    background-color: #ffffff !important;
+    color: var(--web-primary, #0c3989) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Custom enhancements for the input spinner layout styling */
+.input-group .btn-outline-secondary {
+    border-color: #ced4da;
+    color: #495057;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s ease;
+}
+.input-group .btn-outline-secondary:hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+    color: #212529;
+}
+.leading-normal {
+    line-height: 1.4 !important;
+}
+
+/* ==========================================
+   HMS ENHANCED SPECIFICATION CARDS LAYOUT CSS
+   ========================================== */
+.hms-summary-ledger-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+}
+
+/* Custom separator line adjustments for high balanced desktop alignments */
+@media (min-width: 768px) {
+    .border-md-end-custom {
+        border-right: 1px solid #dee2e6 !important;
+    }
+    .border-md-start-custom {
+        border-left: 1px solid #dee2e6 !important;
+    }
+
+    
+}
+
+/* Hides standard spin layout buttons natively across general search engines for cleaner looks */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* ==========================================
+   HMS DISCOVERY MATRIX & FLOW BAR CSS
+   ========================================== */
+
+/* Structural Stepper Nodes Layout */
+.hms-step-node {
+    position: relative;
+}
+.hms-step-node .step-number {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 0.85rem;
+    background-color: #ffffff;
+    border: 2px solid #dee2e6;
+    color: #6c757d;
+}
+.hms-step-node .step-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+}
+.hms-step-node.passed .step-number {
+    background-color: #25D366;
+    border-color: #25D366;
+    color: #ffffff;
+}
+.hms-step-node.passed .step-label { color: #6c757d; }
+.hms-step-node.active .step-number {
+    background-color: var(--web-primary, #0c3989);
+    border-color: var(--web-primary, #0c3989);
+    color: #ffffff;
+}
+.hms-step-node.active .step-label { color: var(--web-primary, #0c3989); }
+.hms-step-node.incoming .step-number {
+    background-color: #f8f9fa;
+    color: #adb5bd;
+}
+.hms-step-node.incoming .step-label { color: #adb5bd; }
+
+/* Room Inventory Cards Aspect Tweaks */
+.hms-room-inventory-card {
+    border: 1px solid #e9ecef !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.hms-room-inventory-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06) !important;
+}
+.min-h-250 {
+    min-height: 250px;
+}
+
+@media (min-width: 768px) {
+    .border-start-custom {
+        border-left: 1px solid #dee2e6 !important;
+    }
+}
+
+/* ==========================================
+   STICKY FLOATING FRAME HUD MECHANICS
+   ========================================== */
+.hms-sticky-cart-footer {
+    z-index: 1040; /* Places elegantly over default views safely */
+    box-shadow: 0 -15px 40px rgba(0,0,0,0.08) !important;
+    animation: slideUpFooter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.max-w-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@keyframes slideUpFooter {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* Disabled State Design Polishing */
+.hms-btn-primary:disabled {
+    background-color: #ced4da !important;
+    color: var(--web-primary);
+    border-color: #ced4da !important;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact !important; /* For Chrome, Safari, Edge */
+        print-color-adjust: exact !important;         /* Standard */
+    }
+}
+
+
+/* ==========================================
+   HMS EXCLUSIVE CREDENTIAL SECURITY STYLES
+   ========================================== */
+
+.hms-auth-body {
+    background-color: #051430; /* Dark premium base backdrop layer */
+    overflow-x: hidden;
+    position: relative;
+    font-family: inherit;
+}
+
+/* Ambient Deep Atmospheric Background Blurs */
+.hms-auth-blur-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: 1;
+    opacity: 0.35;
+}
+.hms-auth-blur-circle.circle-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--web-primary);
+    top: -10%;
+    left: -10%;
+}
+.hms-auth-blur-circle.circle-2 {
+    width: 500px;
+    height: 500px;
+    background: var(--web-accent);
+    bottom: -15%;
+    right: -10%;
+}
+
+.z-10 { z-index: 10; }
+
+/* Translucent High-Density Glassmorphism Profile Module Box Card */
+.hms-auth-glass-card {
+    background: rgba(12, 57, 137, 0.12) !important;
+    backdrop-filter: blur(25px) saturate(150%);
+    -webkit-backdrop-filter: blur(25px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.hms-auth-subtitle {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--web-accent);
+}
+
+.hms-auth-title {
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+/* Clean Custom Form Field Structural Overrides */
+.hms-auth-label {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.hms-auth-input-group {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.hms-auth-input-group:focus-within {
+    border-color: var(--web-accent);
+}
+
+.hms-auth-input-group .input-group-text {
+    background: transparent;
+    border: none;
+    padding-left: 16px;
+}
+
+.hms-auth-input-group .form-control {
+    background: transparent;
+    border: none;
+    color: #ffffff !important;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+}
+
+.hms-auth-input-group .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.hms-auth-input-group .form-control:focus {
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Checkbox Adjustment handles */
+.hms-auth-checkbox .form-check-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+.hms-auth-checkbox .form-check-input:checked {
+    background-color: var(--web-accent);
+    border-color: var(--web-accent);
+}
+
+/* Authentication Action Buttons */
+.hms-btn-auth {
+    background-color: var(--web-accent);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.hms-btn-auth:hover {
+    background-color: #822b24;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(155, 55, 48, 0.2);
+}
+
+/* Links & Redirection Controls */
+.hms-auth-link {
+    color: var(--web-accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.hms-auth-link:hover {
+    color: #b8433b;
+    text-decoration: underline;
+}
+
+.hms-auth-link-alt {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.hms-auth-link-alt:hover {
+    color: #ffffff;
+}
+
+/* Forgot Password Structural Custom Badge Icon Styling */
+.hms-auth-icon-badge {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================
+   FLOATING HOME NAV LINK (BLENDS INTO CORNER)
+   ========================================== */
+.hms-auth-back-nav {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px 10px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hms-auth-back-nav i {
+    transition: transform 0.3s ease;
+}
+
+/* Slick movement on interaction */
+.hms-auth-back-nav:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hms-auth-back-nav:hover i {
+    transform: translateX(-4px);
+}
+
+/* Responsiveness handling for small mobile layouts */
+@media (max-width: 575.98px) {
+    .hms-auth-back-nav {
+        top: 16px;
+        left: 16px;
+        padding: 8px 12px;
+    }
+    .hms-auth-back-nav span {
+        display: none; /* Hide text on ultra small mobile displays to maintain clean space */
+    }
+}

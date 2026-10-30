@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS | Premium Guest Portal Access</title>
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="hms-auth-body">
+
+    <!-- Floating Back to Website Action Badge -->
+    <a href="/" class="hms-auth-back-nav">
+        <i class="bi bi-arrow-left-short fs-4"></i>
+        <span>Back to Website</span>
+    </a>
+
+    <!-- Ambient Abstract Background Graphic Rings -->
+    <div class="hms-auth-blur-circle circle-1"></div>
+    <div class="hms-auth-blur-circle circle-2"></div>
+
+    <div class="container d-flex align-items-center justify-content-center min-vh-100 position-relative z-10">
+        <div class="hms-auth-glass-card">
+            
+            <!-- Branding Header -->
+            <div class="text-center mb-4">
+                <span class="hms-auth-subtitle">Exquisite Accommodations</span>
+                <h2 class="hms-auth-title text-white mt-1">Welcome Back</h2>
+                <p class="text-white-50 small">Access your custom room booking portfolio management matrix</p>
+            </div>
+
+            <!-- Form Wrapper Block -->
+            <form action="/login-endpoint" method="POST">
+                
+                <!-- Email Entry -->
+                <div class="mb-3">
+                    <label class="form-label hms-auth-label">Email Address</label>
+                    <div class="input-group hms-auth-input-group">
+                        <span class="input-group-text"><i class="bi bi-envelope text-white-50"></i></span>
+                        <input type="email" class="form-control" placeholder="name@example.com" required autocomplete="email">
+                    </div>
+                </div>
+
+                <!-- Password Entry -->
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <label class="form-label hms-auth-label mb-0">Password</label>
+                        <a href="forgot-password.html" class="hms-auth-link-alt small">Forgot Password?</a>
+                    </div>
+                    <div class="input-group hms-auth-input-group">
+                        <span class="input-group-text"><i class="bi bi-shield-lock text-white-50"></i></span>
+                        <input type="password" class="form-control" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <!-- Remember Processing Token Switch -->
+                <div class="form-check hms-auth-checkbox mb-4">
+                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                    <label class="form-check-label small text-white-50" for="rememberMe">
+                        Keep me signed in on this client instance
+                    </label>
+                </div>
+
+                <!-- Submission Action Trigger -->
+                <button type="submit" class="btn hms-btn-auth w-100 py-3 fw-bold mb-3">
+                    Secure Authorization Access <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+
+                <!-- Registration Route Redirect Anchor -->
+                <div class="text-center mt-4 pt-3 border-top border-white border-opacity-10">
+                    <span class="text-white-50 small">New to our premium collections?</span>
+                    <a href="/register" class="hms-auth-link ms-2 fw-bold small">Create Account</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

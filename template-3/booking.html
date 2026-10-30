@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wells Carlton Hotel & Apartments</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <nav id="heroNavbar" class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container px-4 px-md-5">
+
+            <!-- Customized Clean Hamburger Trigger -->
+            <button class="navbar-toggler custom-toggler order-1" type="button" onclick="openMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Desktop Links (Left-aligned, Ultra-Compact Group) -->
+            <div class="collapse navbar-collapse order-3 order-lg-1 flex-grow-0" id="mainNavbar">
+                <ul class="navbar-nav compact-nav-links">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+                    <!-- Refined Amenities to Dropdown named 'Spaces' -->
+                    <li class="nav-item dropdown custom-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="spacesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Experiences
+                        </a>
+                        <ul class="dropdown-menu border-0" aria-labelledby="spacesDropdown">
+                            <li><a class="dropdown-item" href="gym.html">Gym</a></li>
+                            <li><a class="dropdown-item" href="spa.html">Spa</a></li>
+                            <li><a class="dropdown-item" href="restaurant.html">Restaurant</a></li>
+                            <li><a class="dropdown-item" href="events.html">Events & Halls</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Absolute Centered Brand Mark -->
+            <a class="navbar-brand-centered order-2" href="#">
+                <span class="brand-top">WELLS</span>
+                <span class="brand-bottom">CARLTON</span>
+            </a>
+
+            <!-- Right-aligned Actions Panel (Balanced with Login) -->
+            <div class="d-none d-sm-flex align-items-center gap-4 order-4 ms-auto ms-lg-0">
+                <a href="login.html" class="nav-link contact-link login-link">Login</a>
+                <a href="contact.html" class="nav-link contact-link">Contact Us</a>
+                <a href="booking.html" class="btn btn-custom btn-nav-large px-4 py-2.5">Book Now</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Full-screen Mobile Overlay Drawer -->
+    <div class="mobile-overlay" id="mobileMenu">
+        <div class="mobile-header">
+            <span class="fw-bold tracking-wider text-uppercase text-accent-light">Navigation</span>
+            <span onclick="closeMenu()" class="mobile-close">&times;</span>
+        </div>
+
+        <div class="mobile-body">
+            <div class="mobile-section">
+                <h6>Explore Our Property</h6>
+                <a href="index.html">Home</a>
+                <a href="rooms.html">Rooms & Suites</a>
+
+                <!-- Expanded Spaces Sub-links for Mobile Navigation Clarity -->
+                <div class="mobile-nested-group ps-2 my-2">
+                    <span class="mobile-sub-heading d-block text-uppercase">Featured Spaces</span>
+                    <a href="gym.html" class="py-1 ps-2 opacity-75 fs-6">- Gym</a>
+                    <a href="spa.html" class="py-1 ps-2 opacity-75 fs-6">- Spa</a>
+                    <a href="restaurant.html" class="py-1 ps-2 opacity-75 fs-6">- Restaurant</a>
+                    <a href="events.html" class="py-1 ps-2 opacity-75 fs-6">- Events & Halls</a>
+                </div>
+
+                <a href="tel:+12345678">Contact Us</a>
+                <a href="login.html">Guest Login</a>
+            </div>
+
+            <div class="mobile-section pt-2">
+                <a href="booking.html" class="btn btn-custom w-100 py-3 text-center d-block">Book Your Stay Now</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+   HMS BOOKING CENTER SPLIT HERO SECTION
+   ========================================== -->
+    <header class="hms-restaurant-split-hero position-relative overflow-hidden">
+
+        <!-- Mobile Background Engine (Active only < 992px) -->
+        <div class="restaurant-hero-mobile-bg d-lg-none">
+            <img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1200&h=900&q=80"
+                class="w-100 h-100 object-fit-cover" alt="Luxury Interior Planning Background">
+            <div class="restaurant-hero-mobile-overlay"></div>
+        </div>
+
+        <div class="container-fluid p-0 h-100 position-relative z-3">
+            <div class="row g-0 h-100 align-items-center">
+
+                <!-- LEFT PANEL: Half-screen graphic space on desktop containing the layered portrait box -->
+                <div class="col-lg-6 hms-hero-left-split position-relative d-none d-lg-block">
+                    <div class="w-100 h-100">
+                        <img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1200&h=900&q=80"
+                            class="w-100 h-100 object-fit-cover" alt="Elegant Hotel Architecture Planning">
+                    </div>
+
+                    <!-- Floating Portrait Box nesting inside the left half boundary -->
+                    <div class="restaurant-hero-nested-floating-box">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&h=800&q=80"
+                            class="restaurant-floating-photo" alt="Luxury Suite Living Area Detail">
+                    </div>
+                </div>
+
+                <!-- RIGHT PANEL: Narrative presentation box -->
+                <div class="col-lg-6 hms-hero-right-split d-flex flex-column justify-content-center">
+                    <div class="restaurant-hero-content-wrapper px-4 px-md-5 mx-xl-5">
+
+                        <span class="text-uppercase tracking-widest fw-black d-block mb-2 text-accent-theme"
+                            style="font-size: 0.75rem; letter-spacing: 4px !important;">
+                            Reservations Desk
+                        </span>
+
+                        <h1 class="display-4 fw-black text-uppercase tracking-tight text-accent-theme mb-4">
+                            Secure Your <br>Stay & Spaces
+                        </h1>
+
+                        <p class="text-accent-theme leading-relaxed mb-4">
+                            Plan your luxury getaway or execute spectacular corporate events. Check live availability
+                            instantly and transition directly to our concierge team to finalize your elite itinerary.
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-3 pt-2">
+                            <a href="#booking-engine-core"
+                                class="btn hms-restaurant-action-btn hms-btn-primary px-4 py-3 fw-bold text-white text-uppercase shadow-sm"
+                                style="font-size: 0.8rem; letter-spacing: 1px;">
+                                Begin Booking <i class="bi bi-chevron-down ms-2"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ==========================================
+   HMS COMPOSITE LAYERED SHOWCASE (HEADER-BLEED)
+   ========================================== -->
+    <section class="hms-dual-composite-section py-5 bg-white overflow-visible">
+        <div class="container px-4 px-md-5 py-md-4">
+            <div class="row g-5 align-items-center">
+
+                <!-- LEFT COLUMN: Three small images arranged in an inverted triangle configuration -->
+                <div class="col-lg-5 order-2 order-lg-1">
+                    <div class="hms-pyramid-grid-container">
+
+                        <!-- Top Centralized Image Element -->
+                        <div class="hms-pyramid-row-top d-flex justify-content-center">
+                            <div class="hms-small-thumb-box shadow">
+                                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=400&h=400&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Banquet Hall Arrangement Detail">
+                            </div>
+                        </div>
+
+                        <!-- Bottom Two Split Images Row Component -->
+                        <div class="hms-pyramid-row-bottom d-flex justify-content-center gap-4">
+                            <div class="hms-small-thumb-box shadow">
+                                <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&h=400&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Premium Bedroom Setup">
+                            </div>
+                            <div class="hms-small-thumb-box shadow">
+                                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=400&h=400&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Champagne Toast Reception">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Massive Composite Image Stack Bleeding Upwards into Hero Section Area -->
+                <div class="col-lg-7 order-1 order-lg-2">
+                    <div class="hms-double-layer-wrapper position-relative mx-auto ms-lg-auto me-lg-0">
+
+                        <!-- Base Foundation Image Frame (Massive Size Variant) -->
+                        <div class="hms-stack-base-card rounded-2 overflow-hidden shadow">
+                            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&h=1200&q=80"
+                                class="w-100 h-100 object-fit-cover" alt="Main Hotel Entrance Foyer Base">
+                        </div>
+
+                        <!-- Floating Frame Layered cleanly over the Left Boundary Edge -->
+                        <div
+                            class="hms-stack-floating-card rounded-2 overflow-hidden shadow-lg border border-white border-4">
+                            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=450&h=550&q=80"
+                                class="w-100 h-100 object-fit-cover" alt="Exclusive Suite Bedroom Accent Card">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================
+   HMS BOOKING PORTAL MATRIX WORKSPACE
+   ========================================== -->
+    <section id="booking-engine-core" class="hms-venues-grid-section py-5 bg-light">
+        <div class="container px-4 px-md-5 py-md-4">
+
+            <!-- Section Architecture Header -->
+            <div class="row mb-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="hms-venue-dot"></span>
+                        <span class="text-uppercase tracking-widest text-muted fw-bold"
+                            style="font-size: 0.72rem; letter-spacing: 3px !important;">Booking Portal v1.0</span>
+                    </div>
+                    <h2 class="h1 fw-black text-dark text-uppercase tracking-tight m-0">
+                        Reservation <span class="text-accent-theme">Engine</span>
+                    </h2>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-muted m-0 pt-3 pt-lg-0 max-w-text small">
+                        Select your service profile below to initiate availability checks. Once confirmed, you can
+                        instantly proceed to schedule real-world hotel tours or process secure payments via your
+                        concierge agent.
+                    </p>
+                </div>
+            </div>
+
+            <!-- THE MAIN MATRIX HUB (Bento Container) -->
+            <div class="bg-white rounded-2 shadow-sm border border-light p-4 p-md-5">
+
+                <!-- =========================================================
+               SUB-WORKSPACE STEP 1: INITIAL SEARCH FORM
+               ========================================================= -->
+                <div id="booking-form-workspace">
+
+                    <!-- STEP INTERFACE SWITCHER (PILLS ENGINE) -->
+                    <div class="d-flex justify-content-center mb-5">
+                        <div class="hms-booking-toggle-pill p-1 d-inline-flex rounded-3 bg-light border">
+                            <button type="button" class="btn active px-4 py-2 text-uppercase fw-bold tracking-wider"
+                                id="roomToggleBtn" onclick="switchBookingTab('rooms')">
+                                <i class="bi bi-door-open-fill me-2"></i> Book Luxury Rooms
+                            </button>
+                            <button type="button" class="btn px-4 py-2 text-uppercase fw-bold tracking-wider"
+                                id="eventToggleBtn" onclick="switchBookingTab('events')">
+                                <i class="bi bi-buildings-fill me-2"></i> Book Event Halls
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- TAB CONTAINER 1: ROOM RESERVATION CORE -->
+                    <div id="roomBookingTab" class="hms-booking-pane active">
+                        <!-- ACTION INTERCEPT: Prevents real loads and triggers the step transition layout -->
+                        <form action="#" method="POST" onsubmit="event.preventDefault(); handleSearchSubmitAndSwap();">
+                            <div class="row g-4">
+
+                                <div class="col-md-4">
+                                    <label
+                                        class="form-label small text-uppercase fw-black text-muted tracking-wide">Check-In
+                                        Date</label>
+                                    <input type="date" id="input_checkin" class="form-control rounded-1 py-2" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label
+                                        class="form-label small text-uppercase fw-black text-muted tracking-wide">Check-Out
+                                        Date</label>
+                                    <input type="date" id="input_checkout" class="form-control rounded-1 py-2" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label
+                                        class="form-label small text-uppercase fw-black text-muted tracking-wide">Length
+                                        of Stay (Nights)</label>
+                                    <input type="number" id="input_nights" class="form-control rounded-1 py-2" min="1"
+                                        placeholder="" readonly required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label
+                                        class="form-label small text-uppercase fw-black text-muted tracking-wide">Number
+                                        of Adults</label>
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary px-3" type="button"
+                                            onclick="decrementValue('adultsCount')">-</button>
+                                        <input type="number" class="form-control text-center py-2 fw-bold"
+                                            id="adultsCount" value="2" min="1" max="20"
+                                            onchange="validateInputField(this, 1)">
+                                        <button class="btn btn-outline-secondary px-3" type="button"
+                                            onclick="incrementValue('adultsCount')">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label
+                                        class="form-label small text-uppercase fw-black text-muted tracking-wide">Number
+                                        of Children</label>
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary px-3" type="button"
+                                            onclick="decrementValue('childrenCount')">-</button>
+                                        <input type="number" class="form-control text-center py-2 fw-bold"
+                                            id="childrenCount" value="0" min="0" max="20"
+                                            onchange="validateInputField(this, 0)">
+                                        <button class="btn btn-outline-secondary px-3" type="button"
+                                            onclick="incrementValue('childrenCount')">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label
+                                        class="form-label small text-uppercase fw-black text-muted tracking-wide">Number
+                                        of Rooms</label>
+                                    <input type="number" class="form-control rounded-1 py-2" min="1" max="10" value="1" id="input_rooms"
+                                        required>
+                                </div>
+
+                                <div
+                                    class="col-12 pt-4 border-top mt-5 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+                                    <span class="text-muted small"><i class="bi bi-info-circle me-1"></i> Next step
+                                        reveals real-time available suites matching your criteria.</span>
+                                    <button type="submit"
+                                        class="btn hms-restaurant-action-btn hms-btn-primary px-lg-5 py-3 fw-bold text-white text-uppercase"
+                                        style="font-size: 0.85rem; letter-spacing: 1px;">
+                                        Check Room Availability <i class="bi bi-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- TAB CONTAINER 2: EVENT RESERVATION CORE -->
+                   <div id="eventBookingTab" class="hms-booking-pane d-none">
+                        
+                        <form id="hmsEventBookingForm" onsubmit="executeEventBookingPipeline(event);">
+                            <div class="row g-4">
+
+                                <div class="col-md-4">
+                                    <label class="form-label small text-uppercase fw-black text-muted tracking-wide">Organizer / Corporate Name</label>
+                                    <input type="text" id="eventOrganizerName" class="form-control rounded-1 py-2" placeholder="Corporate / Organizer Name" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="form-label small text-uppercase fw-black text-muted tracking-wide">Email Address</label>
+                                    <input type="email" id="eventOrganizerEmail" class="form-control rounded-1 py-2" placeholder="contact@company.com" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="form-label small text-uppercase fw-black text-muted tracking-wide">Phone Number</label>
+                                    <input type="tel" id="eventOrganizerPhone" class="form-control rounded-1 py-2" placeholder="Mobile line" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label small text-uppercase fw-black text-muted tracking-wide">Event Type</label>
+                                    <select class="form-select rounded-1 py-2" id="eventTypeSelect" onchange="handleSelectionSpecsChange()" required>
+                                        <option value="" disabled selected>Select event category...</option>
+                                        <option value="Wedding Reception">Wedding Reception</option>
+                                        <option value="Corporate Conference">Corporate Conference</option>
+                                        <option value="Gala & Banquet">Gala & Banquet</option>
+                                        <option value="Exhibition / Seminar">Exhibition / Seminar</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label small text-uppercase fw-black text-muted tracking-wide">Preferred Hall</label>
+                                    <select class="form-select rounded-1 py-2" id="preferredHallSelect" onchange="handleSelectionSpecsChange()" required>
+                                        <option value="" disabled selected>Select location choice...</option>
+                                        <option value="grand-ballroom">The Grand Ballroom</option>
+                                        <option value="executive-suite">Executive Corporate Pavilion</option>
+                                        <option value="garden-terrace">The Royal Garden Terrace</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 d-none" id="hallSpecificationProfileCard">
+                                    <div class="card border-0 rounded-2 bg-light p-4 shadow-sm position-relative overflow-hidden">
+                                        <div class="row align-items-center g-4">
+                                            <div class="col-md-7 border-md-end-custom">
+                                                <span class="badge text-uppercase tracking-wider px-2 py-1 mb-2 text-white" id="specBadgeType" style="background-color: var(--web-accent, #1E6E99); font-size: 0.65rem; letter-spacing: 1px;">Event Setup</span>
+                                                <h4 class="fw-black text-dark text-uppercase m-0 tracking-tight" id="specHallName">Selected Hall Name</h4>
+                                                <p class="text-muted small m-0 mt-1">Configured for premium experience with custom ambient staging.</p>
+                                            </div>
+                                            <div class="col-md-5 ps-md-4">
+                                                <div class="row g-2 text-start">
+                                                    <div class="col-6">
+                                                        <span class="d-block text-muted small text-uppercase fw-bold" style="font-size: 0.7rem;">Capacity Limit</span>
+                                                        <span class="fw-black text-dark" id="specCapacity">—</span>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <span class="d-block text-muted small text-uppercase fw-bold" style="font-size: 0.7rem;">Base Rate / Day</span>
+                                                        <span class="fw-black text-accent-theme" id="specRate">—</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label small text-uppercase fw-black text-muted tracking-wide">Event Start Date & Time</label>
+                                    <input type="datetime-local" class="form-control rounded-1 py-2" id="eventStart" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label small text-uppercase fw-black text-muted tracking-wide">Event End Date & Time</label>
+                                    <input type="datetime-local" class="form-control rounded-1 py-2" id="eventEnd" required>
+                                </div>
+
+                                <div class="col-12 my-3">
+                                    <div class="hms-summary-ledger-card rounded-2 p-4 text-center text-md-start bg-white border">
+                                        <div class="row g-4 align-items-center justify-content-between">
+                                            <div class="col-md-3">
+                                                <span class="d-block text-muted small text-uppercase fw-bold tracking-wide mb-1">Rate Per Day</span>
+                                                <span class="h5 fw-black text-dark m-0" id="ledgerRateDisplay">₦0.00</span>
+                                            </div>
+                                            <div class="col-md-3 border-md-start-custom">
+                                                <span class="d-block text-muted small text-uppercase fw-bold tracking-wide mb-1">Total Days</span>
+                                                <span class="h5 fw-black text-muted m-0" id="ledgerDaysDisplay">0 Days</span>
+                                            </div>
+                                            <div class="col-md-4 border-md-start-custom text-md-end">
+                                                <span class="d-block text-muted small text-uppercase fw-bold tracking-wide mb-1">Total Estimated Amount</span>
+                                                <span class="h4 fw-black text-dark m-0" id="ledgerAmountDisplay">₦0.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 pt-4 border-top d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+                                    <span class="text-danger small max-w-text leading-normal text-start">
+                                        <i class="bi bi-exclamation-triangle-fill me-1"></i>
+                                        <strong>Temporary Viewing Hold:</strong> Submitting hooks an automated viewing hold on the venue space. Unpaid holds automatically recycle into public circulation if verification is not logged swiftly.
+                                    </span>
+                                    <button type="submit" id="eventSubmitBtn" class="btn btn-primary px-4 py-3 fw-bold text-white text-uppercase flex-shrink-0" style="font-size: 0.8rem; letter-spacing: 1px;">
+                                        Check Availability & Book Hold <i class="bi bi-calendar-plus ms-2"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                        <div id="eventSuccessVoucherCard" class="d-none mt-4 text-start">
+                            
+                            <div class="alert alert-info border border-info rounded-2 p-3 mb-4 shadow-sm">
+                                <div class="d-flex align-items-center gap-2 small fw-bold text-dark">
+                                    <i class="bi bi-phone-vibrate text-info fs-5"></i>
+                                    <span>Important: Please grab a screenshot of your reservation record below or securely copy your temporary booking number immediately.</span>
+                                </div>
+                            </div>
+
+                            <div class="card border rounded-3 p-4 p-md-5 bg-white shadow-sm position-relative overflow-hidden" style="border-top: 5px solid var(--web-accent, #1E6E99) !important;">
+                                
+                                <div class="row align-items-start g-3 mb-4 border-bottom pb-4">
+                                    <div class="col-sm-7">
+                                        <h4 class="fw-black text-dark text-uppercase tracking-tight m-0">EVENT HOLD VOUCHER</h4>
+                                        <p class="text-muted small m-0">Temporary Venue Allocation Record</p>
+                                        <span class="badge bg-warning text-dark mt-2 px-3 py-2 text-uppercase fw-black shadow-sm" style="font-size: 0.65rem;">Viewing Hold Pending</span>
+                                    </div>
+                                    <div class="col-sm-5 text-sm-end">
+                                        <span class="text-uppercase text-muted d-block fw-bold" style="font-size: 0.62rem;">Temporary Booking No.</span>
+                                        <span class="fw-black h5 text-accent-theme text-uppercase tracking-wider" id="v_bookingNumber">EVT-XXXXXX</span>
+                                        <span class="text-muted d-block small mt-1" id="v_timestamp">Generated: Just Now</span>
+                                    </div>
+                                </div>
+
+                                <div class="row g-4 mb-4 border-bottom pb-4">
+                                    <div class="col-md-6 border-end border-light">
+                                        <h6 class="text-uppercase fw-black text-muted tracking-wide mb-3" style="font-size: 0.7rem;"><i class="bi bi-building me-1"></i> Organizer Profile</h6>
+                                        <div class="mb-2"><span class="text-muted d-block" style="font-size: 0.6rem; text-transform: uppercase;">Company/Client Name</span><strong class="text-dark" id="v_name">—</strong></div>
+                                        <div class="mb-2"><span class="text-muted d-block" style="font-size: 0.6rem; text-transform: uppercase;">Email Address</span><strong class="text-dark" id="v_email">—</strong></div>
+                                        <div><span class="text-muted d-block" style="font-size: 0.6rem; text-transform: uppercase;">Phone Number</span><strong class="text-dark" id="v_phone">—</strong></div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <h6 class="text-uppercase fw-black text-muted tracking-wide mb-3" style="font-size: 0.7rem;"><i class="bi bi-calendar-range me-1"></i> Logistical Arrangements</h6>
+                                        <div class="mb-2"><span class="text-muted d-block" style="font-size: 0.6rem; text-transform: uppercase;">Allocated Hall Space</span><strong class="text-dark text-uppercase" id="v_hall">—</strong></div>
+                                        <div class="mb-2"><span class="text-muted d-block" style="font-size: 0.6rem; text-transform: uppercase;">Setup Assignment</span><strong class="text-dark" id="v_type">—</strong></div>
+                                        <div class="row g-2">
+                                            <div class="col-6"><span class="text-muted d-block" style="font-size: 0.6rem; text-transform: uppercase;">Start Window</span><small class="text-dark fw-bold" id="v_start">—</small></div>
+                                            <div class="col-6"><span class="text-muted d-block" style="font-size: 0.6rem; text-transform: uppercase;">End Window</span><small class="text-dark fw-bold" id="v_end">—</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row align-items-center bg-light rounded-2 p-3 g-3">
+                                    <div class="col-sm-4"><span class="text-muted small d-block text-uppercase fw-bold" style="font-size: 0.65rem;">Calculated Duration</span><strong class="text-dark h6 m-0 d-block" id="v_days">0 Days</strong></div>
+                                    <div class="col-sm-4"><span class="text-muted small d-block text-uppercase fw-bold" style="font-size: 0.65rem;">Base Rate / Day</span><strong class="text-dark h6 m-0 d-block" id="v_rate">₦0.00</strong></div>
+                                    <div class="col-sm-4 text-sm-end"><span class="text-muted small d-block text-uppercase fw-bold" style="font-size: 0.65rem;">Total Financial Estimate</span><strong class="text-accent-theme h5 fw-black m-0 d-block" id="v_total">₦0.00</strong></div>
+                                </div>
+
+                                <div class="mt-4 border border-warning rounded-2 bg-light p-3">
+                                    <div class="d-flex gap-2">
+                                        <i class="bi bi-telephone-outbound-fill text-warning fs-5"></i>
+                                        <div class="small leading-normal text-muted">
+                                            <strong class="text-dark text-uppercase d-block mb-1">Action Required to Secure Venue Space</strong>
+                                            Our customer care team will reach out to your contact number within 24 hours to schedule an inspection. Alternatively, you can call us directly right away to verify logistics and make payments to hold down this venue selection permanently. Unpaid layout assignments dissolve automatically.
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <button type="button" class="btn btn-outline-secondary btn-sm text-uppercase fw-bold" onclick="location.reload();">
+                                    <i class="bi bi-arrow-left me-1"></i> Book New Event Slot
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- =========================================================
+               SUB-WORKSPACE STEP 2: ROOM SELECTION RESULTS (Hidden on load)
+               ========================================================= -->
+                <div id="booking-results-workspace" class="d-none">
+
+                    <!-- STEPPER FLOW BAR -->
+                    <div class="hms-stepper-flow-bar row g-0 text-center border-bottom mb-5 pb-4">
+                        <div class="col-3 hms-step-node passed">
+                            <span class="step-number shadow-sm"><i class="bi bi-check-lg"></i></span>
+                            <span class="step-label d-block text-uppercase fw-bold mt-2"
+                                style="font-size: 0.7rem; letter-spacing: 0.5px;">1. Criteria</span>
+                        </div>
+                        <div class="col-3 hms-step-node active">
+                            <span class="step-number shadow-sm">2</span>
+                            <span class="step-label d-block text-uppercase fw-black mt-2"
+                                style="font-size: 0.7rem; letter-spacing: 0.5px;">2. Choose Rooms</span>
+                        </div>
+                        <div class="col-3 hms-step-node incoming">
+                            <span class="step-number shadow-sm">3</span>
+                            <span class="step-label d-block text-uppercase fw-bold mt-2"
+                                style="font-size: 0.7rem; letter-spacing: 0.5px;">3. Hold Details</span>
+                        </div>
+                        <div class="col-3 hms-step-node incoming">
+                            <span class="step-number shadow-sm">4</span>
+                            <span class="step-label d-block text-uppercase fw-bold mt-2"
+                                style="font-size: 0.7rem; letter-spacing: 0.5px;">4. Complete Hold</span>
+                        </div>
+                    </div>
+
+                    <!-- LIVE SELECTION SUMMARY ANCHOR BAR -->
+                    <div class="hms-selection-summary-anchor rounded-2 p-3 bg-light border mb-5">
+                        <div class="row g-3 align-items-center text-center text-md-start">
+                            <div class="col-md-9">
+                                <div
+                                    class="d-flex flex-wrap gap-4 align-items-center justify-content-center justify-content-md-start">
+                                    <div>
+                                        <span class="text-uppercase text-muted d-block fw-bold mb-1"
+                                            style="font-size: 0.65rem; letter-spacing: 0.5px;">Timeline Range</span>
+                                        <strong class="text-dark small" id="summaryDatesLabel"><i
+                                                class="bi bi-calendar3 me-1 text-accent-theme"></i> Loading
+                                            Range...</strong>
+                                    </div>
+                                    <div class="border-start d-none d-md-block"
+                                        style="height: 25px; border-color: #dee2e6 !important;"></div>
+                                    <div>
+                                        <span class="text-uppercase text-muted d-block fw-bold mb-1"
+                                            style="font-size: 0.65rem; letter-spacing: 0.5px;">Duration</span>
+                                        <strong class="text-dark small" id="summaryNightsLabel">0 Nights</strong>
+                                    </div>
+                                    <div class="border-start d-none d-md-block"
+                                        style="height: 25px; border-color: #dee2e6 !important;"></div>
+                                    <div>
+                                        <span class="text-uppercase text-muted d-block fw-bold mb-1"
+                                            style="font-size: 0.65rem; letter-spacing: 0.5px;">Composition Pool</span>
+                                        <strong class="text-dark small" id="summaryCompositionLabel"><i
+                                                class="bi bi-people-fill me-1 text-accent-theme"></i> 2 Adults</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-center text-md-end">
+                                <button type="button"
+                                    class="btn btn-sm btn-outline-secondary px-3 text-uppercase fw-bold"
+                                    style="font-size: 0.7rem; letter-spacing: 0.5px;"
+                                    onclick="revertToSearchCriteria();">
+                                    <i class="bi bi-pencil-square me-1"></i> Modify Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROOM INVENTORY DISCOVERY GRID -->
+                    <div class="row g-4 mb-5">
+
+                        <!-- Suite Variant 1: Executive Royal -->
+                        <div class="col-lg-6">
+                            <div class="card h-100 border rounded-2 shadow-sm overflow-hidden bg-white">
+                                <div class="row g-0 h-100">
+                                    <div class="col-sm-5 bg-dark position-relative min-h-200"
+                                        style="background: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=600&auto=format&fit=crop') center/cover no-repeat;">
+                                        
+                                    </div>
+                                    <div class="col-sm-7 p-4 d-flex flex-column justify-content-between">
+                                        <div>
+                                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                                <h5 class="fw-black text-dark text-uppercase m-0 tracking-tight">
+                                                    Executive Royal Suite</h5>
+                                                <span class="fw-black text-accent-theme h6 m-0">₦75,000<span
+                                                        class="text-muted fw-normal small"
+                                                        style="font-size: 0.65rem;">/Nt</span></span>
+                                            </div>
+                                            <p class="text-muted small mb-3">Refined layout featuring standard lounge
+                                                space, smart workspace desk, and high-tier rainfall shower array.</p>
+                                            <div class="d-flex gap-3 text-muted mb-4" style="font-size: 0.72rem;">
+                                                <span><i class="bi bi-person-fill text-accent-theme"></i> Max 2
+                                                    Adults</span>
+                                                <span><i class="bi bi-bed-fill text-accent-theme"></i> King Bed</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                                            <span class="text-muted small fw-bold text-uppercase"
+                                                style="font-size: 0.65rem;">Select Rooms</span>
+                                            <div class="input-group input-group-sm" style="max-width: 110px;">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                    onclick="adjustSelectedRoomCount('executive', -1)">-</button>
+                                                <input type="number"
+                                                    class="form-control text-center fw-bold room-qty-selector"
+                                                    id="qty_executive" data-rate="75000" value="0" min="0" max="5"
+                                                    readonly>
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                    onclick="adjustSelectedRoomCount('executive', 1)">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Suite Variant 2: Imperial Presidential -->
+                        <div class="col-lg-6">
+                            <div class="card h-100 border rounded-2 shadow-sm overflow-hidden bg-white">
+                                <div class="row g-0 h-100">
+                                    <div class="col-sm-5 bg-dark position-relative min-h-200"
+                                        style="background: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=600&auto=format&fit=crop') center/cover no-repeat;">
+                                        <span
+                                            class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 text-uppercase fw-bold tracking-wider"
+                                            style="font-size: 0.6_rem;">Premium Option</span>
+                                    </div>
+                                    <div class="col-sm-7 p-4 d-flex flex-column justify-content-between">
+                                        <div>
+                                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                                <h5 class="fw-black text-dark text-uppercase m-0 tracking-tight">
+                                                    Imperial Presidential</h5>
+                                                <span class="fw-black text-accent-theme h6 m-0">₦150,000<span
+                                                        class="text-muted fw-normal small"
+                                                        style="font-size: 0.65rem;">/Nt</span></span>
+                                            </div>
+                                            <p class="text-muted small mb-3">Grand luxury setup. Includes deep marble
+                                                jacuzzi setup, private balconies, and dedicated 24/7 private service
+                                                entry lines.</p>
+                                            <div class="d-flex gap-3 text-muted mb-4" style="font-size: 0.72rem;">
+                                                <span><i class="bi bi-person-fill text-accent-theme"></i> Max 4
+                                                    Adults</span>
+                                                <span><i class="bi bi-bed-fill text-accent-theme"></i> 2 Master
+                                                    Beds</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                                            <span class="text-muted small fw-bold text-uppercase"
+                                                style="font-size: 0.65rem;">Select Rooms</span>
+                                            <div class="input-group input-group-sm" style="max-width: 110px;">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                    onclick="adjustSelectedRoomCount('presidential', -1)">-</button>
+                                                <input type="number"
+                                                    class="form-control text-center fw-bold room-qty-selector"
+                                                    id="qty_presidential" data-rate="150000" value="0" min="0" max="5"
+                                                    readonly>
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                    onclick="adjustSelectedRoomCount('presidential', 1)">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- STICKY ACTION TOTAL FOOTER PANEL -->
+                    <div
+                        class="hms-sticky-booking-footer border-top pt-4 mt-5 bg-white position-sticky bottom-0 start-0 end-0 py-3 z-3 shadow-lg rounded-2 px-3 border">
+                        <div class="row align-items-center justify-content-between g-3">
+                            <div class="col-sm-6 text-center text-sm-start">
+                                <span class="text-uppercase text-muted d-block fw-bold"
+                                    style="font-size: 0.65rem; letter-spacing: 0.5px;" id="stickyTotalRoomsLabel">0
+                                    Rooms Selected</span>
+                                <h3 class="fw-black text-dark m-0" id="stickyTotalCostLabel">₦0.00</h3>
+                            </div>
+                            <div class="col-sm-6 text-center text-sm-end">
+                                <button type="button"
+                                    class="btn hms-restaurant-action-btn hms-btn-primary px-5 py-3 text-uppercase fw-bold text-white shadow-sm w-100 w-sm-auto"
+                                    id="stickyBookBtn" style="font-size: 0.82rem; letter-spacing: 1px;"
+                                    onclick="executeRoomBookingHoldTransition();" disabled>
+                                    Confirm Choices & Proceed <i class="bi bi-chevron-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- =========================================================
+               SUB-WORKSPACE STEP 3: GUEST DETAILS & VERIFICATION (Hidden on load)
+               ========================================================= -->
+                <div id="booking-verification-workspace" class="d-none">
+
+                    <!-- STEPPER FLOW BAR (Step 3 Highlighted) -->
+                    <div class="hms-stepper-flow-bar row g-0 text-center border-bottom mb-5 pb-4">
+                        <div class="col-3 hms-step-node passed">
+                            <span class="step-number shadow-sm"><i class="bi bi-check-lg"></i></span>
+                            <span class="step-label d-block text-uppercase fw-bold mt-2"
+                                style="font-size: 0.7rem; letter-spacing: 0.5px;">1. Criteria</span>
+                        </div>
+                        <div class="col-3 hms-step-node passed">
+                            <span class="step-number shadow-sm"><i class="bi bi-check-lg"></i></span>
+                            <span class="step-label d-block text-uppercase fw-bold mt-2"
+                                style="font-size: 0.7rem; letter-spacing: 0.5px;">2. Choose Rooms</span>
+                        </div>
+                        <div class="col-3 hms-step-node active">
+                            <span class="step-number shadow-sm">3</span>
+                            <span class="step-label d-block text-uppercase fw-black mt-2"
+                                style="font-size: 0.7rem; letter-spacing: 0.5px;">3. Verification Details</span>
+                        </div>
+                        <div class="col-3 hms-step-node incoming">
+                            <span class="step-number shadow-sm">4</span>
+                            <span class="step-label d-block text-uppercase fw-bold mt-2"
+                                style="font-size: 0.7rem; letter-spacing: 0.5px;">4. Complete Process</span>
+                        </div>
+                    </div>
+
+                    <form id="hmsGuestVerificationForm" onsubmit="event.preventDefault();">
+                        <div class="row g-4">
+
+                            <!-- LEFT HAND FIELD COLUMN: Summaries and Editable Occupants -->
+                            <div class="col-lg-7">
+                                <div class="card border rounded-2 p-4 mb-4 bg-light">
+                                    <h5 class="fw-black text-uppercase text-dark tracking-tight border-bottom pb-2 mb-3"
+                                        style="font-size: 0.85rem; letter-spacing: 0.5px;">
+                                        <i class="bi bi-info-square me-2 text-accent-theme"></i> Reservation Parameter
+                                        Summary
+                                    </h5>
+
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <span class="text-uppercase text-muted d-block fw-bold"
+                                                style="font-size: 0.65rem;">Timeline Range</span>
+                                            <span class="fw-bold text-dark small" id="step3DatesLabel">—</span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span class="text-uppercase text-muted d-block fw-bold"
+                                                style="font-size: 0.65rem;">Selected Accommodations</span>
+                                            <span class="fw-bold text-accent-theme small"
+                                                id="step3SelectedRoomsLabel">—</span>
+                                        </div>
+
+                                        <!-- LIVE EDITABLE OCCUPANTS POOL -->
+                                        <div class="col-sm-6 pt-2">
+                                            <label
+                                                class="form-label small text-uppercase fw-black text-muted tracking-wide"
+                                                style="font-size: 0.65rem;">Number of Adults</label>
+                                            <div class="input-group input-group-sm" style="max-width: 140px;">
+                                                <button class="btn btn-outline-secondary px-2" type="button"
+                                                    onclick="decrementValue('step3AdultsCount')">-</button>
+                                                <input type="number" class="form-control text-center py-1 fw-bold"
+                                                    id="step3AdultsCount" value="2" min="1" max="20"
+                                                    onchange="validateInputField(this, 1)">
+                                                <button class="btn btn-outline-secondary px-2" type="button"
+                                                    onclick="incrementValue('step3AdultsCount')">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pt-2">
+                                            <label
+                                                class="form-label small text-uppercase fw-black text-muted tracking-wide"
+                                                style="font-size: 0.65rem;">Number of Children</label>
+                                            <div class="input-group input-group-sm" style="max-width: 140px;">
+                                                <button class="btn btn-outline-secondary px-2" type="button"
+                                                    onclick="decrementValue('step3ChildrenCount')">-</button>
+                                                <input type="number" class="form-control text-center py-1 fw-bold"
+                                                    id="step3ChildrenCount" value="0" min="0" max="20"
+                                                    onchange="validateInputField(this, 0)">
+                                                <button class="btn btn-outline-secondary px-2" type="button"
+                                                    onclick="incrementValue('step3ChildrenCount')">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- GUEST PROFILE FIELDS -->
+                                <div class="card border rounded-2 p-4 bg-white shadow-sm">
+                                    <h5 class="fw-black text-uppercase text-dark tracking-tight border-bottom pb-2 mb-3"
+                                        style="font-size: 0.85rem; letter-spacing: 0.5px;">
+                                        <i class="bi bi-person-bounding-box me-2 text-accent-theme"></i> Primary Guest
+                                        Profile Information
+                                    </h5>
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label
+                                                class="form-label small text-uppercase fw-black text-muted tracking-wide">Full
+                                                Name</label>
+                                            <input type="text" id="guestFullName" class="form-control rounded-1 py-2"
+                                                placeholder="e.g., Chidi Okafor" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label
+                                                class="form-label small text-uppercase fw-black text-muted tracking-wide">Email
+                                                Address</label>
+                                            <input type="email" id="guestEmail" class="form-control rounded-1 py-2"
+                                                placeholder="chidi@example.com" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label
+                                                class="form-label small text-uppercase fw-black text-muted tracking-wide">Phone
+                                                Number</label>
+                                            <input type="tel" id="guestPhone" class="form-control rounded-1 py-2"
+                                                placeholder="+234..." required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label
+                                                class="form-label small text-uppercase fw-black text-muted tracking-wide">Special
+                                                Notes / Request</label>
+                                            <textarea id="guestNotes" class="form-control rounded-1 py-2" rows="3"
+                                                placeholder="Specify airport pickups, dietary restrictions, or early arrivals if required..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RIGHT HAND COLUMN: PRICING LEDGER & TRANSACTION GATEWAY BUTTONS -->
+                            <div class="col-lg-5">
+                                <div class="card border rounded-2 p-4 bg-white shadow-sm position-sticky"
+                                    style="top: 100px;">
+                                    <h5 class="fw-black text-uppercase text-dark tracking-tight border-bottom pb-2 mb-3"
+                                        style="font-size: 0.85rem; letter-spacing: 0.5px;">
+                                        <i class="bi bi-credit-card-2-front me-2 text-accent-theme"></i> Settlement
+                                        Ledger
+                                    </h5>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center py-2 border-bottom border-dashed">
+                                        <span class="text-muted small">Accommodation Base Total</span>
+                                        <span class="fw-bold text-dark" id="step3BaseTotalDisplay">₦0.00</span>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between align-items-center py-2 border-bottom border-dashed">
+                                        <span class="text-muted small">VAT / Service Surcharge (0%)</span>
+                                        <span class="text-muted small">Included</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center py-3 mb-4">
+                                        <span class="fw-black text-uppercase text-dark"
+                                            style="font-size: 0.75rem;">Total Estimated Settlement</span>
+                                        <h4 class="fw-black text-accent-theme m-0" id="step3GrandTotalDisplay">₦0.00
+                                        </h4>
+                                    </div>
+
+                                    <div class="d-flex flex-column gap-2">
+                                        <!-- PROMINENT PAY NOW BUTTON -->
+                                        <button type="button"
+                                            class="btn btn-primary py-3 fw-bold text-white text-uppercase"
+                                            style="font-size: 0.85rem; letter-spacing: 1px;"
+                                            onclick="processPaystackEngineGateway();">
+                                            <i class="bi bi-lightning-charge-fill me-2"></i> Pay Now
+                                        </button>
+
+                                        <!-- PLACE ON HOLD BUTTON -->
+                                        <button type="button"
+                                            class="btn btn-outline-secondary py-3 fw-bold text-uppercase"
+                                            style="font-size: 0.8rem; letter-spacing: 1px;"
+                                            onclick="processPayLaterHoldRequest();">
+                                            <i class="bi bi-clock-history me-2"></i> Place On Hold (Pay Later)
+                                        </button>
+
+                                        <button type="button"
+                                            class="btn btn-link btn-sm text-muted text-uppercase fw-bold mt-2"
+                                            style="font-size: 0.65rem;" onclick="revertToRoomSelectionGrid();">
+                                            <i class="bi bi-arrow-left me-1"></i> Modify Room Selections
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+
+                <!-- =========================================================
+               SUB-WORKSPACE STEP 4: CONFIRMATION & RECEIPTS PORTAL
+               ========================================================= -->
+                <div id="booking-confirmation-workspace" class="d-none">
+
+                    <!-- STEPPER FLOW BAR (Step 4 Highlighted) -->
+                    <div class="hms-stepper-flow-bar row g-0 text-center border-bottom mb-5 pb-4 d-print-none">
+                        <div class="col-3 hms-step-node passed"><span class="step-number shadow-sm"><i
+                                    class="bi bi-check-lg"></i></span><span
+                                class="step-label d-block text-uppercase fw-bold mt-2" style="font-size: 0.7rem;">1.
+                                Criteria</span></div>
+                        <div class="col-3 hms-step-node passed"><span class="step-number shadow-sm"><i
+                                    class="bi bi-check-lg"></i></span><span
+                                class="step-label d-block text-uppercase fw-bold mt-2" style="font-size: 0.7rem;">2.
+                                Choose Rooms</span></div>
+                        <div class="col-3 hms-step-node passed"><span class="step-number shadow-sm"><i
+                                    class="bi bi-check-lg"></i></span><span
+                                class="step-label d-block text-uppercase fw-bold mt-2" style="font-size: 0.7rem;">3.
+                                Verification</span></div>
+                        <div class="col-3 hms-step-node active"><span class="step-number shadow-sm">4</span><span
+                                class="step-label d-block text-uppercase fw-black mt-2"
+                                style="font-size: 0.7rem; letter-spacing: 0.5px;">4. Complete Manifest</span></div>
+                    </div>
+
+                    <!-- PERSISTENT BOOTSTRAP HOLD ALERT BANNER -->
+                    <div class="alert alert-warning border border-warning rounded-2 p-4 mb-4 shadow-sm d-none d-print-none"
+                        role="alert" id="bootstrapHoldAlert">
+                        <div class="d-flex gap-3">
+                            <i class="bi bi-exclamation-triangle-fill text-warning fs-3"></i>
+                            <div>
+                                <h5 class="alert-heading fw-black text-uppercase tracking-tight mb-1"
+                                    style="font-size: 0.95rem;">Temporary Holding Window Activated</h5>
+                                <p class="m-0 small text-muted leading-normal">
+                                    Your room inventory selections are securely locked. You must settle payment within
+                                    **15 minutes** or this reservation hold recycles back into public circulation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACTIONABLE USER REMINDER BADGE FOR SCREENSHOTS/DOWNLOADS -->
+                    <div class="alert alert-info border border-info rounded-2 p-3 mb-4 shadow-sm d-print-none"
+                        id="screenshotRecommendationBadge">
+                        <div class="d-flex align-items-center gap-2 small fw-bold text-dark">
+                            <i class="bi bi-phone-vibrate text-info fs-5"></i>
+                            <span>Tip: Please take a quick screenshot or click "Print / Save PDF" below to keep a hard
+                                copy of your booking voucher securely on your device!</span>
+                        </div>
+                    </div>
+
+                    <!-- BEAUTIFUL PREMIUM DIGITAL VOUCHER & RECEIPT SHEET -->
+                    <div class="card border rounded-3 p-4 p-md-5 bg-white shadow-sm position-relative overflow-hidden mx-auto"
+                        style="max-width: 800px; border-top: 5px solid #111 !important;" id="printableReceiptCard">
+
+                        <!-- Top Receipt Header Banner -->
+                        <div class="row align-items-start g-3 mb-4 border-bottom pb-4 text-start">
+                            <div class="col-sm-6">
+                                <h4 class="fw-black text-dark text-uppercase tracking-tight m-0"
+                                    style="letter-spacing: 1px;">HMS RESERVATION VOUCHER</h4>
+                                <p class="text-muted small m-0">Automated Enterprise Portal Transaction</p>
+                                <span class="badge mt-2 px-3 py-2 text-uppercase fw-black shadow-sm"
+                                    id="receiptStatusBadge" style="font-size: 0.65rem; letter-spacing: 0.5px;">Paid /
+                                    Confirmed</span>
+                            </div>
+                            <div class="col-sm-6 text-sm-end">
+                                <span class="text-uppercase text-muted d-block fw-bold"
+                                    style="font-size: 0.62rem;">Reservation Number</span>
+                                <span class="fw-black h5 text-dark text-uppercase tracking-wider"
+                                    id="manifestTokenString">HMS-79A8B2X</span>
+                                <span class="text-muted d-block small mt-1" id="receiptGeneratedTimestamp">Generated:
+                                    Just Now</span>
+                            </div>
+                        </div>
+
+                        <!-- Segmented Data Logs Matrix -->
+                        <div class="row text-start g-4 mb-4">
+
+                            <!-- Guest Profile Segment -->
+                            <div class="col-md-5 border-end border-light">
+                                <h6 class="text-uppercase fw-black text-muted tracking-wide mb-3"
+                                    style="font-size: 0.7rem;"><i class="bi bi-person me-1"></i> Guest Profile</h6>
+                                <div class="mb-2">
+                                    <span class="text-uppercase text-muted d-block" style="font-size: 0.58rem;">Full
+                                        Guest Name</span>
+                                    <strong class="text-dark small" id="receiptGuestName">—</strong>
+                                </div>
+                                <div class="mb-2">
+                                    <span class="text-uppercase text-muted d-block" style="font-size: 0.58rem;">Email
+                                        Address</span>
+                                    <strong class="text-dark small" id="receiptGuestEmail">—</strong>
+                                </div>
+                                <div>
+                                    <span class="text-uppercase text-muted d-block" style="font-size: 0.58rem;">Phone
+                                        Number</span>
+                                    <strong class="text-dark small" id="receiptGuestPhone">—</strong>
+                                </div>
+                            </div>
+
+                            <!-- Reservation Matrix Segment -->
+                            <div class="col-md-7">
+                                <h6 class="text-uppercase fw-black text-muted tracking-wide mb-3"
+                                    style="font-size: 0.7rem;"><i class="bi bi-calendar-check me-1"></i> Stay
+                                    Specifications</h6>
+                                <div class="row g-2">
+                                    <div class="col-sm-6">
+                                        <span class="text-uppercase text-muted d-block"
+                                            style="font-size: 0.58rem;">Check-In Date</span>
+                                        <strong class="text-dark small" id="receiptCheckInDate">—</strong>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <span class="text-uppercase text-muted d-block"
+                                            style="font-size: 0.58rem;">Check-Out Date</span>
+                                        <strong class="text-dark small" id="receiptCheckOutDate">—</strong>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <span class="text-uppercase text-muted d-block"
+                                            style="font-size: 0.58rem;">Duration of Stay</span>
+                                        <strong class="text-accent-theme small" id="receiptNightsCount">—</strong>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <span class="text-uppercase text-muted d-block"
+                                            style="font-size: 0.58rem;">Occupancy Pool</span>
+                                        <strong class="text-dark small" id="receiptComposition">—</strong>
+                                    </div>
+                                    <div class="col-12 mt-2">
+                                        <span class="text-uppercase text-muted d-block"
+                                            style="font-size: 0.58rem;">Special Requests / Memo</span>
+                                        <p class="text-muted small m-0 leading-tight style-italic"
+                                            id="receiptNotesProfile">—</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Itemized Ledger Cost Table -->
+                        <div class="text-start mb-4">
+                            <h6 class="text-uppercase fw-black text-muted tracking-wide mb-2"
+                                style="font-size: 0.7rem;"><i class="bi bi-receipt-cutoff me-1"></i> Financial Summary
+                            </h6>
+                            <div class="table-responsive border rounded-1">
+                                <table class="table table-sm table-striped m-0 small">
+                                    <thead class="bg-light text-uppercase font-monospace" style="font-size: 0.65rem;">
+                                        <tr>
+                                            <th class="p-2">Description Item</th>
+                                            <th class="p-2 text-end">Total Base Ledger Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="p-2 text-dark font-monospace" id="receiptRoomsProfile">Selected
+                                                Room Suites</td>
+                                            <td class="p-2 text-end fw-bold text-dark" id="receiptBaseAmountLine">₦0.00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2 text-muted">VAT & Surcharges (0.00%)</td>
+                                            <td class="p-2 text-end text-muted">Inclusive</td>
+                                        </tr>
+                                        <tr class="table-dark text-white fw-bold">
+                                            <td class="p-2 text-uppercase tracking-wider" style="font-size: 0.65rem;">
+                                                Total Settlement Final Figure</td>
+                                            <td class="p-2 text-end h6 fw-black m-0" id="receiptFinalAmount">₦0.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Footer Stamp -->
+                        <div class="border-top pt-3 text-center">
+                            <p class="text-muted font-monospace m-0" style="font-size: 0.6rem; letter-spacing: 0.5px;">
+                                Thank you for choosing luxury hospitality operations. We look forward to your arrival.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- UTILITY CONTROL CONTROLS -->
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4 d-print-none">
+                        <button type="button" class="btn btn-dark px-4 py-2 text-uppercase fw-bold shadow-sm"
+                            style="font-size: 0.75rem;" onclick="printReceipt();">
+                            <i class="bi bi-printer-fill me-2"></i> Print / Save as PDF
+                        </button>
+                        <button type="button"
+                            class="btn btn-outline-secondary px-4 py-2 text-uppercase fw-bold shadow-sm"
+                            style="font-size: 0.75rem;" onclick="location.reload();">
+                            <i class="bi bi-arrow-clockwise me-1"></i> Return to Engine Terminal
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="fancy-cta-section py-5 position-relative overflow-hidden">
+        <div class="cta-glass-overlay"></div>
+        <div class="container px-4 px-md-5 position-relative z-3 py-5 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <span class="d-block text-uppercase fw-black text-accent letter-spacing-2 mb-3">Reservations
+                        Open</span>
+                    <h2 class="display-5 text-white text-uppercase fw-black mb-4">Secure Your Luxury Haven</h2>
+                    <p class="text-white-50 fs-5 mb-5 max-w-xl mx-auto font-weight-light">
+                        Escape into a refined ecosystem of luxury, privacy, and impeccable service. Your customized
+                        sanctuary layout is prepared and waiting for your check-in parameters.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                        <a href="#" class="btn btn-custom btn-nav-large px-5 py-3 text-uppercase">Reserve Your Suite
+                            Now</a>
+                        <a href="tel:+12345678"
+                            class="btn btn-outline-white px-5 py-3 text-uppercase fw-bold letter-spacing-1">Speak with
+                            Concierge</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="luxury-footer-system pt-5 pb-4 position-relative">
+        <div class="container px-4 px-md-5 pt-3">
+            <div class="row g-5 border-bottom border-secondary-subtle pb-5">
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Wells Carlton</h5>
+                    <p class="small text-muted leading-relaxed mb-0">
+                        A timeless statement of modern elegance, architecture, and luxury execution. Built to host
+                        global travelers seeking sanctuary.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Discover Spaces</h5>
+                    <ul class="list-unstyled footer-link-list d-flex flex-column gap-2.5">
+                        <li><a href="#">The Luxury Rooms</a></li>
+                        <li><a href="#">The Organic Spa</a></li>
+                        <li><a href="#">Elite Fitness Center</a></li>
+                        <li><a href="#">Fine Dining Restaurant</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Contact Info</h5>
+                    <ul class="list-unstyled footer-contact-details d-flex flex-column gap-2">
+                        <li class="small text-muted"><strong class="text-primary-theme">Address:</strong> 8 Asokoro
+                            District, Abuja, Nigeria</li>
+                        <li class="small text-muted"><strong class="text-primary-theme">Phone:</strong> +234 (0) 123
+                            4567 89</li>
+                        <li class="small text-muted"><strong class="text-primary-theme">Email:</strong>
+                            concierge@wellscarlton.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Follow Us</h5>
+                    <p class="small text-muted mb-3">Connect with our social media networks for daily property updates:
+                    </p>
+                    <div class="d-flex gap-3 social-icon-row">
+                        <a href="#" aria-label="Instagram Channel"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" aria-label="Facebook Page"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" aria-label="Twitter Feed"><i class="bi bi-twitter-x fs-5"></i></a>
+                        <a href="#" aria-label="LinkedIn Network"><i class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row pt-4 align-items-center">
+                <div class="col-sm-6">
+                    <p class="small text-muted mb-0">&copy; 2026 Wells Carlton Hotel & Suites. All Rights Reserved.</p>
+                </div>
+                <div class="col-sm-6 text-sm-end mt-3 mt-sm-0 position-relative">
+                    <button onclick="scrollToTop()" class="btn btn-scroll-top border-0 p-2" id="scrollTopBtn"
+                        aria-label="Scroll back to top area">
+                        <span class="small text-uppercase tracking-wider fw-bold text-primary-theme me-2">Back To
+                            Top</span>
+                        <i class="bi bi-arrow-up-square-fill fs-4 text-primary-theme align-middle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & Custom Layout Architecture Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wells Carlton Hotel & Apartments</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Fixed Top Navigation Bar -->
+    <nav id="heroNavbar" class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container px-4 px-md-5">
+
+            <!-- Customized Clean Hamburger Trigger -->
+            <button class="navbar-toggler custom-toggler order-1" type="button" onclick="openMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Desktop Links (Left-aligned, Ultra-Compact Group) -->
+            <div class="collapse navbar-collapse order-3 order-lg-1 flex-grow-0" id="mainNavbar">
+                <ul class="navbar-nav compact-nav-links">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+                    <!-- Refined Amenities to Dropdown named 'Spaces' -->
+                    <li class="nav-item dropdown custom-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="spacesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Experiences
+                        </a>
+                        <ul class="dropdown-menu border-0" aria-labelledby="spacesDropdown">
+                            <li><a class="dropdown-item" href="gym.html">Gym</a></li>
+                            <li><a class="dropdown-item" href="spa.html">Spa</a></li>
+                            <li><a class="dropdown-item" href="restaurant.html">Restaurant</a></li>
+                            <li><a class="dropdown-item" href="events.html">Events & Halls</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Absolute Centered Brand Mark -->
+            <a class="navbar-brand-centered order-2" href="#">
+                <span class="brand-top">WELLS</span>
+                <span class="brand-bottom">CARLTON</span>
+            </a>
+
+            <!-- Right-aligned Actions Panel (Balanced with Login) -->
+            <div class="d-none d-sm-flex align-items-center gap-4 order-4 ms-auto ms-lg-0">
+                <a href="login.html" class="nav-link contact-link login-link">Login</a>
+                <a href="contact.html" class="nav-link contact-link">Contact Us</a>
+                <a href="booking.html" class="btn btn-custom btn-nav-large px-4 py-2.5">Book Now</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Full-screen Mobile Overlay Drawer -->
+    <div class="mobile-overlay" id="mobileMenu">
+        <div class="mobile-header">
+            <span class="fw-bold tracking-wider text-uppercase text-accent-light">Navigation</span>
+            <span onclick="closeMenu()" class="mobile-close">&times;</span>
+        </div>
+
+        <div class="mobile-body">
+            <div class="mobile-section">
+                <h6>Explore Our Property</h6>
+                <a href="index.html">Home</a>
+                <a href="rooms.html">Rooms & Suites</a>
+
+                <!-- Expanded Spaces Sub-links for Mobile Navigation Clarity -->
+                <div class="mobile-nested-group ps-2 my-2">
+                    <span class="mobile-sub-heading d-block text-uppercase">Featured Spaces</span>
+                    <a href="gym.html" class="py-1 ps-2 opacity-75 fs-6">- Gym</a>
+                    <a href="spa.html" class="py-1 ps-2 opacity-75 fs-6">- Spa</a>
+                    <a href="restaurant.html" class="py-1 ps-2 opacity-75 fs-6">- Restaurant</a>
+                    <a href="events.html" class="py-1 ps-2 opacity-75 fs-6">- Events & Halls</a>
+                </div>
+
+                <a href="tel:+12345678">Contact Us</a>
+                <a href="login.html">Guest Login</a>
+            </div>
+
+            <div class="mobile-section pt-2">
+                <a href="booking.html" class="btn btn-custom w-100 py-3 text-center d-block">Book Your Stay Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Asymmetrical Hero Container Base Grid -->
+   <header class="hero-container container-fluid p-0">
+    <div class="row g-0 min-vh-100">
+
+        <!-- Left Side Core Narrative Column -->
+        <div class="col-lg-5 d-flex align-items-center left-hero-panel hero-text-panel">
+            <div class="hero-content-wrapper px-4 px-md-5 ms-xl-5 ps-xl-4 w-100">
+                <h1 class="display-5 fw-black mb-3 hero-title text-uppercase">
+                    Experience Luxury <br><span class="text-accent">Redefined</span>
+                </h1>
+                <p class="hero-writeup mb-4">
+                    Indulge in a sophisticated sanctuary designed for modern travelers. Discover timeless elegance,
+                    world-class amenities, and impeccable service tailored perfectly to your lifestyle.
+                </p>
+                <a href="#" class="btn btn-custom btn-hero-cta w-100 w-sm-auto d-inline-block text-center px-4 py-3">
+                    Book Your Stay Now
+                </a>
+            </div>
+        </div>
+
+        <!-- Desktop Graphic Column (Now Dynamic!) -->
+        <div class="col-lg-7 d-none d-lg-block right-hero-panel hero-image-panel">
+            <!-- Dynamic dynamic image tag ready for your backend logic -->
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80" class="hms-dynamic-hero-img" alt="Luxury Hotel Suite View">
+            
+            <!-- High-contrast safety overlay protector -->
+            <div class="hero-overlay"></div>
+        </div>
+
+    </div>
+</header>
+
+    <!-- Features & Gallery Grid Section -->
+    <section class="gallery-grid-section position-relative">
+        <div class="container px-4 px-md-5">
+            <div class="row align-items-start g-0 match-height-row">
+
+                <!-- LEFT PANEL: Shifted further to the right using offset-md-1 and offset-lg-2 -->
+                <div
+                    class="col-md-5 offset-md-1 col-lg-4 offset-lg-2 d-flex flex-column stacked-images-wrapper pe-md-3 pe-lg-4">
+
+                    <!-- Top horizontal image: Back to its standard overlap height, but shifted right -->
+                    <div class="grid-img-box overlap-top-box position-relative">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"
+                            alt="Luxury Lounge" class="img-fluid grid-photo">
+                        <div class="glass-photo-tag">Lounge</div>
+                    </div>
+
+                    <!-- Bottom horizontal image -->
+                    <div class="grid-img-box position-relative">
+                        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80"
+                            alt="Premium Room Interior" class="img-fluid grid-photo">
+                        <div class="glass-photo-tag">Suites</div>
+                    </div>
+                </div>
+
+                <!-- RIGHT PANEL: Adjusted column alignment to match the new rightward shift -->
+                <div class="col-md-5 col-lg-4 offset-lg-1 pt-4 pt-md-5 mt-lg-2">
+                    <div class="grid-img-box vertical-showcase-box w-100 position-relative">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&h=1100&q=80"
+                            alt="Hotel Poolside View" class="img-fluid grid-photo">
+                        <div class="glass-photo-tag showcase-tag">The Sanctuary Pool</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation Showcase Section -->
+    <section class="accommodation-section py-5 position-relative">
+        <div class="container px-4 px-md-5">
+
+            <!-- Header Block: Aligned with matching primary colors -->
+            <div class="row align-items-end mb-5 g-4">
+                <div class="col-lg-7">
+                    <!-- Subtitle and Header now use the identical primary theme color -->
+                    <span class="d-block text-uppercase fw-bold text-accent-theme letter-spacing-2 mb-2">Our Sanctuary
+                        Rooms</span>
+                    <h2 class="fw-black text-uppercase tracking-tight text-accent-theme mb-3">Accommodation at Hoteller
+                        Suites</h2>
+                    <p class="text-muted leading-relaxed mb-0">
+                        Indulge in elegance and relaxation as you step into our beautifully appointed rooms and suites.
+                        Whether you’re here for business or leisure, our accommodations offer the perfect blend of
+                        modern amenities and classic charm. From cozy standard rooms to spacious suites with
+                        breathtaking views, we have a space to suit every traveler’s needs.
+                    </p>
+                </div>
+                <div class="col-lg-5 text-lg-end">
+                    <a href="#" class="btn btn-luxury-accent text-uppercase fw-bold letter-spacing-1 px-4 py-3">
+                        View All Accommodations <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4-Card Multi-Column Matrix Layout -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
+
+                <!-- CARD 1 -->
+                <div class="col">
+                    <div class="room-card-wrapper h-100 position-relative">
+                        <div class="room-img-box">
+                            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&h=900&q=80"
+                                alt="Deluxe Room" class="img-fluid room-photo">
+                        </div>
+                        <div class="room-card-body pt-3 pb-2">
+                            <h4 class="room-title text-uppercase fw-bold m-0">Deluxe Executive Room</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="col">
+                    <div class="room-card-wrapper h-100 position-relative">
+                        <div class="room-img-box">
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&h=900&q=80"
+                                alt="Ocean Premium Suite" class="img-fluid room-photo">
+                        </div>
+                        <div class="room-card-body pt-3 pb-2">
+                            <h4 class="room-title text-uppercase fw-bold m-0">Ocean Premium Suite</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="col">
+                    <div class="room-card-wrapper h-100 position-relative">
+                        <div class="room-img-box">
+                            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&h=900&q=80"
+                                alt="Skyline Penthouse" class="img-fluid room-photo">
+                        </div>
+                        <div class="room-card-body pt-3 pb-2">
+                            <h4 class="room-title text-uppercase fw-bold m-0">Skyline Penthouse</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="col">
+                    <div class="room-card-wrapper h-100 position-relative">
+                        <div class="room-img-box">
+                            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=600&h=900&q=80"
+                                alt="Imperial Royal Suite" class="img-fluid room-photo">
+                        </div>
+                        <div class="room-card-body pt-3 pb-2">
+                            <h4 class="room-title text-uppercase fw-bold m-0">Imperial Royal Suite</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+   <!-- Full-Width Accent Break Section -->
+<section class="hms-architectural-break-section">
+    <div class="container px-4 px-md-5">
+        <div class="row g-0">
+            <!-- Align content cleanly on the right side of the screen layout -->
+            <div class="col-md-6 offset-md-6 d-flex justify-content-end align-items-center">
+                
+                <!-- Floating Frosted Glass Info Badge -->
+                <div class="hms-glass-badge d-flex align-items-center gap-4 py-4 px-5 rounded-3 border border-white border-opacity-10">
+                    <div class="text-end">
+                        <span class="text-uppercase d-block geometric-badge-label">Wells Carlton</span>
+                        <span class="d-block geometric-badge-sub">Est. 2026</span>
+                    </div>
+
+                    <!-- Clean White-Tinted Graduated Accent Lines -->
+                    <div class="graduated-line-track">
+                        <span class="line-primary"></span>
+                        <span class="line-secondary"></span>
+                        <span class="line-tertiary"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="hospitality-brand-section py-5 position-relative">
+        <div class="container px-4 px-md-5">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6 position-relative floating-composite-wrapper">
+                    <div class="composite-base-box">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&h=1000&q=80"
+                            alt="Hoteller Premium Entrance" class="img-fluid base-composite-photo">
+                    </div>
+
+                    <div class="composite-floating-box">
+                        <img src="https://images.unsplash.com/photo-1560200353-ce0a76b1d438?auto=format&fit=crop&w=600&h=700&q=80"
+                            alt="Luxury Bedding Close-up" class="img-fluid floating-composite-photo">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 ps-xl-5">
+                    <div class="hospitality-content-panel">
+                        <h2 class="fw-black text-uppercase tracking-tight text-primary-theme mb-4 display-6">
+                            Where Every Stay is a Hug of Hospitality
+                        </h2>
+                        <p class="text-primary-theme leading-relaxed text-opacity-85 mb-4">
+                            At Hoteller, we pride ourselves on providing a personalized and intimate experience for each
+                            guest. Our cozy rooms are thoughtfully designed to offer modern amenities while retaining
+                            the warmth and character of a home away from home. Whether you’re traveling for leisure or
+                            business, our comfortable accommodations ensure a restful night’s sleep.
+                        </p>
+                        <a href="#"
+                            class="btn btn-primary-theme-solid text-uppercase fw-bold letter-spacing-1 px-4 py-3 mt-2">
+                            Book Your Stay Now
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="dining-showcase-section py-5 position-relative">
+        <div class="container px-4 px-md-5">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="dining-content-panel">
+                        <span class="d-block text-uppercase fw-bold text-accent-theme letter-spacing-2 mb-2">Culinary
+                            Excellence</span>
+                        <h2 class="fw-black text-uppercase tracking-tight text-accent-theme mb-4 display-6">
+                            A Symphony of Flavors & Fine Dining
+                        </h2>
+                        <p class="text-accent-theme leading-relaxed text-opacity-85 mb-4">
+                            Savor an exceptional gastronomic journey at our signature restaurant. Our world-class chefs
+                            masterfully blend local inspirations with international culinary techniques to create dishes
+                            that delight the senses. From intimate candlelit dinners to vibrant celebratory gatherings,
+                            our dining spaces offer an exquisite ambiance tailored for unforgettable moments.
+                        </p>
+                        <a href="#"
+                            class="btn btn-accent-theme-solid text-uppercase fw-bold letter-spacing-1 px-4 py-3 mt-2">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="dining-img-box">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&h=700&q=80"
+                            alt="Hoteller Fine Dining Experience" class="img-fluid dining-photo">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="spa-matrix-section py-5 position-relative">
+        <div class="container px-4 px-md-5">
+
+            <div class="row mb-5 g-0">
+                <div class="col-lg-6">
+                    <span class="d-block text-uppercase fw-bold text-accent letter-spacing-2 mb-2">Rejuvenation &
+                        Wellness</span>
+                    <h2 class="fw-black text-uppercase tracking-tight text-primary-theme">The Spa at Hoteller Suites
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch text-primary-theme">
+
+                <div class="col-md-6">
+                    <div class="spa-grid-card d-flex flex-column flex-sm-row h-100">
+                        <div class="spa-card-img w-100 w-sm-50">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&h=600&q=80"
+                                alt="Massage Therapy" class="img-fluid grid-photo">
+                        </div>
+                        <div class="spa-card-content w-100 w-sm-50 p-4 d-flex flex-column justify-content-center">
+                            <h4 class="fw-bold text-uppercase fs-6 mb-2">Holistic Massages</h4>
+                            <p class="small text-muted mb-0">Indulge in tailored deep tissue massages managed by elite
+                                therapists designed to eliminate physical strain.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="spa-grid-card d-flex flex-column flex-sm-row-reverse h-100">
+                        <div class="spa-card-img w-100 w-sm-50">
+                            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&h=600&q=80"
+                                alt="Facial Therapy" class="img-fluid grid-photo">
+                        </div>
+                        <div class="spa-card-content w-100 w-sm-50 p-4 d-flex flex-column justify-content-center">
+                            <h4 class="fw-bold text-uppercase fs-6 mb-2">Revitalizing Facials</h4>
+                            <p class="small text-muted mb-0">Advanced organic skin treatments that restore natural
+                                hydration, radiance, and youthful cellular health.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="spa-grid-card d-flex flex-column flex-sm-row-reverse h-100">
+                        <div class="spa-card-img w-100 w-sm-50">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&h=600&q=80"
+                                alt="Detox Mud Bath" class="img-fluid grid-photo">
+                        </div>
+                        <div class="spa-card-content w-100 w-sm-50 p-4 d-flex flex-column justify-content-center">
+                            <h4 class="fw-bold text-uppercase fs-6 mb-2">Detox Mud Rituals</h4>
+                            <p class="small text-muted mb-0">Mineral-rich thermal mud wraps engineered to extract
+                                impurities, soothe tissues, and stimulate metabolism.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="spa-grid-card d-flex flex-column flex-sm-row h-100">
+                        <div class="spa-card-img w-100 w-sm-50">
+                            <img src="https://images.unsplash.com/photo-1531844251246-9a1bfaae0d16?auto=format&fit=crop&w=600&h=600&q=80"
+                                alt="Aromatherapy Steam" class="img-fluid grid-photo">
+                        </div>
+                        <div class="spa-card-content w-100 w-sm-50 p-4 d-flex flex-column justify-content-center">
+                            <h4 class="fw-bold text-uppercase fs-6 mb-2">Aromatherapy Steam</h4>
+                            <p class="small text-muted mb-0">Pure botanical extracts paired with dynamic heat to open
+                                airways and deeply cleanse your circulatory systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container px-4 px-md-5 my-5">
+        <div class="row g-0">
+            <div class="col-md-6 d-flex flex-column gap-2 align-items-start">
+                <span class="geometric-accent-line-left"></span>
+                <span class="geometric-accent-line-left"></span>
+                <span class="geometric-accent-line-left"></span>
+            </div>
+        </div>
+    </div>
+
+    <section class="gym-brand-section py-5 position-relative">
+        <div class="container px-4 px-md-5">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+                    <div class="gym-content-panel">
+                        <span class="d-block text-uppercase fw-bold text-primary-theme letter-spacing-2 mb-2">Elite
+                            Conditioning</span>
+                        <h2 class="fw-black text-uppercase tracking-tight text-primary-theme mb-4 display-6">
+                            State-of-the-Art Fitness Center
+                        </h2>
+                        <p class="text-primary-theme leading-relaxed text-opacity-85 mb-4">
+                            Maintain your physical alignment within our professional-grade gym fitness club. Outfitted
+                            with high-caliber cardio systems, dynamic weight sectors, and dedicated strength
+                            conditioning gear, our facility ensures your training schedule moves forward without
+                            interruption. Achieve your health metrics in a focused, high-end private environment.
+                        </p>
+                        <a href="#"
+                            class="btn btn-primary-theme-solid text-uppercase fw-bold letter-spacing-1 px-4 py-3 mt-2">
+                            Book Your Stay Now
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="gym-img-box">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&h=650&q=80"
+                            alt="Hoteller High-End Gym" class="img-fluid gym-photo">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="fancy-cta-section py-5 position-relative overflow-hidden">
+        <div class="cta-glass-overlay"></div>
+        <div class="container px-4 px-md-5 position-relative z-3 py-5 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <span class="d-block text-uppercase fw-black text-accent letter-spacing-2 mb-3">Reservations
+                        Open</span>
+                    <h2 class="display-5 text-white text-uppercase fw-black mb-4">Secure Your Luxury Haven</h2>
+                    <p class="text-white-50 fs-5 mb-5 max-w-xl mx-auto font-weight-light">
+                        Escape into a refined ecosystem of luxury, privacy, and impeccable service. Your customized
+                        sanctuary layout is prepared and waiting for your check-in parameters.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                        <a href="#" class="btn btn-custom btn-nav-large px-5 py-3 text-uppercase">Reserve Your Suite
+                            Now</a>
+                        <a href="tel:+12345678"
+                            class="btn btn-outline-white px-5 py-3 text-uppercase fw-bold letter-spacing-1">Speak with
+                            Concierge</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="luxury-footer-system pt-5 pb-4 position-relative">
+        <div class="container px-4 px-md-5 pt-3">
+            <div class="row g-5 border-bottom border-secondary-subtle pb-5">
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Wells Carlton</h5>
+                    <p class="small text-muted leading-relaxed mb-0">
+                        A timeless statement of modern elegance, architecture, and luxury execution. Built to host
+                        global travelers seeking sanctuary.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Discover Spaces</h5>
+                    <ul class="list-unstyled footer-link-list d-flex flex-column gap-2.5">
+                        <li><a href="#">The Luxury Rooms</a></li>
+                        <li><a href="#">The Organic Spa</a></li>
+                        <li><a href="#">Elite Fitness Center</a></li>
+                        <li><a href="#">Fine Dining Restaurant</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Contact Info</h5>
+                    <ul class="list-unstyled footer-contact-details d-flex flex-column gap-2">
+                        <li class="small text-muted"><strong class="text-primary-theme">Address:</strong> 8 Asokoro
+                            District, Abuja, Nigeria</li>
+                        <li class="small text-muted"><strong class="text-primary-theme">Phone:</strong> +234 (0) 123
+                            4567 89</li>
+                        <li class="small text-muted"><strong class="text-primary-theme">Email:</strong>
+                            concierge@wellscarlton.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Follow Us</h5>
+                    <p class="small text-muted mb-3">Connect with our social media networks for daily property updates:
+                    </p>
+                    <div class="d-flex gap-3 social-icon-row">
+                        <a href="#" aria-label="Instagram Channel"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" aria-label="Facebook Page"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" aria-label="Twitter Feed"><i class="bi bi-twitter-x fs-5"></i></a>
+                        <a href="#" aria-label="LinkedIn Network"><i class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row pt-4 align-items-center">
+                <div class="col-sm-6">
+                    <p class="small text-muted mb-0">&copy; 2026 Wells Carlton Hotel & Suites. All Rights Reserved.</p>
+                </div>
+                <div class="col-sm-6 text-sm-end mt-3 mt-sm-0 position-relative">
+                    <button onclick="scrollToTop()" class="btn btn-scroll-top border-0 p-2" id="scrollTopBtn"
+                        aria-label="Scroll back to top area">
+                        <span class="small text-uppercase tracking-wider fw-bold text-primary-theme me-2">Back To
+                            Top</span>
+                        <i class="bi bi-arrow-up-square-fill fs-4 text-primary-theme align-middle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & Custom Layout Architecture Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

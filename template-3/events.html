@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wells Carlton Hotel & Apartments</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="heroNavbar" class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container px-4 px-md-5">
+
+            <!-- Customized Clean Hamburger Trigger -->
+            <button class="navbar-toggler custom-toggler order-1" type="button" onclick="openMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Desktop Links (Left-aligned, Ultra-Compact Group) -->
+            <div class="collapse navbar-collapse order-3 order-lg-1 flex-grow-0" id="mainNavbar">
+                <ul class="navbar-nav compact-nav-links">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+                    <!-- Refined Amenities to Dropdown named 'Spaces' -->
+                    <li class="nav-item dropdown custom-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="spacesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Experiences
+                        </a>
+                        <ul class="dropdown-menu border-0" aria-labelledby="spacesDropdown">
+                            <li><a class="dropdown-item" href="gym.html">Gym</a></li>
+                            <li><a class="dropdown-item" href="spa.html">Spa</a></li>
+                            <li><a class="dropdown-item" href="restaurant.html">Restaurant</a></li>
+                            <li><a class="dropdown-item" href="events.html">Events & Halls</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Absolute Centered Brand Mark -->
+            <a class="navbar-brand-centered order-2" href="#">
+                <span class="brand-top">WELLS</span>
+                <span class="brand-bottom">CARLTON</span>
+            </a>
+
+            <!-- Right-aligned Actions Panel (Balanced with Login) -->
+            <div class="d-none d-sm-flex align-items-center gap-4 order-4 ms-auto ms-lg-0">
+                <a href="login.html" class="nav-link contact-link login-link">Login</a>
+                <a href="contact.html" class="nav-link contact-link">Contact Us</a>
+                <a href="booking.html" class="btn btn-custom btn-nav-large px-4 py-2.5">Book Now</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Full-screen Mobile Overlay Drawer -->
+    <div class="mobile-overlay" id="mobileMenu">
+        <div class="mobile-header">
+            <span class="fw-bold tracking-wider text-uppercase text-accent-light">Navigation</span>
+            <span onclick="closeMenu()" class="mobile-close">&times;</span>
+        </div>
+
+        <div class="mobile-body">
+            <div class="mobile-section">
+                <h6>Explore Our Property</h6>
+                <a href="index.html">Home</a>
+                <a href="rooms.html">Rooms & Suites</a>
+
+                <!-- Expanded Spaces Sub-links for Mobile Navigation Clarity -->
+                <div class="mobile-nested-group ps-2 my-2">
+                    <span class="mobile-sub-heading d-block text-uppercase">Featured Spaces</span>
+                    <a href="gym.html" class="py-1 ps-2 opacity-75 fs-6">- Gym</a>
+                    <a href="spa.html" class="py-1 ps-2 opacity-75 fs-6">- Spa</a>
+                    <a href="restaurant.html" class="py-1 ps-2 opacity-75 fs-6">- Restaurant</a>
+                    <a href="events.html" class="py-1 ps-2 opacity-75 fs-6">- Events & Halls</a>
+                </div>
+
+                <a href="tel:+12345678">Contact Us</a>
+                <a href="login.html">Guest Login</a>
+            </div>
+
+            <div class="mobile-section pt-2">
+                <a href="booking.html" class="btn btn-custom w-100 py-3 text-center d-block">Book Your Stay Now</a>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="hms-restaurant-split-hero position-relative overflow-hidden">
+
+        <div class="restaurant-hero-mobile-bg d-lg-none">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&h=900&q=80"
+                class="w-100 h-100 object-fit-cover object-position-left" alt="Grand Ballroom Mobile Background">
+            <div class="restaurant-hero-mobile-overlay"></div>
+        </div>
+
+        <div class="container-fluid p-0 h-100 position-relative z-3">
+            <div class="row g-0 h-100 align-items-center">
+
+                <div class="col-lg-6 hms-hero-left-split position-relative d-none d-lg-block">
+                    <div class="w-100 h-100">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&h=900&q=80"
+                            class="w-100 h-100 object-fit-cover" alt="Wells Carlton Grand Ballroom Space">
+                    </div>
+
+                    <div class="restaurant-hero-nested-floating-box">
+                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=600&h=800&q=80"
+                            class="restaurant-floating-photo" alt="Gala Event Table Setting Close-up">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 hms-hero-right-split d-flex flex-column justify-content-center">
+                    <div class="restaurant-hero-content-wrapper px-4 px-md-5 mx-xl-5">
+
+                        <span class="text-uppercase tracking-widest fw-black d-block mb-2 text-accent-theme"
+                            style="font-size: 0.75rem; letter-spacing: 4px !important;">
+                            Exclusive Venues
+                        </span>
+
+                        <h1 class="display-4 fw-black text-uppercase tracking-tight text-accent-theme mb-4">
+                            Grand Spaces <br>Elevated Galas
+                        </h1>
+
+                        <p class="text-accent-theme leading-relaxed mb-4">
+                            From high-profile corporate summits to majestic wedding banquets, our architectural event
+                            spaces adapt fluidly to your vision. Discover dynamic layouts paired with flawless premium
+                            technical frameworks.
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#booking-inquiry"
+                                class="btn hms-restaurant-action-btn px-4 py-3 fw-bold text-white text-uppercase shadow-sm"
+                                style="font-size: 0.8rem; letter-spacing: 1px;">
+                                Book Venue Space <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <section class="hms-dual-composite-section py-5 bg-white overflow-visible">
+        <div class="container px-4 px-md-5 py-md-4">
+            <div class="row g-5 align-items-center">
+
+                <div class="col-lg-5 order-2 order-lg-1">
+                    <div class="hms-pyramid-grid-container">
+
+                        <div class="hms-pyramid-row-top d-flex justify-content-center">
+                            <div class="hms-small-thumb-box shadow">
+                                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=400&h=400&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Corporate Summit Layout Detail">
+                            </div>
+                        </div>
+
+                        <div class="hms-pyramid-row-bottom d-flex justify-content-center gap-4">
+                            <div class="hms-small-thumb-box shadow">
+                                <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=400&h=400&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Cocktail Social Event Space">
+                            </div>
+                            <div class="hms-small-thumb-box shadow">
+                                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=400&h=400&q=80"
+                                    class="w-100 h-100 object-fit-cover" alt="Concert/Theater Event Lighting Profile">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-7 order-1 order-lg-2">
+                    <div class="hms-double-layer-wrapper position-relative mx-auto ms-lg-auto me-lg-0">
+
+                        <div class="hms-stack-base-card rounded-2 overflow-hidden shadow">
+                            <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1000&h=1200&q=80"
+                                class="w-100 h-100 object-fit-cover" alt="Elite Banquet Hall Staging Base">
+                        </div>
+
+                        <div
+                            class="hms-stack-floating-card rounded-2 overflow-hidden shadow-lg border border-white border-4">
+                            <img src="https://images.unsplash.com/photo-1505232458627-a727266571c6?auto=format&fit=crop&w=450&h=550&q=80"
+                                class="w-100 h-100 object-fit-cover" alt="Luxury Table Setup Accent Card">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hms-venues-grid-section py-5 bg-light">
+    <div class="container px-4 px-md-5 py-md-4">
+        
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="hms-venue-dot"></span>
+                    <span class="text-uppercase tracking-widest text-muted fw-bold" style="font-size: 0.72rem; letter-spacing: 3px !important;">Our Portfolios</span>
+                </div>
+                <h2 class="h1 fw-black text-dark text-uppercase tracking-tight m-0">
+                    Discover Our <span class="text-accent-theme">Halls</span>
+                </h2>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+                <p class="text-muted m-0 pt-3 pt-lg-0 max-w-text">
+                    Whether hosting an intimate executive session or a large-scale international gala, select from our meticulously tailored spaces equipped with premium ambient acoustics.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            
+            <div class="col-lg-7">
+                <div class="hms-venue-card featured-venue position-relative rounded-2 overflow-hidden shadow-sm bg-white h-100">
+                    <div class="hms-venue-img-box">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="The Grand Ballroom">
+                    </div>
+                    <div class="hms-venue-meta-box p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h3 class="h4 fw-black text-dark m-0 text-uppercase">The Grand Ballroom</h3>
+                            <span class="badge hms-capacity-badge">Up to 800 Guests</span>
+                        </div>
+                        <p class="text-muted small mb-4">Our premier venue space features sweeping high ceilings, customizable crystal lighting tracks, and integrated staging platforms for majestic celebrations.</p>
+                        <div class="d-flex gap-3 text-muted small border-top pt-3">
+                            <span><i class="bi bi-arrows-fullscreen me-1"></i> 1,200 m²</span>
+                            <span><i class="bi bi-volume-up me-1"></i> JBL Quantum Sound</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="hms-venue-card position-relative rounded-2 overflow-hidden shadow-sm bg-white h-100">
+                    <div class="hms-venue-img-box standard-height">
+                        <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="The Westminster Suite">
+                    </div>
+                    <div class="hms-venue-meta-box p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h3 class="h5 fw-black text-dark m-0 text-uppercase">Westminster Suite</h3>
+                            <span class="badge hms-capacity-badge">250 Guests</span>
+                        </div>
+                        <p class="text-muted small mb-4">Perfect for banquets, dynamic cocktail socials, and mid-tier exhibitions looking for an intimate yet sophisticated atmosphere.</p>
+                        <div class="d-flex gap-3 text-muted small border-top pt-3">
+                            <span><i class="bi bi-arrows-fullscreen me-1"></i> 450 m²</span>
+                            <span><i class="bi bi-lightbulb me-1"></i> Smart Dimming</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="hms-venue-card position-relative rounded-2 overflow-hidden shadow-sm bg-white h-100">
+                    <div class="hms-venue-img-box standard-height">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="The Summit Hall">
+                    </div>
+                    <div class="hms-venue-meta-box p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h3 class="h5 fw-black text-dark m-0 text-uppercase">The Summit Hall</h3>
+                            <span class="badge hms-capacity-badge">150 Guests</span>
+                        </div>
+                        <p class="text-muted small mb-4">Optimized for corporate presentations, conferences, and seminars with built-in high-definition matrices and drop-down screens.</p>
+                        <div class="d-flex gap-3 text-muted small border-top pt-3">
+                            <span><i class="bi bi-arrows-fullscreen me-1"></i> 320 m²</span>
+                            <span><i class="bi bi-projector me-1"></i> 4K Laser Projection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="hms-venue-card position-relative rounded-2 overflow-hidden shadow-sm bg-white h-100">
+                    <div class="hms-venue-img-box standard-height">
+                        <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="The Executive Boardroom">
+                    </div>
+                    <div class="hms-venue-meta-box p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h3 class="h5 fw-black text-dark m-0 text-uppercase">The Directors Boardroom</h3>
+                            <span class="badge hms-capacity-badge">25 Guests</span>
+                        </div>
+                        <p class="text-muted small mb-4">A high-end micro-space featuring premium Italian leather fixtures, absolute soundproofing, and integrated video conferencing hubs.</p>
+                        <div class="d-flex gap-3 text-muted small border-top pt-3">
+                            <span><i class="bi bi-arrows-fullscreen me-1"></i> 85 m²</span>
+                            <span><i class="bi bi-shield-lock me-1"></i> Sound Isolated</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section class="fancy-cta-section py-5 position-relative overflow-hidden">
+        <div class="cta-glass-overlay"></div>
+        <div class="container px-4 px-md-5 position-relative z-3 py-5 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <span class="d-block text-uppercase fw-black text-accent letter-spacing-2 mb-3">Reservations
+                        Open</span>
+                    <h2 class="display-5 text-white text-uppercase fw-black mb-4">Secure Your Luxury Haven</h2>
+                    <p class="text-white-50 fs-5 mb-5 max-w-xl mx-auto font-weight-light">
+                        Escape into a refined ecosystem of luxury, privacy, and impeccable service. Your customized
+                        sanctuary layout is prepared and waiting for your check-in parameters.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                        <a href="#" class="btn btn-custom btn-nav-large px-5 py-3 text-uppercase">Reserve Your Suite
+                            Now</a>
+                        <a href="tel:+12345678"
+                            class="btn btn-outline-white px-5 py-3 text-uppercase fw-bold letter-spacing-1">Speak with
+                            Concierge</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="luxury-footer-system pt-5 pb-4 position-relative">
+        <div class="container px-4 px-md-5 pt-3">
+            <div class="row g-5 border-bottom border-secondary-subtle pb-5">
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Wells Carlton</h5>
+                    <p class="small text-muted leading-relaxed mb-0">
+                        A timeless statement of modern elegance, architecture, and luxury execution. Built to host
+                        global travelers seeking sanctuary.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Discover Spaces</h5>
+                    <ul class="list-unstyled footer-link-list d-flex flex-column gap-2.5">
+                        <li><a href="#">The Luxury Rooms</a></li>
+                        <li><a href="#">The Organic Spa</a></li>
+                        <li><a href="#">Elite Fitness Center</a></li>
+                        <li><a href="#">Fine Dining Restaurant</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Contact Info</h5>
+                    <ul class="list-unstyled footer-contact-details d-flex flex-column gap-2">
+                        <li class="small text-muted"><strong class="text-primary-theme">Address:</strong> 8 Asokoro
+                            District, Abuja, Nigeria</li>
+                        <li class="small text-muted"><strong class="text-primary-theme">Phone:</strong> +234 (0) 123
+                            4567 89</li>
+                        <li class="small text-muted"><strong class="text-primary-theme">Email:</strong>
+                            concierge@wellscarlton.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Follow Us</h5>
+                    <p class="small text-muted mb-3">Connect with our social media networks for daily property updates:
+                    </p>
+                    <div class="d-flex gap-3 social-icon-row">
+                        <a href="#" aria-label="Instagram Channel"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" aria-label="Facebook Page"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" aria-label="Twitter Feed"><i class="bi bi-twitter-x fs-5"></i></a>
+                        <a href="#" aria-label="LinkedIn Network"><i class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row pt-4 align-items-center">
+                <div class="col-sm-6">
+                    <p class="small text-muted mb-0">&copy; 2026 Wells Carlton Hotel & Suites. All Rights Reserved.</p>
+                </div>
+                <div class="col-sm-6 text-sm-end mt-3 mt-sm-0 position-relative">
+                    <button onclick="scrollToTop()" class="btn btn-scroll-top border-0 p-2" id="scrollTopBtn"
+                        aria-label="Scroll back to top area">
+                        <span class="small text-uppercase tracking-wider fw-bold text-primary-theme me-2">Back To
+                            Top</span>
+                        <i class="bi bi-arrow-up-square-fill fs-4 text-primary-theme align-middle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & Custom Layout Architecture Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

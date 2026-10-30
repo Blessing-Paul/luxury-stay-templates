@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wells Carlton Hotel & Apartments</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Fixed Top Navigation Bar -->
+    <nav id="heroNavbar" class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container px-4 px-md-5">
+
+            <!-- Customized Clean Hamburger Trigger -->
+            <button class="navbar-toggler custom-toggler order-1" type="button" onclick="openMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Desktop Links (Left-aligned, Ultra-Compact Group) -->
+            <div class="collapse navbar-collapse order-3 order-lg-1 flex-grow-0" id="mainNavbar">
+                <ul class="navbar-nav compact-nav-links">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+                    <!-- Refined Amenities to Dropdown named 'Spaces' -->
+                    <li class="nav-item dropdown custom-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="spacesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Experiences
+                        </a>
+                        <ul class="dropdown-menu border-0" aria-labelledby="spacesDropdown">
+                            <li><a class="dropdown-item" href="gym.html">Gym</a></li>
+                            <li><a class="dropdown-item" href="spa.html">Spa</a></li>
+                            <li><a class="dropdown-item" href="restaurant.html">Restaurant</a></li>
+                            <li><a class="dropdown-item" href="events.html">Events & Halls</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Absolute Centered Brand Mark -->
+            <a class="navbar-brand-centered order-2" href="#">
+                <span class="brand-top">WELLS</span>
+                <span class="brand-bottom">CARLTON</span>
+            </a>
+
+            <!-- Right-aligned Actions Panel (Balanced with Login) -->
+            <div class="d-none d-sm-flex align-items-center gap-4 order-4 ms-auto ms-lg-0">
+                <a href="login.html" class="nav-link contact-link login-link">Login</a>
+                <a href="contact.html" class="nav-link contact-link">Contact Us</a>
+                <a href="booking.html" class="btn btn-custom btn-nav-large px-4 py-2.5">Book Now</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Full-screen Mobile Overlay Drawer -->
+    <div class="mobile-overlay" id="mobileMenu">
+        <div class="mobile-header">
+            <span class="fw-bold tracking-wider text-uppercase text-accent-light">Navigation</span>
+            <span onclick="closeMenu()" class="mobile-close">&times;</span>
+        </div>
+
+        <div class="mobile-body">
+            <div class="mobile-section">
+                <h6>Explore Our Property</h6>
+                <a href="index.html">Home</a>
+                <a href="rooms.html">Rooms & Suites</a>
+
+                <!-- Expanded Spaces Sub-links for Mobile Navigation Clarity -->
+                <div class="mobile-nested-group ps-2 my-2">
+                    <span class="mobile-sub-heading d-block text-uppercase">Featured Spaces</span>
+                    <a href="gym.html" class="py-1 ps-2 opacity-75 fs-6">- Gym</a>
+                    <a href="spa.html" class="py-1 ps-2 opacity-75 fs-6">- Spa</a>
+                    <a href="restaurant.html" class="py-1 ps-2 opacity-75 fs-6">- Restaurant</a>
+                    <a href="events.html" class="py-1 ps-2 opacity-75 fs-6">- Events & Halls</a>
+                </div>
+
+                <a href="tel:+12345678">Contact Us</a>
+                <a href="login.html">Guest Login</a>
+            </div>
+
+            <div class="mobile-section pt-2">
+                <a href="booking.html" class="btn btn-custom w-100 py-3 text-center d-block">Book Your Stay Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+   ROOMS PAGE ARCHITECTURAL HERO CANVAS (100VH)
+   ========================================== -->
+    <header class="rooms-hero-container position-relative overflow-hidden">
+
+        <!-- Full-Bleed Base Background / Right Image System -->
+        <div class="rooms-hero-full-bleed-img">
+            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&h=900&q=80"
+                alt="Deluxe Suite Master Ocean Vista Layout" class="full-bleed-photo">
+        </div>
+
+        <!-- Unified Text Protection Mask (Active only on small/medium screens) -->
+        <div class="rooms-hero-mobile-overlay"></div>
+
+        <div class="container px-4 px-md-5 h-100 position-relative z-3">
+            <div class="row h-100 align-items-center">
+
+                <!-- LEFT PANEL: Dead-Centered Narrative Content Block -->
+                <div class="col-lg-6 rooms-hero-left d-flex flex-column justify-content-center h-100">
+                    <div class="rooms-hero-content-wrapper pe-lg-4">
+
+                        <h1 class="display-4 fw-black text-uppercase tracking-tight text-primary-theme mb-4">
+                            Checkout Our Rooms
+                        </h1>
+                        <p class="text-primary-theme leading-relaxed mb-0">
+                            Escape to luxury with our Deluxe Suite, boasting a breathtaking ocean view that will leave
+                            you mesmerized. This spacious suite features a private balcony, a separate living area, and
+                            a bedroom with a king-size bed. Immerse yourself in comfort and style with modern amenities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- RIGHT PANEL: Context Container holding the centered Floating Portrait Image -->
+                <div class="col-lg-6 position-relative d-none d-lg-block h-100 d-flex align-items-center">
+                    <div class="rooms-hero-nested-floating-box">
+                        <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=600&h=800&q=80"
+                            alt="Breathtaking Luxury Suite Vignette" class="rooms-floating-photo">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+        ROOMS CAROUSEL
+   ========================================== -->
+    <section class="hms-carousel-section">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <div>
+                    <span class="hms-section-subtitle">Exquisite Accommodations</span>
+                    <h2 class="hms-section-title mb-0">Explore Our Premium Rooms</h2>
+                </div>
+                <div class="hms-carousel-controls-top">
+                    <button class="hms-btn-nav-round" type="button"
+                        onclick="document.getElementById('hmsScrollTrack').scrollBy({left: -document.getElementById('hmsScrollTrack').offsetWidth, behavior: 'smooth'})">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="hms-btn-nav-round" type="button"
+                        onclick="document.getElementById('hmsScrollTrack').scrollBy({left: document.getElementById('hmsScrollTrack').offsetWidth, behavior: 'smooth'})">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="hmsScrollTrack" class="hms-carousel-custom-track">
+
+                <div class="hms-card-container">
+                    <div class="hms-full-bg-card">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=600&q=80"
+                            class="hms-card-bg-img" alt="Grand Deluxe Suite">
+                        <div class="hms-card-glass-overlay">
+                            <h4 class="h5 fw-bold text-white mb-2">Grand Deluxe Suite</h4>
+                            <div class="mb-3">
+                                <span class="hms-amenity-tag">Free Wi-Fi</span>
+                                <span class="hms-amenity-tag">Mini Bar</span>
+                                <span class="hms-amenity-tag">King Bed</span>
+                            </div>
+                            <div
+                                class="pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-white-50 small d-block">Rate From</span>
+                                    <div class="fw-bold text-white">$240<span class="small text-white-50">/night</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm hms-btn-glass px-3 py-2" data-bs-toggle="modal"
+                                    data-bs-target="#hmsRoomDetailsModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hms-card-container">
+                    <div class="hms-full-bg-card">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
+                            class="hms-card-bg-img" alt="Executive Premium">
+                        <div class="hms-card-glass-overlay">
+                            <h4 class="h5 fw-bold text-white mb-2">Executive Premium</h4>
+                            <div class="mb-3">
+                                <span class="hms-amenity-tag">Balcony</span>
+                                <span class="hms-amenity-tag">Smart TV</span>
+                                <span class="hms-amenity-tag">Spa Access</span>
+                            </div>
+                            <div
+                                class="pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-white-50 small d-block">Rate From</span>
+                                    <div class="fw-bold text-white">$310<span class="small text-white-50">/night</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm hms-btn-glass px-3 py-2" data-bs-toggle="modal"
+                                    data-bs-target="#hmsRoomDetailsModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hms-card-container">
+                    <div class="hms-full-bg-card">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80"
+                            class="hms-card-bg-img" alt="Skyline Penthouse">
+                        <div class="hms-card-glass-overlay">
+                            <h4 class="h5 fw-bold text-white mb-2">Skyline Penthouse</h4>
+                            <div class="mb-3">
+                                <span class="hms-amenity-tag">Private Pool</span>
+                                <span class="hms-amenity-tag">Jacuzzi</span>
+                                <span class="hms-amenity-tag">Chef Svc</span>
+                            </div>
+                            <div
+                                class="pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-white-50 small d-block">Rate From</span>
+                                    <div class="fw-bold text-white">$550<span class="small text-white-50">/night</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm hms-btn-glass px-3 py-2" data-bs-toggle="modal"
+                                    data-bs-target="#hmsRoomDetailsModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hms-card-container">
+                    <div class="hms-full-bg-card">
+                        <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=600&q=80"
+                            class="hms-card-bg-img" alt="Junior Garden Suite">
+                        <div class="hms-card-glass-overlay">
+                            <h4 class="h5 fw-bold text-white mb-2">Junior Garden Suite</h4>
+                            <div class="mb-3">
+                                <span class="hms-amenity-tag">Kitchenette</span>
+                                <span class="hms-amenity-tag">Espresso</span>
+                                <span class="hms-amenity-tag">Workspace</span>
+                            </div>
+                            <div
+                                class="pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-white-50 small d-block">Rate From</span>
+                                    <div class="fw-bold text-white">$195<span class="small text-white-50">/night</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm hms-btn-glass px-3 py-2" data-bs-toggle="modal"
+                                    data-bs-target="#hmsRoomDetailsModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hms-card-container">
+                    <div class="hms-full-bg-card">
+                        <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=600&q=80"
+                            class="hms-card-bg-img" alt="Junior Garden Suite">
+                        <div class="hms-card-glass-overlay">
+                            <h4 class="h5 fw-bold text-white mb-2">Junior Garden Suite</h4>
+                            <div class="mb-3">
+                                <span class="hms-amenity-tag">Kitchenette</span>
+                                <span class="hms-amenity-tag">Espresso</span>
+                                <span class="hms-amenity-tag">Workspace</span>
+                            </div>
+                            <div
+                                class="pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-white-50 small d-block">Rate From</span>
+                                    <div class="fw-bold text-white">$195<span class="small text-white-50">/night</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm hms-btn-glass px-3 py-2" data-bs-toggle="modal"
+                                    data-bs-target="#hmsRoomDetailsModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hms-card-container">
+                    <div class="hms-full-bg-card">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=600&q=80"
+                            class="hms-card-bg-img" alt="Grand Deluxe Suite">
+                        <div class="hms-card-glass-overlay">
+                            <h4 class="h5 fw-bold text-white mb-2">Grand Deluxe Suite</h4>
+                            <div class="mb-3">
+                                <span class="hms-amenity-tag">Free Wi-Fi</span>
+                                <span class="hms-amenity-tag">Mini Bar</span>
+                                <span class="hms-amenity-tag">King Bed</span>
+                            </div>
+                            <div
+                                class="pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-white-50 small d-block">Rate From</span>
+                                    <div class="fw-bold text-white">$240<span class="small text-white-50">/night</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm hms-btn-glass px-3 py-2" data-bs-toggle="modal"
+                                    data-bs-target="#hmsRoomDetailsModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hms-card-container">
+                    <div class="hms-full-bg-card">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
+                            class="hms-card-bg-img" alt="Executive Premium">
+                        <div class="hms-card-glass-overlay">
+                            <h4 class="h5 fw-bold text-white mb-2">Executive Premium</h4>
+                            <div class="mb-3">
+                                <span class="hms-amenity-tag">Balcony</span>
+                                <span class="hms-amenity-tag">Smart TV</span>
+                                <span class="hms-amenity-tag">Spa Access</span>
+                            </div>
+                            <div
+                                class="pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-white-50 small d-block">Rate From</span>
+                                    <div class="fw-bold text-white">$310<span class="small text-white-50">/night</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm hms-btn-glass px-3 py-2" data-bs-toggle="modal"
+                                    data-bs-target="#hmsRoomDetailsModal">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+        ROOMS DETAILS MODAL
+   ========================================== -->
+    <div class="modal fade hms-glass-modal" id="hmsRoomDetailsModal" tabindex="-1" aria-labelledby="hmsRoomDetailsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="row g-0">
+
+                        <div class="col-lg-6 position-relative">
+                            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80"
+                                class="w-100 h-100" style="object-fit: cover; min-height: 450px; max-height: 650px;"
+                                alt="Selected Room Display Feature">
+                            <button type="button"
+                                class="btn-close btn-close-white position-absolute top-0 start-0 m-3 d-lg-none"
+                                data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div
+                            class="col-lg-6 hms-modal-details-side p-4 p-md-5 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <span class="text-uppercase small tracking-wider"
+                                            style="color: #ffffff; opacity: 0.6;">Premium Option</span>
+                                        <h3 class="fw-black text-white mt-1" id="hmsRoomDetailsLabel">Grand Deluxe Suite
+                                        </h3>
+                                    </div>
+                                    <button type="button" class="btn-close btn-close-white d-none d-lg-block"
+                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <hr class="border-white opacity-25">
+
+                                <p class="text-white mb-4" style="font-size: 0.95rem; line-height: 1.6; opacity: 0.85;">
+                                    Experience premium luxury in our Grand Deluxe Suite. Offering sweeping custom view
+                                    features, refined aesthetic architecture adjustments, and high-end room design
+                                    options crafted elegantly for total convenience.
+                                </p>
+
+                                <h5 class="h6 text-white fw-bold mb-3"
+                                    style="letter-spacing: 0.5px; text-transform: uppercase;">Room Features & Amenities
+                                </h5>
+                                <div class="row g-3 text-white small mb-4" style="opacity: 0.85;">
+                                    <div class="col-6"><i class="bi bi-wifi me-2"></i> High-Speed Wi-Fi 6</div>
+                                    <div class="col-6"><i class="bi bi-tv me-2"></i> 4K Smart TV Stream</div>
+                                    <div class="col-6"><i class="bi bi-cup-hot me-2"></i> Espresso Bar Machine</div>
+                                    <div class="col-6"><i class="bi bi-wind me-2"></i> Climate Controller</div>
+                                    <div class="col-6"><i class="bi bi-shield-lock me-2"></i> Encryption Safe</div>
+                                    <div class="col-6"><i class="bi bi-water me-2"></i> Luxury Ensuite Tub</div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="pt-4 border-top border-white border-opacity-10 d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="text-white small d-block" style="opacity: 0.6;">Base Price</span>
+                                    <span class="fs-3 fw-black text-white">$240</span><span class="text-white"
+                                        style="opacity: 0.6;"> / night</span>
+                                </div>
+                                <a href="/bookings" class="btn hms-btn-book px-4 py-3 fw-bold">
+                                    Book Room Now <i class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hms-faq-section">
+    <div class="container">
+        <div class="row g-5 align-items-stretch">
+            
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hms-faq-img-container">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" class="hms-faq-cover-photo" alt="Luxury Hotel Concierge Desk">
+                    <div class="hms-faq-img-glass-tint"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="ps-lg-3">
+                    <span class="hms-faq-subtitle">Guest Information Center</span>
+                    <h2 class="hms-faq-main-title mb-5">Frequently Asked Questions</h2>
+
+                    <div class="hms-faq-category-wrapper mb-5">
+                        <h4 class="h6 hms-faq-cat-heading text-uppercase mb-4">
+                            <i class="bi bi-clock-history me-2"></i> Check-In & Check-Out Procedures
+                        </h4>
+                        
+                        <div class="accordion hms-faq-accordion" id="hmsCheckInAccordion">
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#checkInQ1" aria-expanded="false">
+                                        What time is check-in?
+                                    </button>
+                                </h2>
+                                <div id="checkInQ1" class="accordion-collapse collapse" data-bs-parent="#hmsCheckInAccordion">
+                                    <div class="accordion-body">
+                                        Standard check-in begins at 3:00 PM. Early check-in options can be requested during reservation processing and are subject to availability upon arrival. Standard check-out is at 11:00 AM.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#checkInQ2" aria-expanded="false">
+                                        What do I need to provide during check-in?
+                                    </button>
+                                </h2>
+                                <div id="checkInQ2" class="accordion-collapse collapse" data-bs-parent="#hmsCheckInAccordion">
+                                    <div class="accordion-body">
+                                        Guests must present a valid government-issued photo identification card (Passport or Driver's License) along with the matching credit card used to secure the initial portal booking.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#checkInQ3" aria-expanded="false">
+                                        Do I need to pay a security deposit upon check-in?
+                                    </button>
+                                </h2>
+                                <div id="checkInQ3" class="accordion-collapse collapse" data-bs-parent="#hmsCheckInAccordion">
+                                    <div class="accordion-body">
+                                        Yes, a standard incidental hold profile is authorized on your card at check-in. This holds funds for room services or damages and is completely released automatically post-departure inspection.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="hms-faq-category-wrapper">
+                        <h4 class="h6 hms-faq-cat-heading text-uppercase mb-4">
+                            <i class="bi bi-credit-card-2-front me-2"></i> Price & Cancellation Rules
+                        </h4>
+                        
+                        <div class="accordion hms-faq-accordion" id="hmsPriceAccordion">
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#priceQ1" aria-expanded="false">
+                                        How can I make a hotel reservation?
+                                    </button>
+                                </h2>
+                                <div id="priceQ1" class="accordion-collapse collapse" data-bs-parent="#hmsPriceAccordion">
+                                    <div class="accordion-body">
+                                        Reservations can be processed instantly through our full-bleed online portal booking engine, or directly by calling our dedicated guest relations concierge service line.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#priceQ2" aria-expanded="false">
+                                        Can I modify or cancel my reservation?
+                                    </button>
+                                </h2>
+                                <div id="priceQ2" class="accordion-collapse collapse" data-bs-parent="#hmsPriceAccordion">
+                                    <div class="accordion-body">
+                                        Modifications or cancellations can be executed online via your portal profile page or by contacting guest relations. Availability variations and rate differentials may apply to calendar adjustments.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#priceQ3" aria-expanded="false">
+                                        What is your cancellation policy?
+                                    </button>
+                                </h2>
+                                <div id="priceQ3" class="accordion-collapse collapse" data-bs-parent="#hmsPriceAccordion">
+                                    <div class="accordion-body">
+                                        Free cancellations are permitted up to 24 hours prior to your scheduled arrival date for standard rates. Non-refundable promotional bookings do not qualify for cancellation refunds.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#priceQ4" aria-expanded="false">
+                                        Is there a minimum age requirement to make a reservation?
+                                    </button>
+                                </h2>
+                                <div id="priceQ4" class="accordion-collapse collapse" data-bs-parent="#hmsPriceAccordion">
+                                    <div class="accordion-body">
+                                        Yes, the primary guest registering and booking the room profile must be at least 18 years of age and present a valid matching credit framework card at check-in.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="fancy-cta-section py-5 position-relative overflow-hidden">
+        <div class="cta-glass-overlay"></div>
+        <div class="container px-4 px-md-5 position-relative z-3 py-5 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <span class="d-block text-uppercase fw-black text-accent letter-spacing-2 mb-3">Reservations
+                        Open</span>
+                    <h2 class="display-5 text-white text-uppercase fw-black mb-4">Secure Your Luxury Haven</h2>
+                    <p class="text-white-50 fs-5 mb-5 max-w-xl mx-auto font-weight-light">
+                        Escape into a refined ecosystem of luxury, privacy, and impeccable service. Your customized
+                        sanctuary layout is prepared and waiting for your check-in parameters.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                        <a href="#" class="btn btn-custom btn-nav-large px-5 py-3 text-uppercase">Reserve Your Suite
+                            Now</a>
+                        <a href="tel:+12345678"
+                            class="btn btn-outline-white px-5 py-3 text-uppercase fw-bold letter-spacing-1">Speak with
+                            Concierge</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="luxury-footer-system pt-5 pb-4 position-relative">
+        <div class="container px-4 px-md-5 pt-3">
+            <div class="row g-5 border-bottom border-secondary-subtle pb-5">
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Wells Carlton</h5>
+                    <p class="small text-muted leading-relaxed mb-0">
+                        A timeless statement of modern elegance, architecture, and luxury execution. Built to host
+                        global travelers seeking sanctuary.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Discover Spaces</h5>
+                    <ul class="list-unstyled footer-link-list d-flex flex-column gap-2.5">
+                        <li><a href="#">The Luxury Rooms</a></li>
+                        <li><a href="#">The Organic Spa</a></li>
+                        <li><a href="#">Elite Fitness Center</a></li>
+                        <li><a href="#">Fine Dining Restaurant</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Contact Info</h5>
+                    <ul class="list-unstyled footer-contact-details d-flex flex-column gap-2">
+                        <li class="small text-muted"><strong class="text-primary-theme">Address:</strong> 8 Asokoro
+                            District, Abuja, Nigeria</li>
+                        <li class="small text-muted"><strong class="text-primary-theme">Phone:</strong> +234 (0) 123
+                            4567 89</li>
+                        <li class="small text-muted"><strong class="text-primary-theme">Email:</strong>
+                            concierge@wellscarlton.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <h5 class="footer-title text-uppercase mb-4">Follow Us</h5>
+                    <p class="small text-muted mb-3">Connect with our social media networks for daily property updates:
+                    </p>
+                    <div class="d-flex gap-3 social-icon-row">
+                        <a href="#" aria-label="Instagram Channel"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" aria-label="Facebook Page"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" aria-label="Twitter Feed"><i class="bi bi-twitter-x fs-5"></i></a>
+                        <a href="#" aria-label="LinkedIn Network"><i class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row pt-4 align-items-center">
+                <div class="col-sm-6">
+                    <p class="small text-muted mb-0">&copy; 2026 Wells Carlton Hotel & Suites. All Rights Reserved.</p>
+                </div>
+                <div class="col-sm-6 text-sm-end mt-3 mt-sm-0 position-relative">
+                    <button onclick="scrollToTop()" class="btn btn-scroll-top border-0 p-2" id="scrollTopBtn"
+                        aria-label="Scroll back to top area">
+                        <span class="small text-uppercase tracking-wider fw-bold text-primary-theme me-2">Back To
+                            Top</span>
+                        <i class="bi bi-arrow-up-square-fill fs-4 text-primary-theme align-middle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+
+
+<!-- Bootstrap & Custom Layout Architecture Modules -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
