@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solstice Hotel &amp; Social Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d1b26;
+    --sun: #ffb02e;
+    --bone: #f6f1e7;
+    --lagoon: #46b3a9;
+    /* 1. PUT YOUR OWN PHOTO HERE, e.g. url('images/hero.jpg') */
+    --hero-img: none;
+    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --ui: "Instrument Sans", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--ui); background: var(--ink); }
+
+  /* ---------- Hero shell ---------- */
+  .hero {
+    position: relative; isolation: isolate; overflow: hidden;
+    min-height: 100svh; color: var(--bone);
+    display: grid; grid-template-rows: auto 1fr auto auto;
+  }
+  /* Four stacked layers behind everything: sky, photo, colour tint, shade */
+  .sky, .photo, .tint, .shade { position: absolute; inset: 0; z-index: -1; }
+  .photo { background: var(--hero-img) center / cover no-repeat; }
+  .shade {
+    background:
+      linear-gradient(to top, rgba(13,27,38,.88), rgba(13,27,38,0) 48%),
+      linear-gradient(to bottom, rgba(13,27,38,.55), rgba(13,27,38,0) 24%);
+  }
+
+  /* ---------- Header ---------- */
+  .top { display: flex; align-items: center; justify-content: space-between; padding: 22px clamp(20px, 4vw, 56px); gap: 16px; }
+  .logo { font: 700 1.5rem/1 var(--display); letter-spacing: -.03em; color: var(--bone); text-decoration: none; }
+  .logo small { display: block; font: 500 .72rem/1.6 var(--ui); letter-spacing: .02em; opacity: .75; }
+  .links { display: flex; gap: 6px; padding: 5px; border-radius: 999px; background: rgba(13,27,38,.35); backdrop-filter: blur(10px); }
+  .links a, .login { color: var(--bone); text-decoration: none; font-size: .88rem; font-weight: 500; padding: 9px 16px; border-radius: 999px; }
+  .links a:hover { background: rgba(246,241,231,.14); }
+  .actions { display: flex; align-items: center; gap: 8px; }
+  .reserve { background: var(--sun); color: var(--ink); font-weight: 600; font-size: .88rem; padding: 12px 20px; border-radius: 999px; text-decoration: none; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, .sun:focus-visible { outline: 3px solid var(--lagoon); outline-offset: 3px; }
+
+  /* ---------- Sun path ---------- */
+  .arc { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+  .arc path { fill: none; stroke: rgba(246,241,231,.4); stroke-width: 1.5; stroke-dasharray: 2 8; stroke-linecap: round; }
+
+  .sun { position: absolute; z-index: 3; width: 56px; height: 56px; margin: -28px 0 0 -28px; cursor: grab; touch-action: none; border-radius: 50%; }
+  .sun:active { cursor: grabbing; }
+  .disc {
+    position: absolute; inset: 0; border-radius: 50%;
+    background: radial-gradient(circle at 40% 38%, #fff7de, var(--sun) 62%);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.35), 0 0 70px 24px rgba(255,176,46,.5);
+  }
+  .sun.nudge::after { /* ring that invites the first drag, then stops */
+    content: ""; position: absolute; inset: -8px; border-radius: 50%;
+    border: 2px solid rgba(255,247,222,.8); animation: ring 1.8s ease-out 3;
+  }
+  @keyframes ring { from { transform: scale(.8); opacity: 1; } to { transform: scale(1.9); opacity: 0; } }
+  .readout { position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%); text-align: center; white-space: nowrap; pointer-events: none; text-shadow: 0 1px 12px rgba(13,27,38,.6); }
+  .readout b { display: block; font: 700 1.25rem/1.1 var(--display); font-variant-numeric: tabular-nums; }
+  .readout span { font-size: .8rem; opacity: .85; }
+
+  .hint { position: absolute; z-index: 2; left: clamp(20px, 4vw, 56px); top: 104px; margin: 0; font-size: .9rem; max-width: 22ch; opacity: .85; transition: opacity .6s; }
+  .hint.gone { opacity: 0; }
+
+  /* ---------- Headline: letters are lit by the sun ---------- */
+  .copy { grid-row: 3; padding: 0 clamp(20px, 4vw, 56px); position: relative; z-index: 1; }
+  .headline {
+    margin: 0; font: 700 clamp(3.1rem, 11.6vw, 11.5rem)/.9 var(--display);
+    font-variation-settings: "opsz" 96; letter-spacing: -.045em;
+    /* --sx / --sy / --r are set by JS so the glow follows the sun */
+    background: radial-gradient(circle var(--r, 55vw) at var(--sx, 80%) var(--sy, 40%),
+      #fff3d6 0, var(--sun) 14%, rgba(246,241,231,.62) 42%, rgba(246,241,231,.5) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .headline span { display: block; }
+  .sub { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-top: 22px; flex-wrap: wrap; }
+  .sub p { margin: 0; max-width: 42ch; line-height: 1.55; font-size: 1.02rem; opacity: .92; }
+  .sub a { color: var(--bone); font-weight: 600; text-underline-offset: 5px; text-decoration-thickness: 2px; text-decoration-color: var(--sun); }
+
+  /* ---------- Booking bar ---------- */
+  .book { grid-row: 4; margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 1px; background: rgba(246,241,231,.18); border-top: 1px solid rgba(246,241,231,.18); }
+  .book label { display: grid; gap: 4px; padding: 16px clamp(20px, 3vw, 40px); background: var(--ink); font-size: .78rem; opacity: 1; color: rgba(246,241,231,.7); }
+  .book input, .book select { font: 500 1.05rem var(--ui); color: var(--bone); background: transparent; border: 0; padding: 0; color-scheme: dark; }
+  .book select option { color: #000; }
+  .book button { background: var(--sun); color: var(--ink); border: 0; font: 600 1rem var(--ui); padding: 0 clamp(24px, 4vw, 56px); cursor: pointer; }
+  .book button:hover { background: #ffc254; }
+
+  /* ---------- Small screens ---------- */
+  @media (max-width: 760px) {
+    .links { display: none; }
+    .login { display: none; }
+    .hint { top: 88px; }
+    .headline { font-size: 15.5vw; }
+    .book { grid-template-columns: 1fr 1fr; }
+    .book button { grid-column: 1 / -1; padding: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .sun.nudge::after { animation: none; } .hint { transition: none; } }
+</style>
+</head>
+<body>
+
+<section class="hero" id="hero" aria-label="Welcome to Solstice">
+  <div class="sky" id="sky"></div>
+  <div class="photo" id="photo"></div>
+  <div class="tint" id="tint"></div>
+  <div class="shade"></div>
+
+  <header class="top">
+    <a class="logo" href="#">Solstice<small>Hotel &amp; Social Club</small></a>
+    <nav class="links" aria-label="Main">
+      <a href="#rooms">Rooms</a><a href="#experiences">Experiences</a><a href="#dining">Dining</a><a href="#events">Events</a>
+    </nav>
+    <div class="actions">
+      <a class="login" href="#login">Log in</a>
+      <a class="reserve" href="#book">Reserve a stay</a>
+    </div>
+  </header>
+
+  <!-- The sun's path across the hero (drawn in a 100x100 box that stretches) -->
+  <svg class="arc" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M6 80 Q50 -20 94 80" vector-effect="non-scaling-stroke"/>
+  </svg>
+
+  <p class="hint" id="hint">Drag the sun to change the light.</p>
+
+  <div class="sun nudge" id="sun" role="slider" tabindex="0"
+       aria-label="Time of day" aria-valuemin="6" aria-valuemax="20" aria-valuenow="18">
+    <div class="disc"></div>
+    <div class="readout"><b id="time">6:30 pm</b><span id="phase">Golden hour</span></div>
+  </div>
+
+  <div class="copy">
+    <h1 class="headline" id="headline"><span>A little more</span><span>room to live.</span></h1>
+    <div class="sub">
+      <p>Considered spaces, unhurried mornings, and the simple pleasure of being somewhere beautiful.</p>
+      <a href="#rooms">Explore the rooms</a>
+    </div>
+  </div>
+
+  <form class="book" id="book" action="#" method="get">
+    <label>Arrive <input type="date" name="arrive" required></label>
+    <label>Depart <input type="date" name="depart" required></label>
+    <label>Guests
+      <select name="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option></select>
+    </label>
+    <button type="submit">Check availability</button>
+  </form>
+</section>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const hero = $('hero'), sun = $('sun'), sky = $('sky'), photo = $('photo'),
+        tint = $('tint'), headline = $('headline'), hint = $('hint');
+
+  /* 1. The sun travels along a curve (quadratic Bézier) in a 100x100 box.
+        P0 = left horizon, P1 = control point (pulls the curve up), P2 = right horizon. */
+  const P0 = [6, 80], P1 = [50, -20], P2 = [94, 80];
+  const onArc = t => {
+    const a = (1 - t) ** 2, b = 2 * (1 - t) * t, c = t * t;
+    return [a * P0[0] + b * P1[0] + c * P2[0], a * P0[1] + b * P1[1] + c * P2[1]];
+  };
+
+  /* 2. Look of the light at key moments. t = 0 is 6am, t = 1 is 8pm.
+        top/bot = sky gradient, tint = overlay on your photo, b/s = brightness/saturation. */
+  const stops = [
+    { t: 0,   top: [58,70,120],  bot: [255,183,140], tint: [255,160,110,.30], b: .85, s: .95 },
+    { t: .3,  top: [90,160,220], bot: [255,236,200], tint: [255,235,200,.08], b: 1.1, s: 1.05 },
+    { t: .5,  top: [60,140,225], bot: [170,215,245], tint: [190,225,255,.08], b: 1.2, s: 1.1 },
+    { t: .75, top: [86,98,160],  bot: [255,168,84],  tint: [255,150,60,.28],  b: 1.0, s: 1.15 },
+    { t: .9,  top: [36,48,96],   bot: [214,120,110], tint: [70,60,130,.22],   b: .92, s: 1.0 },
+    { t: 1,   top: [14,24,52],   bot: [120,70,100],  tint: [20,25,70,.45],    b: .75, s: .9 }
+  ];
+  const mix = (a, b, k) => a.map((v, i) => v + (b[i] - v) * k);
+  const rgb = a => `rgb(${a.slice(0, 3).map(Math.round)})`;
+  function light(t) {                       // blend between the two nearest stops
+    let i = 0;
+    while (i < stops.length - 2 && t > stops[i + 1].t) i++;
+    const A = stops[i], B = stops[i + 1];
+    const k = Math.min(1, Math.max(0, (t - A.t) / (B.t - A.t)));
+    return { top: mix(A.top, B.top, k), bot: mix(A.bot, B.bot, k), tint: mix(A.tint, B.tint, k),
+             b: A.b + (B.b - A.b) * k, s: A.s + (B.s - A.s) * k };
+  }
+  const phaseName = t => t < .12 ? 'Sunrise' : t < .35 ? 'Morning' : t < .6 ? 'Midday'
+                       : t < .78 ? 'Afternoon' : t < .92 ? 'Golden hour' : 'Dusk';
+  function clock(t) {
+    const h = 6 + t * 14, hr = Math.floor(h), m = Math.round((h - hr) * 60);
+    const hh = m === 60 ? hr + 1 : hr, mm = m === 60 ? 0 : m;
+    return `${hh % 12 || 12}:${String(mm).padStart(2, '0')} ${hh >= 12 ? 'pm' : 'am'}`;
+  }
+
+  /* 3. One function paints everything for a given t */
+  let t = .05;
+  function render(next) {
+    t = Math.min(1, Math.max(0, next));
+    const [x, y] = onArc(t), L = light(t);
+    sun.style.left = x + '%'; sun.style.top = y + '%';
+    sky.style.background = `linear-gradient(${rgb(L.top)}, ${rgb(L.bot)})`;
+    photo.style.filter = `brightness(${L.b}) saturate(${L.s})`;
+    tint.style.background = `rgba(${L.tint.slice(0, 3).map(Math.round)},${L.tint[3]})`;
+    $('time').textContent = clock(t);
+    $('phase').textContent = phaseName(t);
+    sun.setAttribute('aria-valuenow', (6 + t * 14).toFixed(1));
+    sun.setAttribute('aria-valuetext', `${clock(t)}, ${phaseName(t)}`);
+    // Move the headline's light to where the sun is (in the headline's own pixels)
+    const h = hero.getBoundingClientRect(), r = headline.getBoundingClientRect();
+    headline.style.setProperty('--sx', (h.left + x / 100 * h.width - r.left) + 'px');
+    headline.style.setProperty('--sy', (h.top + y / 100 * h.height - r.top) + 'px');
+    headline.style.setProperty('--r', Math.max(h.width * .55, 360) + 'px');
+  }
+
+  /* 4. Intro: the sun rises into place once on load */
+  let raf;
+  const settle = to => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return render(to);
+    const from = t, t0 = performance.now(), dur = 2600;
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur), e = 1 - (1 - k) ** 3;   // ease-out
+      render(from + (to - from) * e);
+      if (k < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+  };
+  render(.05); settle(.88);
+
+  /* 5. Dragging: pointer x along the hero becomes t */
+  const touched = () => { cancelAnimationFrame(raf); sun.classList.remove('nudge'); hint.classList.add('gone'); };
+  const fromPointer = e => {
+    const h = hero.getBoundingClientRect();
+    const pct = (e.clientX - h.left) / h.width * 100;
+    render((pct - P0[0]) / (P2[0] - P0[0]));
+  };
+  sun.addEventListener('pointerdown', e => { touched(); sun.setPointerCapture(e.pointerId); fromPointer(e); });
+  sun.addEventListener('pointermove', e => { if (sun.hasPointerCapture(e.pointerId)) fromPointer(e); });
+
+  /* 6. Keyboard: arrows nudge, Home/End jump to sunrise/dusk */
+  sun.addEventListener('keydown', e => {
+    const keys = { ArrowRight: .03, ArrowUp: .03, ArrowLeft: -.03, ArrowDown: -.03 };
+    if (e.key in keys) { e.preventDefault(); touched(); render(t + keys[e.key]); }
+    if (e.key === 'Home') { e.preventDefault(); touched(); render(0); }
+    if (e.key === 'End')  { e.preventDefault(); touched(); render(1); }
+  });
+  addEventListener('resize', () => render(t));
+})();
+</script>
+</body>
+</html>

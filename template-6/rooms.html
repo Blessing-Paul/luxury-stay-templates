@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aurelia House & Hotel — considered hospitality in Abuja, Nigeria.">
+    <title>Rooms | Aurelia House & Hotel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="topbar">A considered stay in the heart of Abuja · Nigeria</div>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html"><strong>AURELIA</strong><span>House & Hotel</span></a>
+            <a class="nav-book" href="booking.html">Book a stay</a>
+            <input class="menu-toggle" type="checkbox" id="menu-toggle"><label class="menu-icon" for="menu-toggle"
+                aria-label="Toggle navigation">☰</label>
+            <nav class="nav-links"><a class="" href="index.html">Home</a><a class="" href="about.html">About</a><a
+                    class="active" href="rooms.html">Rooms</a><a class="" href="amenities.html">Amenities</a><a class=""
+                    href="events.html">Events</a><a class="" href="dining.html">Dining</a><a class="" href="booking.html">Booking</a><a class="" href="contact.html">Contact</a><a class="login-link" href="login.html" aria-label="Login" title="Login"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="login-text">Login</span></a></nav>
+        </div>
+    </header>
+    <main>
+        <section class="page-hero"
+            style="background-image:linear-gradient(0deg,rgba(13,30,23,.72),rgba(13,30,23,.05)),url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=2000&q=85')">
+            <div class="container">
+                <div class="eyebrow">Your own private retreat</div>
+                <h1>Stay in comfort.</h1>
+                <p>Rest easy in thoughtfully appointed rooms and suites, designed to make every moment away feel just
+                    right.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="page-intro">
+                    <div class="eyebrow">Rooms & suites</div>
+                    <h1>Find the space that feels like yours.</h1>
+                    <p>From restful nights between busy days to longer stays with room to spread out, discover your
+                        perfect fit.</p>
+                </div>
+                <div class="cards" style="margin-top:48px">
+                    <article class="card"><img
+                            src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85"
+                            alt="Deluxe room with king bed">
+                        <div class="card-body">
+                            <div class="eyebrow">Rest & recharge</div>
+                            <h3>Deluxe Room</h3>
+                            <p>A calm, comfortable base with a plush bed, considered lighting and a welcoming place to
+                                unwind.</p>
+                            <div class="card-meta"><span>2 guests · King or twin</span><span>Room to relax</span></div>
+                            <div class="room-actions"><button class="btn" type="button" data-room-details="deluxe">View
+                                    room details</button><button class="btn btn-light" type="button">Book this
+                                    room</button></div>
+                        </div>
+                    </article>
+                    <article class="card"><img
+                            src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=85"
+                            alt="Executive suite bedroom">
+                        <div class="card-body">
+                            <div class="eyebrow">Room to breathe</div>
+                            <h3>Executive Suite</h3>
+                            <p>Enjoy a separate lounge area and extra space to work, relax or simply take your time.</p>
+                            <div class="card-meta"><span>2 guests · King bed</span><span>Separate lounge</span></div>
+                            <div class="room-actions"><button class="btn" type="button"
+                                    data-room-details="executive">View room details</button><button
+                                    class="btn btn-light" type="button">Book this room</button></div>
+                        </div>
+                    </article>
+                    <article class="card"><img
+                            src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1000&q=85"
+                            alt="Signature suite with premium furnishings">
+                        <div class="card-body">
+                            <div class="eyebrow">A special escape</div>
+                            <h3>Signature Suite</h3>
+                            <p>Generous proportions and elevated touches for a stay that deserves something special.</p>
+                            <div class="card-meta"><span>2 guests · King bed</span><span>Premium comfort</span></div>
+                            <div class="room-actions"><button class="btn" type="button"
+                                    data-room-details="signature">View room details</button><button
+                                    class="btn btn-light" type="button">Book this room</button></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="feature-band">
+            <div class="container feature-band-inner">
+                <div>
+                    <div class="eyebrow">Ready when you are</div>
+                    <h2>Your next stay starts here.</h2>
+                    <p>Tell us when you would like to visit and our team will help you find the right room.</p>
+                </div><a class="btn btn-outline" href="mailto:reservations@aureliahouse.example">Enquire now</a>
+            </div>
+        </section>
+    </main>
+    <div class="room-modal" id="room-modal" aria-hidden="true">
+        <div class="room-modal-backdrop" data-close-room-modal></div>
+        <section class="room-modal-panel" role="dialog" aria-modal="true" aria-labelledby="room-modal-title"
+            tabindex="-1">
+            <button class="room-modal-close" type="button" aria-label="Close room details"
+                data-close-room-modal>&times;</button>
+            <img class="room-modal-image" id="room-modal-image" src="" alt="">
+            <div class="room-modal-content">
+                <div class="eyebrow" id="room-modal-eyebrow">Rooms & suites</div>
+                <h2 id="room-modal-title"></h2>
+                <p class="room-modal-intro" id="room-modal-intro"></p>
+                <div class="room-modal-facts" id="room-modal-facts"></div>
+                <h3>Room details</h3>
+                <p id="room-modal-description"></p>
+                <h3>In-room features</h3>
+                <ul class="room-feature-list" id="room-modal-features"></ul>
+                <p class="room-modal-note">For availability and rates, please contact our reservations team.</p>
+            </div>
+        </section>
+    </div>
+    <script>
+        (() => {
+            const roomInfo = {
+                deluxe: {
+                    title: 'Deluxe Room', eyebrow: 'Rest & recharge',
+                    image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1400&q=85',
+                    intro: 'A welcoming retreat with thoughtful comforts and everything you need to settle in.',
+                    facts: ['Up to 2 guests', 'King or twin bed', 'Comfortable work area'],
+                    description: 'Designed for a restful stay, the Deluxe Room pairs a plush bed with a calm palette, considered lighting and a practical layout. Whether you are visiting Abuja for work or taking a break, it is an inviting space to return to at the end of the day.',
+                    features: ['King or twin bedding configuration', 'Air conditioning', 'Complimentary Wi-Fi', 'Flat-screen television', 'Tea and coffee-making facilities', 'Private en-suite bathroom', 'Work desk and comfortable seating']
+                },
+                executive: {
+                    title: 'Executive Suite', eyebrow: 'Room to breathe',
+                    image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1400&q=85',
+                    intro: 'A little more room to work, unwind and make yourself at home.',
+                    facts: ['Up to 2 guests', 'King bed', 'Separate lounge'],
+                    description: 'The Executive Suite gives you distinct spaces for relaxing and getting things done. Stretch out in the separate lounge, enjoy a quiet moment with a drink, or settle into the bedroom for a peaceful night.',
+                    features: ['King-size bed', 'Separate lounge area', 'Air conditioning', 'Complimentary Wi-Fi', 'Flat-screen television', 'Tea and coffee-making facilities', 'Private en-suite bathroom', 'Work desk and seating area']
+                },
+                signature: {
+                    title: 'Signature Suite', eyebrow: 'A special escape',
+                    image: 'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1400&q=85',
+                    intro: 'An elevated stay with generous proportions and refined finishing touches.',
+                    facts: ['Up to 2 guests', 'King bed', 'Premium comfort'],
+                    description: 'Created for guests who appreciate a little extra space, the Signature Suite offers a relaxed sense of occasion. Enjoy its generous layout, carefully selected furnishings and a comfortable setting for a memorable stay.',
+                    features: ['King-size bed', 'Spacious sitting area', 'Air conditioning', 'Complimentary Wi-Fi', 'Flat-screen television', 'Tea and coffee-making facilities', 'Private en-suite bathroom', 'Premium furnishings and finishes']
+                }
+            };
+
+            const modal = document.getElementById('room-modal');
+            const panel = modal.querySelector('.room-modal-panel');
+            let previousFocus = null;
+
+            function closeModal() {
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('room-modal-open');
+                if (previousFocus) previousFocus.focus();
+            }
+
+            document.querySelectorAll('[data-room-details]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const room = roomInfo[button.dataset.roomDetails];
+                    if (!room) return;
+                    previousFocus = button;
+                    document.getElementById('room-modal-image').src = room.image;
+                    document.getElementById('room-modal-image').alt = room.title;
+                    document.getElementById('room-modal-eyebrow').textContent = room.eyebrow;
+                    document.getElementById('room-modal-title').textContent = room.title;
+                    document.getElementById('room-modal-intro').textContent = room.intro;
+                    document.getElementById('room-modal-description').textContent = room.description;
+                    document.getElementById('room-modal-facts').replaceChildren(...room.facts.map(fact => {
+                        const span = document.createElement('span'); span.textContent = fact; return span;
+                    }));
+                    document.getElementById('room-modal-features').replaceChildren(...room.features.map(feature => {
+                        const li = document.createElement('li'); li.textContent = feature; return li;
+                    }));
+                    modal.classList.add('is-open');
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.classList.add('room-modal-open');
+                    panel.focus();
+                });
+            });
+
+            modal.querySelectorAll('[data-close-room-modal]').forEach(element => element.addEventListener('click', closeModal));
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+            });
+        })();
+    </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><a class="brand" href="index.html"><strong style="color:white">AURELIA</strong><span>House &
+                            Hotel</span></a>
+                    <p>A quiet sense of luxury. Thoughtful hospitality, inviting spaces and memorable moments in Abuja.
+                    </p>
+                </div>
+                <div>
+                    <h4>Explore</h4>
+                    <div class="footer-links"><a href="about.html">Our story</a><a href="rooms.html">Rooms &
+                            suites</a><a href="amenities.html">Amenities</a><a href="dining.html">Dining</a></div>
+                </div>
+                <div>
+                    <h4>Discover</h4>
+                    <div class="footer-links"><a href="events.html">Events & gatherings</a><a href="booking.html">Book a stay
+                            with us</a><a href="amenities.html">Experiences</a></div>
+                </div>
+                <div>
+                    <h4>Get in touch</h4>
+                    <p>Abuja, Nigeria<br>reservations@aureliahouse.example<br>+234 800 000 0000</p><a
+                        href="contact.html">Send an enquiry →</a>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Aurelia House & Hotel. Concept website.</span><span>Designed for
+                    memorable stays.</span></div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+/* Supplied interactive sun-path hero, isolated from the rest of the website. */
+.sunrise-hero { --ink:#0d1b26; --sun:#ffb02e; --bone:#f6f1e7; --lagoon:#46b3a9; --hero-img:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2200&q=90'); --display:"Bricolage Grotesque",system-ui,sans-serif; --ui:"Instrument Sans",system-ui,sans-serif; font-family:var(--ui); }
+
+  
+  
+  
+
+  /* ---------- Hero shell ---------- */
+  .sunrise-hero.sh-hero {
+    position: relative; isolation: isolate; overflow: hidden;
+    min-height: 100svh; padding: 0; color: var(--bone);
+    display: grid; grid-template-rows: auto 1fr auto auto;
+  }
+  /* Four stacked layers behind everything: sky, photo, colour tint, shade */
+  .sh-sky, .sh-photo, .sh-tint, .sh-shade { position: absolute; inset: 0; z-index: -1; }
+  .sh-photo { background: var(--hero-img) center / cover no-repeat; }
+  .sh-shade {
+    background:
+      linear-gradient(to top, rgba(13,27,38,.88), rgba(13,27,38,0) 48%),
+      linear-gradient(to bottom, rgba(13,27,38,.55), rgba(13,27,38,0) 24%);
+  }
+
+  /* ---------- Header ---------- */
+  .sh-top { display: flex; align-items: center; justify-content: space-between; padding: 22px clamp(20px, 4vw, 56px); gap: 16px; }
+  .sh-logo { font: 700 1.5rem/1 var(--display); letter-spacing: -.03em; color: var(--bone); text-decoration: none; }
+  .sh-logo small { display: block; font: 500 .72rem/1.6 var(--ui); letter-spacing: .02em; opacity: .75; }
+  .sh-links { display: flex; gap: 6px; padding: 5px; border-radius: 999px; background: rgba(13,27,38,.35); backdrop-filter: blur(10px); }
+  .sh-links a, .sh-login { color: var(--bone); text-decoration: none; font-size: .88rem; font-weight: 500; padding: 9px 16px; border-radius: 999px; }
+  .sh-links a:hover { background: rgba(246,241,231,.14); }
+  .sh-actions { display: flex; align-items: center; gap: 8px; }
+  .sh-reserve { background: var(--sun); color: var(--ink); font-weight: 600; font-size: .88rem; padding: 12px 20px; border-radius: 999px; text-decoration: none; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, .sh-sun:focus-visible { outline: 3px solid var(--lagoon); outline-offset: 3px; }
+
+  /* ---------- Sun path ---------- */
+  .sh-arc { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+  .sh-arc path { fill: none; stroke: rgba(246,241,231,.4); stroke-width: 1.5; stroke-dasharray: 2 8; stroke-linecap: round; }
+
+  .sh-sun { position: absolute; z-index: 3; width: 56px; height: 56px; margin: -28px 0 0 -28px; cursor: grab; touch-action: none; border-radius: 50%; }
+  .sh-sun:active { cursor: grabbing; }
+  .sh-disc {
+    position: absolute; inset: 0; border-radius: 50%;
+    background: radial-gradient(circle at 40% 38%, #fff7de, var(--sun) 62%);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.35), 0 0 70px 24px rgba(255,176,46,.5);
+  }
+  .sh-sun.sh-nudge::after { /* ring that invites the first drag, then stops */
+    content: ""; position: absolute; inset: -8px; border-radius: 50%;
+    border: 2px solid rgba(255,247,222,.8); animation: ring 1.8s ease-out 3;
+  }
+  @keyframes ring { from { transform: scale(.8); opacity: 1; } to { transform: scale(1.9); opacity: 0; } }
+  .sh-readout { position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%); text-align: center; white-space: nowrap; pointer-events: none; text-shadow: 0 1px 12px rgba(13,27,38,.6); }
+  .sh-readout b { display: block; font: 700 1.25rem/1.1 var(--display); font-variant-numeric: tabular-nums; }
+  .sh-readout span { font-size: .8rem; opacity: .85; }
+
+  .sh-hint { position: absolute; z-index: 2; left: clamp(20px, 4vw, 56px); top: 104px; margin: 0; font-size: .9rem; max-width: 22ch; opacity: .85; transition: opacity .6s; }
+  .sh-hint.sh-gone { opacity: 0; }
+
+  /* ---------- Headline: letters are lit by the sun ---------- */
+  .sh-copy { grid-row: 3; padding: 0 clamp(20px, 4vw, 56px); position: relative; z-index: 1; }
+  .sh-headline {
+    margin: 0; font: 700 clamp(3.1rem, 11.6vw, 11.5rem)/.9 var(--display);
+    font-variation-settings: "opsz" 96; letter-spacing: -.045em;
+    /* --sx / --sy / --r are set by JS so the glow follows the sun */
+    background: radial-gradient(circle var(--r, 55vw) at var(--sx, 80%) var(--sy, 40%),
+      #fff3d6 0, var(--sun) 14%, rgba(246,241,231,.62) 42%, rgba(246,241,231,.5) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sh-headline span { display: block; }
+  .sh-sub { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-top: 22px; flex-wrap: wrap; }
+  .sh-sub p { margin: 0; max-width: 42ch; line-height: 1.55; font-size: 1.02rem; opacity: .92; }
+  .sh-sub a { color: var(--bone); font-weight: 600; text-underline-offset: 5px; text-decoration-thickness: 2px; text-decoration-color: var(--sun); }
+
+  /* ---------- Booking bar ---------- */
+  .sh-book { grid-row: 4; margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 1px; background: rgba(246,241,231,.18); border-top: 1px solid rgba(246,241,231,.18); }
+  .sh-book label { display: grid; gap: 4px; padding: 16px clamp(20px, 3vw, 40px); background: var(--ink); font-size: .78rem; opacity: 1; color: rgba(246,241,231,.7); }
+  .sh-book input, .sh-book select { font: 500 1.05rem var(--ui); color: var(--bone); background: transparent; border: 0; padding: 0; color-scheme: dark; }
+  .sh-book select option { color: #000; }
+  .sh-book button { background: var(--sun); color: var(--ink); border: 0; font: 600 1rem var(--ui); padding: 0 clamp(24px, 4vw, 56px); cursor: pointer; }
+  .sh-book button:hover { background: #ffc254; }
+
+  /* ---------- Small screens ---------- */
+  @media (max-width: 760px) {
+    .sh-links { display: none; }
+    .sh-login { display: none; }
+    .sh-hint { top: 88px; }
+    .sh-headline { font-size: 15.5vw; }
+    .sh-book { grid-template-columns: 1fr 1fr; }
+    .sh-book button { grid-column: 1 / -1; padding: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .sh-sun.sh-nudge::after { animation: none; } .sh-hint { transition: none; } }
+
+.sunrise-hero.sh-hero { width:100%; max-width:none; margin:0; min-height:100svh; padding:0; display:grid; grid-template-rows:auto 1fr auto auto; color:var(--bone); background:var(--ink); }
+.sunrise-hero .sh-top { position:relative; z-index:6; background:transparent; border:0; display:flex; align-items:center; justify-content:space-between; padding:22px clamp(20px,4vw,56px); }
+.sunrise-hero .sh-logo { font:700 1.5rem/1 var(--display); letter-spacing:-.03em; color:var(--bone); }
+.sunrise-hero .sh-logo small {display:block; font:500 .72rem/1.6 var(--ui); letter-spacing:.02em; opacity:.75;}
+.sunrise-hero .sh-links {display:flex; align-items:center; gap:6px; padding:5px; background:rgba(13,27,38,.35); border-radius:999px; backdrop-filter:blur(10px); position:static; box-shadow:none; border:0;}
+.sunrise-hero .sh-links a {color:var(--bone);font:500 .88rem var(--ui);letter-spacing:0;text-transform:none;padding:9px 16px;}
+.sunrise-hero .sh-actions {display:flex;align-items:center;gap:8px;}
+.sunrise-hero .sh-headline {font:700 clamp(3.1rem,11.6vw,11.5rem)/.9 var(--display);letter-spacing:-.045em;}
+.sunrise-hero .sh-book {position:relative;z-index:5;}
+.sunrise-hero .sh-book input,.sunrise-hero .sh-book select {width:100%;padding:0;border:0;border-radius:0;background:transparent;color:var(--bone);color-scheme:dark;font:500 1.05rem var(--ui);outline-offset:5px;}
+.sunrise-hero .sh-book label {font-weight:400;text-transform:none;letter-spacing:0;}
+.sunrise-hero .sh-book button {border-radius:0;box-shadow:none;transform:none;}
+.sunrise-hero .sh-copy {padding:0 clamp(20px,4vw,56px);}
+.sunrise-hero .sh-sun {user-select:none;}
+@media(max-width:760px){.sunrise-hero .sh-links,.sunrise-hero .sh-login{display:none}.sunrise-hero .sh-headline{font-size:15.5vw}.sunrise-hero .sh-book{grid-template-columns:1fr 1fr}.sunrise-hero .sh-book button{grid-column:1/-1;padding:18px}.sunrise-hero .sh-top{padding:18px 20px}.sunrise-hero .sh-copy{padding:0 20px}.sunrise-hero .sh-hint{top:88px}}
+@media(max-width:480px){.sunrise-hero .sh-book label{padding:12px 16px}.sunrise-hero .sh-reserve{padding:11px 13px;font-size:.78rem}.sunrise-hero .sh-sub{margin-top:14px}.sunrise-hero .sh-sub p{font-size:.9rem}}
