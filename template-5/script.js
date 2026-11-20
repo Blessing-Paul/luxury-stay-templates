@@ -132,7 +132,7 @@ if (quickBooking) {
       departureInput.focus();
       return;
     }
-    const bookingUrl = new URL("booking.html", window.location.href);
+    const bookingUrl = new URL("booking.html#stay-request", window.location.href);
     bookingUrl.searchParams.set("arrival", arrivalInput.value);
     bookingUrl.searchParams.set("departure", departureInput.value);
     bookingUrl.searchParams.set("adults", quickBooking.elements.adults.value);
@@ -140,78 +140,187 @@ if (quickBooking) {
   });
 }
 
-const stayRequest = document.querySelector("#stay-request");
-if (stayRequest) {
-  const arrivalInput = stayRequest.elements.arrival;
-  const departureInput = stayRequest.elements.departure;
+const bookingForm = document.querySelector("#booking-request-form");
+if (bookingForm) {
+  const fields = bookingForm.elements;
+  const roomFields = document.querySelector("#room-request-fields");
+  const hallFields = document.querySelector("#hall-request-fields");
   const stayLength = document.querySelector("#stay-length");
-  const feedback = document.querySelector("#stay-request-feedback");
+  const record = document.querySelector("#booking-record");
+  const recordTitle = document.querySelector("#booking-record-title");
+  const recordStatus = document.querySelector("#booking-record-status");
+  const recordDetails = document.querySelector("#booking-record-details");
+  const recordNote = document.querySelector("#booking-record-note");
+  const editButton = document.querySelector("#booking-edit");
+  const prepareButton = document.querySelector("#booking-prepare");
+  const printButton = document.querySelector("#booking-print");
   const emailLink = document.querySelector("#stay-request-email");
-  const now = new Date();
-  const today = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-  const bookingParams = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(window.location.search);
+  const today = new Date();
+  const dateMin = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  const dateFormat = new Intl.DateTimeFormat(undefined, { dateStyle: "medium" });
+  const timeFormat = new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" });
+  let reviewRows = [];
+  let requestType;
 
-  arrivalInput.min = today;
-  departureInput.min = today;
-  ["arrival", "departure", "adults", "children", "rooms"].forEach((name) => {
-    const value = bookingParams.get(name);
-    const field = stayRequest.elements[name];
-    if (value && field) field.value = value;
-  });
+  fields.arrival.min = dateMin;
+  fields.eventDate.min = dateMin;
+  for (const name of ["arrival", "departure", "adults", "children", "rooms", "room", "hall"]) {
+    const value = params.get(name);
+    const field = fields[name];
+    if (!value) continue;
+    if (field.options && !Array.from(field.options).some((option) => option.value === value)) continue;
+    field.value = value;
+  }
+  if (params.get("type") === "hall") fields.bookingKind.value = "hall";
 
-  function updateStayLength() {
-    departureInput.min = arrivalInput.value || today;
-    if (arrivalInput.value && departureInput.value && departureInput.value <= arrivalInput.value) {
-      departureInput.value = "";
-    }
-    if (!arrivalInput.value || !departureInput.value) {
-      stayLength.textContent = "Choose your arrival and departure to see length of stay.";
-      return;
-    }
-    const arrival = new Date(`${arrivalInput.value}T12:00:00`);
-    const departure = new Date(`${departureInput.value}T12:00:00`);
-    const nights = Math.round((departure - arrival) / 86400000);
-    stayLength.textContent = `${nights} ${nights === 1 ? "night" : "nights"} in the house`;
+  function updateBookingKind() {
+    const isHall = fields.bookingKind.value === "hall";
+    roomFields.hidden = roomFields.disabled = isHall;
+    hallFields.hidden = hallFields.disabled = !isHall;
   }
 
-  arrivalInput.addEventListener("change", updateStayLength);
-  departureInput.addEventListener("change", updateStayLength);
-  updateStayLength();
-
-  stayRequest.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!stayRequest.reportValidity()) return;
-    if (departureInput.value <= arrivalInput.value) {
-      feedback.textContent = "Choose a departure date after your arrival.";
-      departureInput.focus();
+  function updateStayLength() {
+    const arrival = fields.arrival.value;
+    const departure = fields.departure.value;
+    fields.departure.min = arrival || dateMin;
+    const invalidRange = arrival && departure && departure <= arrival;
+    fields.departure.setCustomValidity(invalidRange ? "Choose a departure date after arrival." : "");
+    if (!arrival || !departure || invalidRange) {
+      stayLength.textContent = "Choose valid dates to see the length of stay.";
       return;
     }
+    const nights = (Date.parse(departure) - Date.parse(arrival)) / 86400000;
+    stayLength.textContent = `${nights} ${nights === 1 ? "night" : "nights"}`;
+  }
 
-    const formData = new FormData(stayRequest);
-    const arrival = new Date(`${arrivalInput.value}T12:00:00`).toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
+  function updateEventTimes() {
+    const invalidRange = fields.startTime.value && fields.endTime.value && fields.endTime.value <= fields.startTime.value;
+    fields.endTime.setCustomValidity(invalidRange ? "Choose an end time after the start time on the event date." : "");
+  }
+
+  function formatDate(value) {
+    return dateFormat.format(new Date(`${value}T12:00:00`));
+  }
+
+  function formatTime(value) {
+    return timeFormat.format(new Date(`2000-01-01T${value}`));
+  }
+
+  function renderDetails(rows) {
+    const details = rows.map(([label, value]) => {
+      const row = document.createElement("div");
+      const term = document.createElement("dt");
+      const description = document.createElement("dd");
+      term.textContent = label;
+      description.textContent = value;
+      row.append(term, description);
+      return row;
     });
-    const departure = new Date(`${departureInput.value}T12:00:00`).toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-    const body = [
-      `Name: ${formData.get("guestName")}`,
-      `Email: ${formData.get("email")}`,
-      `Arrival: ${arrival}`,
-      `Departure: ${departure}`,
-      `Length of stay: ${stayLength.textContent}`,
-      `Adults: ${formData.get("adults")}`,
-      `Children: ${formData.get("children")}`,
-      `Rooms: ${formData.get("rooms")}`,
-      `Additional details: ${formData.get("message") || "None"}`,
-    ].join("\n");
-    const subject = "A stay enquiry for Aster House";
-    emailLink.href = `mailto:hello@asterhouse.example?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    emailLink.hidden = false;
-    feedback.textContent = "Your enquiry is ready. Select the email link below to send it to the house.";
+    recordDetails.replaceChildren(...details);
+  }
+
+  bookingForm.addEventListener("change", (event) => {
+    if (event.target.name === "bookingKind") updateBookingKind();
   });
+  for (const field of [fields.arrival, fields.departure]) {
+    field.addEventListener("input", updateStayLength);
+  }
+  for (const field of [fields.startTime, fields.endTime]) {
+    field.addEventListener("input", updateEventTimes);
+  }
+  updateBookingKind();
+  updateStayLength();
+  updateEventTimes();
+  bookingForm.hidden = false;
+
+  bookingForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    updateStayLength();
+    updateEventTimes();
+    if (!bookingForm.reportValidity()) return;
+
+    const isHall = fields.bookingKind.value === "hall";
+    requestType = isHall ? "Event space" : "Room stay";
+    const bookingRows = isHall ? [
+      ["Venue", fields.hall.selectedOptions[0].textContent],
+      ["Occasion", fields.occasion.value.trim()],
+      ["Event date", formatDate(fields.eventDate.value)],
+      ["Hours (venue local time)", `${formatTime(fields.startTime.value)} – ${formatTime(fields.endTime.value)}`],
+      ["Estimated guests", fields.guests.value],
+    ] : [
+      ["Room preference", fields.room.selectedOptions[0].textContent],
+      ["Arrival", formatDate(fields.arrival.value)],
+      ["Departure", formatDate(fields.departure.value)],
+      ["Length of stay", stayLength.textContent],
+      ["Rooms", fields.rooms.value],
+      ["Guests", `${fields.adults.value} adults, ${fields.children.value} children`],
+    ];
+
+    reviewRows = [
+      ["Booking type", requestType],
+      ...bookingRows,
+      ["Name", fields.guestName.value.trim()],
+      ["Email", fields.email.value],
+    ];
+    if (fields.phone.value.trim()) reviewRows.push(["Phone", fields.phone.value.trim()]);
+    if (fields.message.value.trim()) reviewRows.push(["Special requests", fields.message.value.trim()]);
+
+    renderDetails(reviewRows);
+    recordTitle.textContent = "Review your request";
+    recordStatus.textContent = "Review";
+    recordNote.textContent = "Check these details before preparing your request.";
+    prepareButton.hidden = false;
+    printButton.hidden = true;
+    emailLink.hidden = true;
+    emailLink.removeAttribute("href");
+    bookingForm.hidden = true;
+    record.hidden = false;
+    recordTitle.focus();
+  });
+
+  editButton.addEventListener("click", () => {
+    record.hidden = true;
+    bookingForm.hidden = false;
+    bookingForm.querySelector('input[name="bookingKind"]:checked').focus();
+  });
+
+  prepareButton.addEventListener("click", () => {
+    const bytes = window.crypto.getRandomValues(new Uint8Array(6));
+    const reference = "AH-" + Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("").toUpperCase();
+    const receiptRows = [
+      ["Request reference", reference],
+      ["Prepared on", dateFormat.format(new Date())],
+      ...reviewRows,
+      ["Pricing", "To be confirmed"],
+      ["Payment", "No payment collected"],
+    ];
+    const subject = `Aster House ${requestType.toLowerCase()} request · ${reference}`;
+    const message = receiptRows.map(([label, value]) => `${label}: ${value}`).join("\n");
+    emailLink.href = `mailto:hello@asterhouse.example?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+    renderDetails(receiptRows);
+    recordTitle.textContent = "Booking request receipt";
+    recordStatus.textContent = "Prepared";
+    recordNote.textContent = "Send this request by email. Your booking is pending until Aster House confirms availability and pricing.";
+    prepareButton.hidden = true;
+    printButton.hidden = false;
+    emailLink.hidden = false;
+    recordTitle.focus();
+  });
+
+  printButton.addEventListener("click", () => window.print());
+}
+
+for (const form of document.querySelectorAll(".guest-account-form")) {
+  const feedback = form.querySelector(".guest-account-feedback");
+  const password = form.elements.password;
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (password) password.value = "";
+    feedback.textContent = password
+      ? "Online sign-in is currently unavailable. Contact Aster House for help accessing your account."
+      : "Online password resets are currently unavailable. Contact Aster House for help resetting your password.";
+  });
+  form.querySelector("fieldset").disabled = false;
 }

@@ -12,7 +12,7 @@
 <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body data-page="dining">
-<header class="home-header">
+<header class="inner-header">
 <a class="brand" href="index.html"><span class="brand-mark">B<span>W</span></span><span class="brand-name">BERNICE-WISTORIA<small>RESIDENCES</small></span></a>
 <nav aria-label="Main navigation" class="hero-nav">
 
@@ -26,9 +26,10 @@
 
 <a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="amenities.html">Experiences</a><a href="spa.html">Spa</a><a href="gym.html">Gym</a><a aria-current="page" href="dining.html">Dining</a><a href="events.html">Events</a><a href="booking.html">Booking</a><a href="contact.html">Contact</a><a href="login.html">Sign in ↗</a></nav>
 </header>
-<nav aria-label="Quick navigation" class="scroll-nav"><a class="mini-brand" href="index.html">B<span>W</span></a><button aria-expanded="false" aria-label="Open navigation" class="menu-toggle"><span></span><span></span></button></nav>
-<div aria-hidden="true" class="menu-overlay">
+<nav aria-label="Quick navigation" class="scroll-nav"><a class="mini-brand" href="index.html">B<span>W</span></a><button aria-expanded="false" aria-label="Open navigation" aria-controls="compact-menu" class="menu-toggle"><span></span><span></span></button></nav>
+<div aria-hidden="true" class="menu-overlay" id="compact-menu">
 <div class="menu-panel">
+<button class="menu-close" type="button">Close <span aria-hidden="true">×</span></button>
 <p class="eyebrow">EXPLORE BERNICE-WISTORIA</p>
 
 

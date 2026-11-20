@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11121d" />
+  <meta name="description" content="Sign in to your Aster House account." />
+  <title>Login — Aster House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="detail-pages.css" />
+</head>
+<body class="detail-page">
+  <header class="site-header">
+    <a class="brand" href="index.html#home" aria-label="Aster House home"><span class="brand-mark" aria-hidden="true">✳</span><span>ASTER<small>HOUSE</small></span></a>
+    <a class="header-note" href="index.html#stay">A SMALL COASTAL HOUSE <i></i> OPEN ALL YEAR</a>
+    <div class="header-actions"><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="side-menu" aria-label="Open navigation"><span class="menu-label">MENU</span><span class="menu-icon" aria-hidden="true"><i></i><i></i></span></button><a class="header-book" href="booking.html#stay-request">Book your stay</a></div>
+  </header>
+  <div class="menu-backdrop" data-menu-close></div>
+  <nav class="side-menu" id="side-menu" aria-label="Main navigation" aria-hidden="true" inert>
+    <div class="side-menu-head"><a class="brand" href="index.html#home" aria-label="Aster House home"><span class="brand-mark" aria-hidden="true">✳</span><span>ASTER<small>HOUSE</small></span></a><button class="menu-close" type="button" aria-label="Close navigation">CLOSE <b aria-hidden="true">×</b></button></div>
+    <div class="side-menu-links"><p>COME A LITTLE CLOSER</p><a href="index.html#stay"><small>01</small> The house <span>↗</span></a><a href="rooms.html"><small>02</small> Rooms & suites <span>↗</span></a><a href="spa.html"><small>03</small> Spa & wellness <span>↗</span></a><a href="dining.html"><small>04</small> Dining <span>↗</span></a><a href="fitness.html"><small>05</small> Fitness <span>↗</span></a><a href="events.html"><small>06</small> Gatherings & events <span>↗</span></a><a href="index.html#contact"><small>07</small> Get in touch <span>↗</span></a><a href="login.html" aria-current="page"><small>08</small> Login <span>↗</span></a></div>
+    <div class="side-menu-foot"><span>THE COAST, AT YOUR OWN PACE</span><a href="mailto:hello@asterhouse.example">SAY HELLO ↗</a></div>
+  </nav>
+  <main class="guest-login">
+    <section class="booking-form-section">
+      <div class="booking-form-intro">
+        <p class="section-kicker">Aster House</p>
+        <h1>Account <em>login.</em></h1>
+      </div>
+      <form class="stay-request guest-account-form" id="guest-login-form" method="post" aria-labelledby="guest-login-title">
+        <h2 id="guest-login-title">Welcome back.</h2>
+        <fieldset class="guest-account-fields" disabled>
+          <label for="guest-username">Username</label>
+          <input id="guest-username" name="username" type="text" autocomplete="username" required />
+          <label for="guest-password">Password</label>
+          <input id="guest-password" name="password" type="password" autocomplete="current-password" required />
+          <a class="guest-account-link" href="forgot-password.html">Forgot password?</a>
+          <button class="stay-request-submit" type="submit">Log in <span aria-hidden="true">↗</span></button>
+        </fieldset>
+        <p class="guest-account-feedback" role="status"></p>
+        <noscript><p>Contact <a href="index.html#contact">Aster House</a> for help accessing your account.</p></noscript>
+      </form>
+    </section>
+  </main>
+  <div class="closing-marquee" aria-hidden="true"><div class="closing-track"><span>Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b> Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b></span><span>Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b> Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b></span></div></div>
+  <footer class="site-footer"><a class="brand" href="index.html#home" aria-label="Aster House home"><span class="brand-mark" aria-hidden="true">✳</span><span>ASTER<small>HOUSE</small></span></a><p>A familiar place to find<br />a little more room.</p><div class="footer-links"><a href="rooms.html">ROOMS</a><a href="spa.html">SPA</a><a href="dining.html">DINING</a><a href="fitness.html">FITNESS</a><a href="events.html">EVENTS</a><a href="booking.html">BOOK A STAY</a><a href="index.html#contact">CONTACT</a><a href="login.html" aria-current="page">LOGIN</a></div><span class="copyright">© 2025 ASTER HOUSE</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>

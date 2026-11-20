@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="home-page">
 
     <!-- Fixed Top Navigation Bar -->
     <nav id="heroNavbar" class="navbar navbar-expand-lg fixed-top custom-navbar">
@@ -99,67 +99,48 @@
         <!-- Left Side Core Narrative Column -->
         <div class="col-lg-5 d-flex align-items-center left-hero-panel hero-text-panel">
             <div class="hero-content-wrapper px-4 px-md-5 ms-xl-5 ps-xl-4 w-100">
-                <h1 class="display-5 fw-black mb-3 hero-title text-uppercase">
-                    Experience Luxury <br><span class="text-accent">Redefined</span>
+                <h1 class="hero-title">
+                    Experience luxury <em>redefined.</em>
                 </h1>
-                <p class="hero-writeup mb-4">
-                    Indulge in a sophisticated sanctuary designed for modern travelers. Discover timeless elegance,
-                    world-class amenities, and impeccable service tailored perfectly to your lifestyle.
+                <p class="hero-writeup">
+                    Settle into a spacious suite and spend the afternoon by the pool, with attentive service throughout your stay.
                 </p>
-                <a href="#" class="btn btn-custom btn-hero-cta w-100 w-sm-auto d-inline-block text-center px-4 py-3">
-                    Book Your Stay Now
+                <a href="booking.html" class="btn btn-hero-cta">
+                    Book your stay <span aria-hidden="true">↗</span>
                 </a>
             </div>
         </div>
 
-        <!-- Desktop Graphic Column (Now Dynamic!) -->
-        <div class="col-lg-7 d-none d-lg-block right-hero-panel hero-image-panel">
-            <!-- Dynamic dynamic image tag ready for your backend logic -->
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80" class="hms-dynamic-hero-img" alt="Luxury Hotel Suite View">
-            
-            <!-- High-contrast safety overlay protector -->
-            <div class="hero-overlay"></div>
+        <!-- Desktop hero photography -->
+        <div class="col-lg-7 d-none d-lg-flex hero-image-panel">
+            <div class="hero-feature-image">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80"
+                    class="hms-dynamic-hero-img w-100 h-100 object-fit-cover"
+                    alt="Hotel and outdoor pool">
+            </div>
+
+            <div class="hero-right-grid">
+                <figure class="hero-grid-card">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"
+                        alt="White bottle beside pink flowers" class="w-100 h-100 object-fit-cover d-block">
+                    <figcaption class="hero-grid-caption">
+                        <span class="hero-grid-caption-kicker">01 / Unwind</span>
+                        <span class="hero-grid-caption-title">Luxury Lounge</span>
+                    </figcaption>
+                </figure>
+                <figure class="hero-grid-card">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80"
+                        alt="Poolside loungers overlooking the ocean" class="w-100 h-100 object-fit-cover d-block">
+                    <figcaption class="hero-grid-caption">
+                        <span class="hero-grid-caption-kicker">02 / Stay</span>
+                        <span class="hero-grid-caption-title">Premium Room</span>
+                    </figcaption>
+                </figure>
+            </div>
         </div>
 
     </div>
 </header>
-
-    <!-- Features & Gallery Grid Section -->
-    <section class="gallery-grid-section position-relative">
-        <div class="container px-4 px-md-5">
-            <div class="row align-items-start g-0 match-height-row">
-
-                <!-- LEFT PANEL: Shifted further to the right using offset-md-1 and offset-lg-2 -->
-                <div
-                    class="col-md-5 offset-md-1 col-lg-4 offset-lg-2 d-flex flex-column stacked-images-wrapper pe-md-3 pe-lg-4">
-
-                    <!-- Top horizontal image: Back to its standard overlap height, but shifted right -->
-                    <div class="grid-img-box overlap-top-box position-relative">
-                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"
-                            alt="Luxury Lounge" class="img-fluid grid-photo">
-                        <div class="glass-photo-tag">Lounge</div>
-                    </div>
-
-                    <!-- Bottom horizontal image -->
-                    <div class="grid-img-box position-relative">
-                        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80"
-                            alt="Premium Room Interior" class="img-fluid grid-photo">
-                        <div class="glass-photo-tag">Suites</div>
-                    </div>
-                </div>
-
-                <!-- RIGHT PANEL: Adjusted column alignment to match the new rightward shift -->
-                <div class="col-md-5 col-lg-4 offset-lg-1 pt-4 pt-md-5 mt-lg-2">
-                    <div class="grid-img-box vertical-showcase-box w-100 position-relative">
-                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&h=1100&q=80"
-                            alt="Hotel Poolside View" class="img-fluid grid-photo">
-                        <div class="glass-photo-tag showcase-tag">The Sanctuary Pool</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
     <!-- Accommodation Showcase Section -->
     <section class="accommodation-section py-5 position-relative">

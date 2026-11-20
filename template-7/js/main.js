@@ -3,6 +3,7 @@
   const bar = document.querySelector('.scroll-nav');
   const toggle = document.querySelector('.menu-toggle');
   const overlay = document.querySelector('.menu-overlay');
+  const closeButton = overlay.querySelector('.menu-close');
   let lastY = window.scrollY;
   let ticking = false;
 
@@ -29,27 +30,27 @@
     }
   }, { passive: true });
 
-  function closeMenu() {
-    overlay.classList.remove('open');
-    overlay.setAttribute('aria-hidden', 'true');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open navigation');
+  function setMenuOpen(open) {
+    if (!open) toggle.focus();
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', String(!open));
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    document.body.classList.toggle('menu-open', open);
+    if (open) closeButton.focus();
   }
 
   toggle.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') !== 'true';
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    overlay.classList.toggle('open', open);
-    overlay.setAttribute('aria-hidden', String(!open));
+    setMenuOpen(!overlay.classList.contains('open'));
   });
 
+  closeButton.addEventListener('click', () => setMenuOpen(false));
   overlay.addEventListener('click', (event) => {
-    if (event.target === overlay) closeMenu();
+    if (event.target === overlay) setMenuOpen(false);
   });
-  overlay.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  overlay.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') closeMenu();
+    if (event.key === 'Escape' && overlay.classList.contains('open')) setMenuOpen(false);
   });
   const form = document.querySelector('.contact-form');
   if (form) form.addEventListener('submit', event => {

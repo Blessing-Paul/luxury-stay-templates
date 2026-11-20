@@ -38,23 +38,43 @@
 </nav>
 
 <header class="web-home-hero">
-  <video class="web-home-hero-video" autoplay muted loop playsinline>
-    <source src="../files/video-4.mp4" type="video/mp4" />
-  </video>
+  <div class="web-hero-images" aria-hidden="true">
+    <img class="web-hero-image is-current" src="../files/slider-2.jpeg" alt="" fetchpriority="high" />
+    <img class="web-hero-image" src="../files/room-6.jpg" alt="" />
+    <img class="web-hero-image" src="../files/dining-10.avif" alt="" />
+  </div>
 
   <div class="container web-hero-grid">
     <div class="row align-items-center g-5">
       <div class="col-xl-8 col-lg-7">
-        <div class="web-hero-label">Editorial Luxury Hotel</div>
-        <h1 class="web-hero-title">Quiet Luxury, Beautifully Stayed.</h1>
-        <p class="web-hero-copy">
-          A refined hotel experience with sculptural interiors, warm service,
-          elegant rooms, wellness spaces, destination dining, and memorable events.
-        </p>
-
-        <div class="web-actions">
-          <a href="rooms.html" class="web-btn-primary">Explore Rooms</a>
-          <a href="experiences.html" class="web-btn-outline">View Experiences</a>
+        <div class="web-hero-slides">
+          <div class="web-hero-slide is-current">
+            <div class="web-hero-label">Editorial Luxury Hotel</div>
+            <h1 class="web-hero-title">Quiet Luxury, Warm Hospitality.</h1>
+            <p class="web-hero-copy">Settle into elegant rooms, enjoy thoughtful dining, and make time for wellness.</p>
+            <div class="web-actions">
+              <a href="rooms.html" class="web-btn-primary">Explore Rooms</a>
+              <a href="experiences.html" class="web-btn-outline">View Experiences</a>
+            </div>
+          </div>
+          <div class="web-hero-slide" inert aria-hidden="true">
+            <div class="web-hero-label">Rooms &amp; Suites</div>
+            <h2 class="web-hero-title">Rest Comes Naturally.</h2>
+            <p class="web-hero-copy">Unwind in a quiet suite and wake to breakfast at your own pace.</p>
+            <div class="web-actions"><a href="rooms.html" class="web-btn-primary">Find Your Room</a></div>
+          </div>
+          <div class="web-hero-slide" inert aria-hidden="true">
+            <div class="web-hero-label">Dining at SereneStay</div>
+            <h2 class="web-hero-title">A Table Worth Lingering At.</h2>
+            <p class="web-hero-copy">Enjoy a seasonal dinner, then linger over a drink in the lounge.</p>
+            <div class="web-actions"><a href="dining.html" class="web-btn-primary">Discover Dining</a></div>
+          </div>
+        </div>
+        <div class="web-hero-controls" role="group" aria-label="Hero slideshow" hidden>
+          <button type="button" data-hero-slide="0" aria-label="Show hotel introduction" aria-current="true"></button>
+          <button type="button" data-hero-slide="1" aria-label="Show rooms and suites"></button>
+          <button type="button" data-hero-slide="2" aria-label="Show dining"></button>
+          <button type="button" data-hero-toggle>Pause slideshow</button>
         </div>
 
         <div class="web-hero-mini-grid">
@@ -66,60 +86,33 @@
 
       <div class="col-xl-4 col-lg-5">
         <div class="web-hero-book-card">
-          <h3>Plan Your Stay</h3>
-          <form>
-            <div class="mb-3">
-              <label>Check-in</label>
-              <input type="date" class="form-control" />
+          <h2>Plan Your Stay</h2>
+          <form id="heroBookingForm" action="booking.html#roomStepOne" method="get">
+            <input type="hidden" name="from" value="hero" />
+            <div class="row g-3">
+              <div class="col-sm-6"><label for="heroArrival">Check-in</label><input id="heroArrival" name="arrival" type="date" class="form-control" required /></div>
+              <div class="col-sm-6"><label for="heroDeparture">Check-out</label><input id="heroDeparture" name="departure" type="date" class="form-control" required /></div>
+              <div class="col-4"><label for="heroRooms">Rooms</label><input id="heroRooms" name="rooms" type="number" min="1" value="1" class="form-control" required /></div>
+              <div class="col-4"><label for="heroAdults">Adults</label><input id="heroAdults" name="adults" type="number" min="1" value="1" class="form-control" required /></div>
+              <div class="col-4"><label for="heroChildren">Children</label><input id="heroChildren" name="children" type="number" min="0" value="0" class="form-control" required /></div>
+              <div class="col-12">
+                <label for="heroRoomType">Room Type</label>
+                <select id="heroRoomType" name="roomType" class="form-select" required>
+                  <option value="" selected disabled>Choose a room preference</option>
+                  <option value="all">Any available room</option>
+                  <option value="deluxe">Deluxe Room</option>
+                  <option value="executive">Executive Suite</option>
+                  <option value="presidential">Presidential Suite</option>
+                </select>
+              </div>
+              <div class="col-12"><button type="submit" class="web-btn-solid w-100">Check Availability</button></div>
             </div>
-            <div class="mb-3">
-              <label>Check-out</label>
-              <input type="date" class="form-control" />
-            </div>
-            <div class="mb-3">
-              <label>Room</label>
-              <select class="form-select">
-                <option>Deluxe Room</option>
-                <option>Executive Suite</option>
-                <option>Presidential Suite</option>
-              </select>
-            </div>
-            <a href="booking.html" class="web-btn-solid w-100">Check Availability</a>
           </form>
         </div>
       </div>
     </div>
   </div>
 </header>
-
-<section class="web-overlap-panel">
-  <div class="container">
-    <div class="web-booking-strip">
-      <div class="row g-3 align-items-end">
-        <div class="col-lg-3 col-md-6">
-          <label>Arrival</label>
-          <input type="date" class="form-control" />
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <label>Departure</label>
-          <input type="date" class="form-control" />
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <label>Experience</label>
-          <select class="form-select">
-            <option>Room Stay</option>
-            <option>Spa Weekend</option>
-            <option>Dining Visit</option>
-            <option>Event Booking</option>
-          </select>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <a href="booking.html" class="web-btn-solid w-100">Reserve</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="web-section js-bg-order">
   <div class="container">

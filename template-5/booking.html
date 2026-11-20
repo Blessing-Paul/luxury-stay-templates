@@ -20,8 +20,8 @@
   </header>
   <div class="menu-backdrop" data-menu-close></div>
   <nav class="side-menu" id="side-menu" aria-label="Main navigation" aria-hidden="true" inert>
-    <div class="side-menu-head"><a class="brand" href="index.html#home"><span class="brand-mark" aria-hidden="true">✳</span><span>ASTER<small>HOUSE</small></span></a><button class="menu-close" type="button" aria-label="Close navigation">CLOSE <b aria-hidden="true">×</b></button></div>
-    <div class="side-menu-links"><p>COME A LITTLE CLOSER</p><a href="index.html#stay"><small>01</small> The house <span>↗</span></a><a href="rooms.html"><small>02</small> Rooms & suites <span>↗</span></a><a href="spa.html"><small>03</small> Spa & wellness <span>↗</span></a><a href="dining.html"><small>04</small> Dining <span>↗</span></a><a href="fitness.html"><small>05</small> Fitness <span>↗</span></a><a href="events.html"><small>06</small> Gatherings & events <span>↗</span></a><a href="booking.html" aria-current="page"><small>07</small> Find your dates <span>↗</span></a><a href="index.html#story"><small>08</small> The Aster way <span>↗</span></a><a href="index.html#contact"><small>09</small> Get in touch <span>↗</span></a></div>
+    <div class="side-menu-head"><a class="brand" href="index.html#home" aria-label="Aster House home"><span class="brand-mark" aria-hidden="true">✳</span><span>ASTER<small>HOUSE</small></span></a><button class="menu-close" type="button" aria-label="Close navigation">CLOSE <b aria-hidden="true">×</b></button></div>
+    <div class="side-menu-links"><p>COME A LITTLE CLOSER</p><a href="index.html#stay"><small>01</small> The house <span>↗</span></a><a href="rooms.html"><small>02</small> Rooms & suites <span>↗</span></a><a href="spa.html"><small>03</small> Spa & wellness <span>↗</span></a><a href="dining.html"><small>04</small> Dining <span>↗</span></a><a href="fitness.html"><small>05</small> Fitness <span>↗</span></a><a href="events.html"><small>06</small> Gatherings & events <span>↗</span></a><a href="index.html#contact"><small>07</small> Get in touch <span>↗</span></a><a href="login.html"><small>08</small> Login <span>↗</span></a></div>
     <div class="side-menu-foot"><span>THE COAST, AT YOUR OWN PACE</span><a href="mailto:hello@asterhouse.example">SAY HELLO ↗</a></div>
   </nav>
   <main>
@@ -30,39 +30,96 @@
         <a class="detail-back" href="index.html#house">← BACK TO THE HOUSE</a>
         <p class="section-kicker">A little closer to your stay</p>
         <h1>Your coast<br />is <em>waiting.</em></h1>
-        <p>Tell us when you would like to come and who is coming along. Our hosts will help you find the right room for your time away.</p>
-        <div class="detail-hero-actions"><a class="detail-button detail-button-primary" href="#stay-request">PLAN YOUR STAY ↓</a><a class="detail-button detail-button-secondary" href="rooms.html">EXPLORE THE ROOMS ↗</a></div>
+        <p>Choose a room for your stay or a venue for your next gathering.</p>
+        <div class="detail-hero-actions"><a class="detail-button detail-button-primary" href="#stay-request">START YOUR BOOKING ↓</a><a class="detail-button detail-button-secondary" href="events.html">EXPLORE EVENT SPACES ↗</a></div>
       </div>
     </section>
     <section class="booking-form-section">
       <div class="booking-form-intro">
         <p class="section-kicker">Start with the details</p>
-        <h2>Make a little<br /><em>room for away.</em></h2>
-        <p>Share your preferred dates and party size. This is a stay enquiry, not a live availability check; our team will follow up to help with the next steps.</p>
+        <h2>Make room<br /><em>for your plans.</em></h2>
+        <p>Enter your dates, review the details, and prepare an enquiry for our hosts. They’ll confirm availability and pricing by email.</p>
         <div class="booking-form-note"><span>✳</span><p>Not sure which room is right?<a href="rooms.html"> Explore rooms & suites ↗</a></p></div>
       </div>
-      <form class="stay-request" id="stay-request">
-        <p class="stay-request-kicker">YOUR STAY, YOUR PACE</p>
-        <div class="stay-request-grid">
-          <label>Arrival<input type="date" name="arrival" required /></label>
-          <label>Departure<input type="date" name="departure" required /></label>
-          <label>Adults<select name="adults" required><option value="1">1 adult</option><option value="2" selected>2 adults</option><option value="3">3 adults</option><option value="4">4 adults</option><option value="5">5 adults</option><option value="6">6 adults</option></select></label>
-          <label>Children<select name="children"><option value="0" selected>No children</option><option value="1">1 child</option><option value="2">2 children</option><option value="3">3 children</option><option value="4">4 children</option></select></label>
-          <label>Rooms<select name="rooms" required><option value="1" selected>1 room</option><option value="2">2 rooms</option><option value="3">3 rooms</option><option value="4">4 rooms</option></select></label>
-          <p class="stay-length" id="stay-length" aria-live="polite">Choose your arrival and departure to see length of stay.</p>
-        </div>
-        <div class="stay-request-divider"></div>
-        <p class="stay-request-kicker">HOW CAN WE REACH YOU?</p>
-        <div class="stay-request-grid">
-          <label>Your name<input type="text" name="guestName" autocomplete="name" required /></label>
-          <label>Email address<input type="email" name="email" autocomplete="email" required /></label>
-          <label class="stay-request-message">Anything else we should know?<textarea name="message" rows="3" placeholder="A room preference, a special occasion, or a question for our hosts"></textarea></label>
-        </div>
-        <button class="stay-request-submit" type="submit">PREPARE YOUR STAY ENQUIRY <span>↗</span></button>
-        <p class="stay-request-feedback" id="stay-request-feedback" role="status" aria-live="polite"></p>
-        <a class="stay-request-email" id="stay-request-email" hidden>OPEN YOUR EMAIL TO SEND THE ENQUIRY ↗</a>
-        <p class="stay-request-disclaimer">Your email app will open with your enquiry addressed to hello@asterhouse.example. Replace this sample address before publishing.</p>
-      </form>
+      <div class="stay-request" id="stay-request">
+        <form id="booking-request-form" hidden>
+          <fieldset class="booking-kind">
+            <legend class="stay-request-kicker">WHAT WOULD YOU LIKE TO BOOK?</legend>
+            <label><input type="radio" name="bookingKind" value="room" checked /><span>Room stay</span></label>
+            <label><input type="radio" name="bookingKind" value="hall" /><span>Event space</span></label>
+          </fieldset>
+
+          <fieldset class="booking-fields" id="room-request-fields">
+            <legend class="stay-request-kicker">STAY DETAILS</legend>
+            <div class="stay-request-grid">
+              <label>Arrival<input type="date" name="arrival" required /></label>
+              <label>Departure<input type="date" name="departure" required /></label>
+              <label>Adults<input type="number" name="adults" min="1" max="6" value="2" required /></label>
+              <label>Children<input type="number" name="children" min="0" max="4" value="0" required /></label>
+              <label>Number of rooms<input type="number" name="rooms" min="1" max="4" value="1" required /></label>
+              <p class="stay-length" id="stay-length" aria-live="polite">Choose your dates to see the length of stay.</p>
+              <label class="stay-request-message">Room preference
+                <select name="room">
+                  <option value="">No preference</option>
+                  <option value="guest-room">Guest Room</option>
+                  <option value="coastal-suite">Coastal Suite</option>
+                  <option value="family-room">Family Room</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="booking-fields" id="hall-request-fields" hidden disabled>
+            <legend class="stay-request-kicker">EVENT DETAILS</legend>
+            <div class="stay-request-grid">
+              <label>Venue
+                <select name="hall" required>
+                  <option value="">Choose a space</option>
+                  <option value="grand-hall">Grand Hall</option>
+                  <option value="private-dining-room">Private Dining Room</option>
+                  <option value="meeting-room">Meeting Room</option>
+                </select>
+              </label>
+              <label>Occasion<input type="text" name="occasion" maxlength="100" placeholder="e.g. Wedding reception" required /></label>
+              <label>Event date<input type="date" name="eventDate" required /></label>
+              <label>Estimated guests<input type="number" name="guests" inputmode="numeric" min="1" required /></label>
+              <label>Start time<input type="time" name="startTime" required /></label>
+              <label>End time<input type="time" name="endTime" required /></label>
+            </div>
+          </fieldset>
+
+          <div class="stay-request-divider"></div>
+          <fieldset class="booking-fields">
+            <legend class="stay-request-kicker">CONTACT DETAILS</legend>
+            <div class="stay-request-grid">
+              <label>Your name<input type="text" name="guestName" autocomplete="name" maxlength="100" required /></label>
+              <label>Email address<input type="email" name="email" autocomplete="email" required /></label>
+              <label>Phone (optional)<input type="tel" name="phone" autocomplete="tel" maxlength="40" /></label>
+              <label class="stay-request-message">Special requests (optional)<textarea name="message" rows="3" maxlength="500"></textarea></label>
+            </div>
+          </fieldset>
+          <button class="stay-request-submit" type="submit">REVIEW YOUR REQUEST <span aria-hidden="true">↗</span></button>
+        </form>
+
+        <section class="booking-record" id="booking-record" aria-labelledby="booking-record-title" hidden>
+          <div class="booking-record-head">
+            <div>
+              <p class="stay-request-kicker">ASTER HOUSE</p>
+              <h3 id="booking-record-title" tabindex="-1">Review your request</h3>
+            </div>
+            <span class="booking-record-status" id="booking-record-status">Review</span>
+          </div>
+          <dl class="booking-record-details" id="booking-record-details"></dl>
+          <p class="booking-record-note" id="booking-record-note"></p>
+          <div class="booking-record-actions">
+            <button class="detail-button detail-button-secondary" id="booking-edit" type="button">EDIT DETAILS</button>
+            <button class="detail-button detail-button-primary" id="booking-prepare" type="button">PREPARE REQUEST ↗</button>
+            <a class="detail-button detail-button-primary" id="stay-request-email" hidden>OPEN EMAIL TO SEND ↗</a>
+            <button class="detail-button detail-button-secondary" id="booking-print" type="button" hidden>PRINT / SAVE PDF</button>
+          </div>
+        </section>
+        <noscript><p>Enable JavaScript to review your booking request, or email <a href="mailto:hello@asterhouse.example">hello@asterhouse.example</a>.</p></noscript>
+      </div>
     </section>
     <section class="booking-help">
       <p class="section-kicker">A question before you book?</p>
@@ -71,7 +128,7 @@
     </section>
     <div class="closing-marquee" aria-hidden="true"><div class="closing-track"><span>Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b> Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b></span><span>Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b> Come as you are <b>✳</b> Stay a little longer <b>✳</b> Take the scenic way <b>✳</b></span></div></div>
   </main>
-  <footer class="site-footer"><a class="brand" href="index.html#home"><span class="brand-mark" aria-hidden="true">✳</span><span>ASTER<small>HOUSE</small></span></a><p>A familiar place to find<br />a little more room.</p><div class="footer-links"><a href="rooms.html">ROOMS</a><a href="spa.html">SPA</a><a href="dining.html">DINING</a><a href="fitness.html">FITNESS</a><a href="events.html">EVENTS</a><a href="booking.html" aria-current="page">BOOK A STAY</a><a href="index.html#contact">CONTACT</a></div><span class="copyright">© 2025 ASTER HOUSE</span></footer>
+  <footer class="site-footer"><a class="brand" href="index.html#home" aria-label="Aster House home"><span class="brand-mark" aria-hidden="true">✳</span><span>ASTER<small>HOUSE</small></span></a><p>A familiar place to find<br />a little more room.</p><div class="footer-links"><a href="rooms.html">ROOMS</a><a href="spa.html">SPA</a><a href="dining.html">DINING</a><a href="fitness.html">FITNESS</a><a href="events.html">EVENTS</a><a href="booking.html" aria-current="page">BOOK A STAY</a><a href="index.html#contact">CONTACT</a><a href="login.html">LOGIN</a></div><span class="copyright">© 2025 ASTER HOUSE</span></footer>
   <script src="script.js"></script>
 </body>
 </html>

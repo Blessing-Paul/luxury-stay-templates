@@ -13,7 +13,12 @@
 </head>
 <body>
   <header class="hero" id="home">
-    <div class="hero-image" aria-hidden="true"></div>
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-image is-active" style="--slide-image: url('../files/main-home-1.avif')"></div>
+      <div class="hero-image" style="--slide-image: url('../files/main-home-2.avif')"></div>
+      <div class="hero-image" style="--slide-image: url('../files/slider-1.jpeg')"></div>
+      <div class="hero-image" style="--slide-image: url('../files/slider-2.jpeg')"></div>
+    </div>
     <div class="hero-shade" aria-hidden="true"></div>
 
     <nav class="site-nav" aria-label="Main navigation">
@@ -42,7 +47,15 @@
       </div>
     </div>
 
-    <div class="hero-index"><span>01</span> / 04</div>
+    <div class="hero-index" role="group" aria-label="Hero slideshow">
+      <div class="hero-count"><span>01</span> / 04</div>
+      <button type="button" class="hero-next" aria-label="Next slide" hidden>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14m-6-6 6 6-6 6" />
+        </svg>
+      </button>
+      <button type="button" class="hero-playback" aria-label="Pause slideshow" hidden>Ⅱ</button>
+    </div>
     <div class="hero-location">THE COAST, YOUR OWN WAY</div>
   </header>
 

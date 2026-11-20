@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking | SereneStay</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="web-interior">
+  <nav class="navbar navbar-expand-lg web-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        SereneStay
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="rooms.html">Rooms</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="experiences.html">Experiences</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="dining.html">Dining</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="spa.html">Spa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gym.html">Gym</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events.html">Events</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <a href="booking.html" class="web-nav-btn">
+            Book Now
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+  <main class="web-reservations">
+    <header class="web-reservation-heading">
+      <div class="web-reservation-title">
+        <p>SereneStay Reservations</p>
+        <h1>Reserve your visit</h1>
+      </div>
+      <img src="../files/booking-9.avif" alt="" />
+    </header>
+
+    <noscript>
+      <p class="alert alert-warning">Enable JavaScript to use the reservation demo.</p>
+    </noscript>
+
+    <ol class="web-steps" id="booking-steps" aria-label="Reservation progress">
+      <li class="is-current" data-step="details" aria-current="step"><span class="web-step-mark">1</span>Stay & guests
+      </li>
+      <li data-step="review"><span class="web-step-mark">2</span>Review</li>
+      <li data-step="receipt"><span class="web-step-mark">3</span>Receipt</li>
+    </ol>
+
+    <div class="web-booking-workspace" hidden>
+      <form id="reservation-form" class="web-booking-layout" novalidate>
+        <div class="web-booking-main">
+          <div id="booking-errors" class="web-form-alert" role="alert" tabindex="-1" hidden></div>
+
+          <div id="reservation-entry">
+            <section class="web-booking-panel" aria-labelledby="reservation-heading">
+              <h2 id="reservation-heading" tabindex="-1">What are you booking?</h2>
+              <div class="web-segmented" role="radiogroup" aria-label="Reservation type">
+                <label><input type="radio" name="reservationType" value="stay" checked /><span>Hotel stay</span></label>
+                <label><input type="radio" name="reservationType" value="event" /><span>Private event</span></label>
+              </div>
+
+              <fieldset data-fields="stay" class="web-booking-fields">
+                <legend class="visually-hidden">Stay details</legend>
+                <div class="web-stay-stage" data-stage="0">
+                  <div class="web-field-wide">
+                    <p class="web-section-kicker">Plan your stay</p>
+                    <h3>Dates, rooms & guests</h3>
+                    <p class="web-panel-sub">One reservation for yourself, your family or a group.</p>
+                  </div>
+                  <div class="web-date-grid web-field-wide">
+                    <label>Check-in
+                      <input class="form-control" name="arrival" type="date" required>
+                    </label>
+                    <label>Check-out
+                      <input class="form-control" name="departure" type="date" required>
+                    </label>
+                  </div>
+                  <div class="web-counter-grid web-field-wide"><label>Number of rooms<input class="form-control"
+                        name="roomCount" type="number" min="1" max="10" value="1" required></label><label>Adults<input
+                        class="form-control" name="adults" type="number" min="1" max="20" value="2"
+                        required></label><label>Children<input class="form-control" name="children" type="number"
+                        min="0" max="20" value="0" required></label></div>
+                  <div class="web-field-wide" id="children-ages-wrap" hidden>
+                    <p>Children’s ages at check-in</p>
+                    <div id="children-ages" class="web-age-grid"></div>
+                  </div>
+                  <input type="hidden" name="guests" value="2"><input type="hidden" name="room" value="deluxe">
+                  <div class="web-field-wide web-allocation">
+                    <h4>Who will stay in each room?</h4>
+                    <p class="web-field-hint">Distribute adults and children between rooms. Each room needs at least one
+                      adult.</p>
+                    <div id="occupancy-rooms"></div>
+                    <p id="allocation-status" class="web-field-hint" aria-live="polite"></p>
+                  </div>
+                  <p class="web-field-hint web-field-wide" id="guest-hint"></p>
+                  <p class="web-field-hint web-field-wide" id="stay-length"></p>
+                </div>
+                <div class="web-stay-stage" data-stage="1" hidden>
+                  <div class="web-field-wide">
+                    <h3>Choose rooms for your stay</h3>
+                    <p class="web-panel-sub">Choose room types and quantities for your entire stay, from check-in to
+                      check-out. Mix room types in one reservation.</p>
+                    <p class="web-field-hint">Illustrative rates only; no live availability is connected.</p>
+                  </div>
+                  <div id="nightly-rooms" class="web-field-wide"></div>
+                  <fieldset class="web-choice-fieldset web-field-wide">
+                    <legend>Optional extras</legend>
+                    <p class="web-field-hint">Choose any combination of extras. Demo extras are charged once per
+                      reservation.</p>
+                    <div class="web-choice-group web-choice-group-compact" data-catalog="extras"></div>
+                  </fieldset>
+                </div>
+              </fieldset>
+
+              <fieldset data-fields="event" class="web-booking-fields" hidden disabled>
+                <legend class="visually-hidden">Event details</legend>
+                <fieldset class="web-choice-fieldset web-field-wide">
+                  <legend>Venue</legend>
+                  <div class="web-choice-group" data-catalog="venues"></div>
+                </fieldset>
+                <label>Occasion<select class="form-select" name="occasion">
+                    <option value="" selected disabled>Choose an occasion</option>
+                    <option>Wedding</option>
+                    <option>Conference</option>
+                    <option>Private dinner</option>
+                    <option>Celebration</option>
+                  </select></label>
+                <label>Start date and time<input class="form-control" name="startDateTime" type="datetime-local"
+                    required /></label>
+                <label>End date and time<input class="form-control" name="endDateTime" type="datetime-local"
+                    required /></label>
+                <label>Attendees<input class="form-control" name="attendees" type="number" min="1" value="10" required
+                    inputmode="numeric" /></label>
+                <p class="web-field-hint" id="venue-hint"></p>
+              </fieldset>
+            </section>
+
+            <section class="web-booking-panel" id="contact-stage" aria-labelledby="guest-heading" hidden>
+              <h2 id="guest-heading">Guest details</h2>
+              <p class="web-panel-sub">We&rsquo;ll use these for your receipt.</p>
+              <div class="web-booking-fields">
+                <label>Full name<input class="form-control" name="guestName" autocomplete="name" required
+                    maxlength="100" /></label>
+                <label>Email address<input class="form-control" name="email" type="email" autocomplete="email" required
+                    maxlength="150" /></label>
+                <label class="web-field-wide">Special requests <span class="web-optional">(optional)</span><textarea
+                    class="form-control" name="notes" maxlength="300"></textarea></label>
+              </div>
+            </section>
+            <div id="stage-navigation" class="web-stage-navigation"><button type="button" class="web-btn-secondary"
+                id="stage-back" hidden>Back</button><button type="button" class="web-btn-primary"
+                id="stage-next">Continue</button></div>
+          </div>
+
+          <section id="reservation-review" class="web-booking-panel" hidden aria-labelledby="review-heading">
+            <h2 id="review-heading" tabindex="-1">Review your reservation</h2>
+            <p class="web-panel-sub">Check everything below, then confirm. Nothing is charged in this demo.</p>
+            <dl class="web-booking-details" id="booking-review"></dl>
+            <button type="button" class="web-btn-secondary" id="booking-back">Edit details</button>
+          </section>
+        </div>
+
+        <aside class="web-booking-summary" aria-label="Reservation summary">
+          <h2>Your reservation</h2>
+          <dl class="web-booking-details" id="booking-summary"></dl>
+          <div class="web-summary-total">
+            <p>Estimated total</p>
+            <output id="booking-total" aria-live="polite"></output>
+          </div>
+          <button type="submit" class="web-btn-primary">Review reservation</button>
+          <p class="web-demo-note">Demo only &middot; No real reservation or charge</p>
+        </aside>
+      </form>
+    </div>
+
+    <section id="booking-confirmation" hidden>
+      <article class="web-receipt">
+        <header>
+          <div class="web-receipt-brand">SereneStay</div>
+          <p>24 Serene Avenue, City Center</p>
+        </header>
+        <p class="web-receipt-status"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Reservation confirmed
+        </p>
+        <h2 tabindex="-1">Reservation receipt</h2>
+        <p class="web-demo-note">Demo confirmation &middot; No funds collected</p>
+        <dl class="web-booking-details" id="receipt-details"></dl>
+      </article>
+      <div class="web-actions web-receipt-actions">
+        <button type="button" class="web-btn-primary" id="print-receipt">Print receipt</button>
+        <button type="button" class="web-btn-secondary" id="new-booking">Start a new reservation</button>
+      </div>
+    </section>
+  </main>
+  <footer class="web-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="web-footer-brand">SereneStay</div>
+
+          <p class="web-footer-text">
+            A modern luxury hotel created for comfort, calm hospitality,
+            memorable dining, wellness, and elegant stays.
+          </p>
+
+          <div class="web-footer-socials">
+            <a href="#" class="web-footer-social-link" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" class="web-footer-social-link" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" class="web-footer-social-link" aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4">
+          <h4 class="web-footer-title">Hotel</h4>
+
+          <ul class="web-footer-links">
+            <li><a href="experiences.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="spa.html">Spa</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4">
+          <h4 class="web-footer-title">Amenities</h4>
+
+          <ul class="web-footer-links">
+            <li><a href="gym.html">Gym</a></li>
+            <li><a href="experiences.html">Pool</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Concierge</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-4">
+          <h4 class="web-footer-title">Contact</h4>
+
+          <p class="web-footer-text mb-2">
+            24 Serene Avenue, City Center
+          </p>
+
+          <p class="web-footer-text mb-2">
+            reservations@serenestay.com
+          </p>
+
+          <p class="web-footer-text mb-0">
+            +234 800 000 0000
+          </p>
+        </div>
+      </div>
+
+      <div class="web-footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+        <div>
+          © 2026 SereneStay Hotel. All rights reserved.
+        </div>
+
+        <div>
+          Privacy Policy · Terms · Booking Policy
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js"></script>
+  <script src="booking.js"></script>
+</body>
+
+</html>

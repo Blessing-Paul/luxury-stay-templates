@@ -1,6 +1,71 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector("#nav-links");
 
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const heroSlides = [...document.querySelectorAll(".hero-slides .hero-image")];
+
+if (heroSlides.length > 1) {
+  const counter = document.querySelector(".hero-count span");
+  const nextButton = document.querySelector(".hero-next");
+  const playbackButton = document.querySelector(".hero-playback");
+  let currentSlide = 0;
+  let timer;
+  let paused = reducedMotion.matches;
+
+  function showNextSlide() {
+    const previousSlide = currentSlide;
+    currentSlide = (currentSlide + 1) % heroSlides.length;
+    heroSlides.forEach((slide, index) => {
+      slide.classList.toggle("is-previous", index === previousSlide);
+      slide.classList.toggle("is-active", index === currentSlide);
+    });
+    counter.textContent = String(currentSlide + 1).padStart(2, "0");
+  }
+
+  function updatePlayback() {
+    window.clearInterval(timer);
+    playbackButton.textContent = paused ? "▶" : "Ⅱ";
+    playbackButton.setAttribute("aria-label", paused ? "Play slideshow" : "Pause slideshow");
+    if (!paused && !document.hidden) {
+      timer = window.setInterval(showNextSlide, 6500);
+    }
+  }
+
+  nextButton.hidden = false;
+  nextButton.addEventListener("click", () => {
+    showNextSlide();
+    updatePlayback();
+  });
+  playbackButton.hidden = false;
+  playbackButton.addEventListener("click", () => {
+    paused = !paused;
+    updatePlayback();
+  });
+  reducedMotion.addEventListener("change", () => {
+    paused = reducedMotion.matches;
+    updatePlayback();
+  });
+  document.addEventListener("visibilitychange", updatePlayback);
+  updatePlayback();
+}
+
+const scrollTopButton = document.createElement("button");
+scrollTopButton.type = "button";
+scrollTopButton.className = "scroll-top";
+scrollTopButton.setAttribute("aria-label", "Back to top");
+scrollTopButton.textContent = "↑";
+document.body.append(scrollTopButton);
+
+function updateScrollTopButton() {
+  scrollTopButton.hidden = window.scrollY < 360;
+}
+
+scrollTopButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: reducedMotion.matches ? "instant" : "smooth" });
+});
+window.addEventListener("scroll", updateScrollTopButton, { passive: true });
+updateScrollTopButton();
+
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
     const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";

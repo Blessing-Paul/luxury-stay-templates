@@ -497,12 +497,14 @@ h2 em {
 .menu-feature {
     min-height: 550px;
     padding: 100px 12%;
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(28px, 6vw, 90px);
     align-items: center;
-    background: linear-gradient(90deg, rgba(15, 20, 16, .92), rgba(15, 20, 16, .28)), url('https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=2200&q=85') center/cover
+    background: linear-gradient(120deg, #111612, var(--panel))
 }
 
-.menu-feature>div {
+.menu-feature-copy {
     max-width: 430px
 }
 
@@ -825,3 +827,121 @@ h2 em {
 @media(max-width:900px){.booking-paths,.booking-workspace-layout{grid-template-columns:1fr}.booking-aside{position:static;min-height:auto}.booking-aside-art{min-height:190px}.booking-path-image{height:260px}}
 @media(max-width:600px){.booking-entrance,.booking-workspace{padding-top:55px;padding-bottom:60px}.booking-path-copy{padding:30px 24px}.booking-path-image{height:215px}.booking-aside{padding:25px}.booking-path h3{font-size:34px}}
 @media(prefers-reduced-motion:reduce){.booking-path,.booking-path-image{transition:none!important}}
+
+/* Architectural linework for editorial and account panels. */
+.nelson-pattern {
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, transparent 49.7%, rgba(167,180,158,.22) 49.7% 50.3%, transparent 50.3%),
+        repeating-radial-gradient(ellipse at 50% 100%, transparent 0 17px, rgba(167,180,158,.27) 18px 19px, transparent 20px 28px);
+    mask-image: linear-gradient(180deg, transparent, #000 22%, #000 82%, transparent);
+}
+
+.menu-feature-art {
+    position: relative;
+    min-height: clamp(230px, 30vw, 410px);
+}
+
+.menu-feature-art::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: url('https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=1400&q=85') center / cover no-repeat;
+    opacity: .8;
+}
+
+.story-inline {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(24px, 6vw, 90px);
+}
+
+.story-inline h2 { margin: 20px 0 24px; }
+.story-inline-art { min-height: clamp(180px, 22vw, 320px); }
+
+.service-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: clamp(14px, 2vw, 28px);
+    margin-top: 34px;
+}
+
+.service-experience {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-end;
+    min-height: clamp(350px, 38vw, 520px);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--panel);
+}
+
+.service-experience-spa { grid-column: span 8; }
+.service-experience-gym { grid-column: span 4; }
+
+.service-experience img,
+.service-experience::before,
+.service-experience::after {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.service-experience img { z-index: -3; object-fit: cover; }
+.service-experience::before {
+    z-index: -2;
+    content: "";
+    background: linear-gradient(0deg, #111813 3%, rgba(17,24,19,.9) 24%, rgba(17,24,19,.22) 76%);
+}
+
+.service-experience::after {
+    z-index: -1;
+    content: "";
+    background: repeating-radial-gradient(ellipse at 100% 0, transparent 0 17px, rgba(211,223,203,.24) 18px 19px, transparent 20px 28px);
+    mask-image: linear-gradient(225deg, #000, transparent 47%);
+}
+
+.service-experience-copy { padding: clamp(22px, 3.3vw, 48px); }
+.service-experience h3 { margin: 9px 0 12px; font: 400 clamp(28px, 3vw, 48px)/1.12 var(--serif); }
+.service-experience-copy > p:not(.section-kicker) { max-width: 40ch; margin: 0; color: var(--text); }
+.service-rooms { background: var(--panel); border-block: 1px solid var(--line); scroll-margin-top: 30px; }
+.service-rooms .room-card { background: var(--bg); }
+
+.account-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+    max-width: 1400px;
+    margin-inline: auto;
+    padding-block: clamp(48px, 7vw, 100px);
+}
+
+.account-intro, .account-card { padding: clamp(24px, 4.5vw, 64px); border: 1px solid var(--line); }
+.account-intro { position: relative; isolation: isolate; display: grid; align-items: center; overflow: hidden; background: var(--panel2); }
+.account-pattern { position: absolute; z-index: -1; inset: 8% -22% -15% 23%; opacity: .44; }
+.account-intro h1 { margin: 14px 0 20px; font: 400 clamp(40px, 5vw, 72px)/1.04 var(--serif); }
+.account-intro-copy > p:last-child { max-width: 26ch; margin-bottom: 0; color: var(--muted); }
+.account-card { background: var(--panel); }
+.account-card h2 { margin: 0 0 24px; font: 400 clamp(27px, 3vw, 38px)/1.2 var(--serif); }
+.account-card input { background: var(--bg); }
+.account-card .text-link { justify-self: start; margin-top: 0; }
+.account-card .form-note { color: var(--muted); font-size: 12px; }
+.account-card .account-result { color: var(--sage); }
+.account-result:empty { display: none; }
+
+@media (max-width: 850px) {
+    .service-experience-spa, .service-experience-gym { grid-column: 1 / -1; }
+    .service-experience { min-height: 340px; }
+    .account-layout { grid-template-columns: minmax(0, 1fr); }
+    .account-intro { min-height: 220px; }
+}
+
+@media (max-width: 680px) {
+    .menu-feature { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+    .menu-feature-art { min-height: 160px; }
+    .story-inline { grid-template-columns: minmax(0, 1fr); }
+    .story-inline-art { min-height: 150px; }
+    .service-experience { min-height: 310px; }
+}

@@ -114,13 +114,13 @@
   <div class="shade"></div>
 
   <header class="top">
-    <a class="logo" href="#">Solstice<small>Hotel &amp; Social Club</small></a>
+    <a class="logo" href="index.html" target="_top">Solstice<small>Hotel &amp; Social Club</small></a>
     <nav class="links" aria-label="Main">
-      <a href="#rooms">Rooms</a><a href="#experiences">Experiences</a><a href="#dining">Dining</a><a href="#events">Events</a>
+      <a href="rooms.html" target="_top">Rooms</a><a href="experiences.html" target="_top">Experiences</a><a href="dining.html" target="_top">Dining</a><a href="events.html" target="_top">Events</a>
     </nav>
     <div class="actions">
-      <a class="login" href="#login">Log in</a>
-      <a class="reserve" href="#book">Reserve a stay</a>
+      <a class="login" href="login.html" target="_top">Log in</a>
+      <a class="reserve" href="booking.html" target="_top">Reserve a stay</a>
     </div>
   </header>
 
@@ -141,15 +141,15 @@
     <h1 class="headline" id="headline"><span>A little more</span><span>room to live.</span></h1>
     <div class="sub">
       <p>Considered spaces, unhurried mornings, and the simple pleasure of being somewhere beautiful.</p>
-      <a href="#rooms">Explore the rooms</a>
+      <a href="rooms.html" target="_top">Explore the rooms</a>
     </div>
   </div>
 
-  <form class="book" id="book" action="#" method="get">
-    <label>Arrive <input type="date" name="arrive" required></label>
-    <label>Depart <input type="date" name="depart" required></label>
+  <form class="book" id="book" action="booking.html" method="get" target="_top">
+    <label>Arrive <input type="date" name="checkin" required></label>
+    <label>Depart <input type="date" name="checkout" required></label>
     <label>Guests
-      <select name="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option></select>
+      <select name="adults"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select>
     </label>
     <button type="submit">Check availability</button>
   </form>
@@ -250,6 +250,16 @@
   });
   addEventListener('resize', () => render(t));
 })();
+  const bookingForm = document.getElementById('book');
+  const { checkin, checkout } = bookingForm.elements;
+  function updateCheckoutValidity() {
+    checkout.min = checkin.value;
+    checkout.setCustomValidity(checkin.value && checkout.value && checkout.value <= checkin.value
+      ? 'Departure must be after arrival.' : '');
+  }
+  checkin.addEventListener('input', updateCheckoutValidity);
+  checkout.addEventListener('input', updateCheckoutValidity);
+  updateCheckoutValidity();
 </script>
 </body>
 </html>

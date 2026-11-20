@@ -25,11 +25,11 @@
 
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav mx-auto mb-2 mb-xl-0">
-            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li><li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li><li class="nav-item"><a class="nav-link" href="dining.html">Dining</a></li><li class="nav-item"><a class="nav-link" href="spa.html">Spa</a></li><li class="nav-item"><a class="nav-link" href="gym.html">Gym</a></li><li class="nav-item"><a class="nav-link" href="events-halls.html">Events & Halls</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li><li class="nav-item"><a class="nav-link" href="experiences.html">Experiences</a></li><li class="nav-item"><a class="nav-link" href="dining.html">Dining</a></li><li class="nav-item"><a class="nav-link" href="spa.html">Spa</a></li><li class="nav-item"><a class="nav-link" href="gym.html">Gym</a></li><li class="nav-item"><a class="nav-link" href="events-halls.html">Events & Halls</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
 
           <div class="d-flex">
-            <a href="booking.html" class="web-nav-btn">Book Now</a>
+            <a href="booking.html" class="web-nav-btn" aria-current="page">Book Now</a>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
     <div class="web-breadcrumb-label">Reserve Your Stay</div>
     <h1>Booking</h1>
     <p>Book rooms or plan halls and events with a guided two-tab booking interface, availability cards, stay calculation, and booking summary.</p>
-  </div>a
+  </div>
 </header>
 
 <section class="web-section js-bg-order">
@@ -86,11 +86,12 @@
             <div class="col-lg-7">
               <div class="web-form">
                 <div class="row g-3">
-                  <div class="col-md-6"><label for="roomCheckIn">Check-in Date</label><input type="date" id="roomCheckIn" class="form-control"></div>
-                  <div class="col-md-6"><label for="roomCheckOut">Check-out Date</label><input type="date" id="roomCheckOut" class="form-control"></div>
+                  <div class="col-md-6"><label for="roomCheckIn">Check-in Date</label><input type="date" id="roomCheckIn" required class="form-control"></div>
+                  <div class="col-md-6"><label for="roomCheckOut">Check-out Date</label><input type="date" id="roomCheckOut" required class="form-control"></div>
                   <div class="col-md-6">
                     <label for="roomType">Room Type</label>
-                    <select id="roomType" class="form-select">
+                    <select id="roomType" required class="form-select">
+                      <option value="" selected disabled>Choose a room preference</option>
                       <option value="all">Any available room</option>
                       <option value="deluxe">Deluxe Room</option>
                       <option value="executive">Executive Suite</option>
@@ -101,11 +102,13 @@
                     <label>Length of Stay</label>
                     <div id="roomStayOutput" class="web-stay-pill"><i class="fa-solid fa-moon me-2"></i>Select valid dates</div>
                   </div>
-                  <div class="col-md-6"><label for="roomAdults">Adults</label><input type="number" id="roomAdults" min="1" value="1" class="form-control"></div>
-                  <div class="col-md-6"><label for="roomChildren">Children</label><input type="number" id="roomChildren" min="0" value="0" class="form-control"></div>
+                  <div class="col-md-6"><label for="roomCount">Rooms</label><input type="number" id="roomCount" min="1" value="1" class="form-control" required></div>
+                  <div class="col-md-6"><label for="roomAdults">Adults</label><input type="number" id="roomAdults" required min="1" value="1" class="form-control"></div>
+                  <div class="col-md-6"><label for="roomChildren">Children</label><input type="number" id="roomChildren" required min="0" value="0" class="form-control"></div>
                   <div class="col-12">
                     <label for="roomExtras">Extras</label>
                     <select id="roomExtras" class="form-select">
+                      <option value="" selected disabled>Choose an extra preference</option>
                       <option>No extras</option>
                       <option>Airport Pickup</option>
                       <option>Spa Package</option>
@@ -113,7 +116,7 @@
                       <option>Romantic Room Setup</option>
                     </select>
                   </div>
-                  <div class="col-12"><div id="roomAvailabilityAlert" class="web-inline-alert"></div></div>
+                  <div class="col-12"><div id="roomAvailabilityAlert" class="web-inline-alert" role="status"></div></div>
                   <div class="col-12 d-flex flex-column flex-md-row gap-3">
                     <button type="button" id="checkAvailabilityBtn" class="web-btn-ghost">Check Available Rooms</button>
                     <button type="button" id="continueRoomBookingBtn" class="web-btn-solid">Continue to Booking Details</button>
@@ -123,7 +126,18 @@
             </div>
           </div>
 
-          <div id="roomAvailabilityResults" class="row g-4 mt-4"></div>
+          <div id="roomAvailabilityResults" class="row g-4 mt-4" tabindex="-1" aria-label="Room search results"></div>
+          <dialog id="roomSearchDialog" class="web-search-dialog web-form" aria-labelledby="roomSearchDialogTitle" aria-describedby="roomSearchDialogHelp">
+            <div class="web-kicker">Room Availability</div>
+            <h2 id="roomSearchDialogTitle">Complete your room search</h2>
+            <p id="roomSearchDialogHelp">We’ve kept the details you entered. Complete the fields below to see room options.</p>
+            <p id="roomSearchDialogRoom" class="fw-semibold mb-0" hidden></p>
+            <div class="row g-3" id="roomSearchDialogFields"></div>
+            <div class="web-actions mt-4">
+              <button type="button" class="web-btn-solid" id="confirmRoomSearch">Check Available Rooms</button>
+              <button type="button" class="web-btn-ghost" id="cancelRoomSearch">Back to booking</button>
+            </div>
+          </dialog>
         </div>
 
         <div id="roomStepTwo" class="web-booking-step">
@@ -146,6 +160,7 @@
                   <div class="col-md-6">
                     <label for="roomPaymentMethod">Payment Preference</label>
                     <select id="roomPaymentMethod" class="form-select">
+                      <option value="" selected disabled>Choose a payment preference</option>
                       <option>Pay online</option>
                       <option>Pay at hotel</option>
                       <option>Bank transfer</option>
@@ -190,20 +205,21 @@
                   <div class="col-md-6">
                     <label for="eventType">Event Type</label>
                     <select id="eventType" class="form-select">
+                      <option value="" selected disabled>Choose an event type</option>
                       <option>Wedding</option><option>Conference</option><option>Business Meeting</option><option>Birthday / Private Party</option><option>Dinner / Reception</option><option>Training / Seminar</option>
                     </select>
                   </div>
                   <div class="col-md-6">
                     <label for="eventHall">Preferred Hall</label>
                     <select id="eventHall" class="form-select">
+                      <option value="" selected disabled>Choose a hall</option>
                       <option>Grand Ballroom</option><option>Conference Hall</option><option>Executive Boardroom</option><option>Terrace Event Space</option><option>Restaurant Private Area</option>
                     </select>
                   </div>
                   <div class="col-md-6"><label for="eventGuests">Estimated Guests</label><input type="number" id="eventGuests" class="form-control" min="1" placeholder="e.g. 120"></div>
-                  <div class="col-md-4"><label for="eventDate">Event Date</label><input type="date" id="eventDate" class="form-control"></div>
-                  <div class="col-md-4"><label for="eventStart">Start Time</label><input type="time" id="eventStart" class="form-control"></div>
-                  <div class="col-md-4"><label for="eventEnd">End Time</label><input type="time" id="eventEnd" class="form-control"></div>
-                  <div class="col-12"><label>Event Duration</label><div id="eventDurationOutput" class="web-stay-pill"><i class="fa-solid fa-clock me-2"></i>Select valid time</div></div>
+                  <div class="col-md-6"><label for="eventStart">Start Date and Time</label><input type="datetime-local" id="eventStart" class="form-control" required></div>
+                  <div class="col-md-6"><label for="eventEnd">End Date and Time</label><input type="datetime-local" id="eventEnd" class="form-control" required></div>
+                  <div class="col-12"><label>Event Duration</label><div id="eventDurationOutput" class="web-stay-pill"><i class="fa-solid fa-clock me-2"></i>Select valid date and time</div></div>
                   <div class="col-12"><label for="eventNotes">Event Notes</label><textarea id="eventNotes" class="form-control" rows="5" placeholder="Setup, catering, decoration, seating, special request..."></textarea></div>
                   <div class="col-12"><button type="button" id="continueEventBookingBtn" class="web-btn-solid">Continue to Event Summary</button></div>
                 </div>
